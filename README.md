@@ -18,32 +18,30 @@ mba-finanzas/
 
 El `index.html` es un sitio web completo tipo SPA que incluye:
 
-| Sección                    | Contenido                                   |
-| -------------------------- | ------------------------------------------- |
-| **Inicio**                 | Hero, artículos destacados, stats           |
-| **Programas MBA**          | 9 artículos sobre programas globales        |
-| **Carreras & Salarios**    | 8 artículos sobre rutas profesionales       |
-| **Finanzas Técnicas**      | 8 artículos técnicos (DCF, LBO, VaR...)     |
-| **Preparación GMAT**       | 8 artículos sobre admisiones                |
-| **Artículo Pillar**        | Artículo completo +1,000 palabras (ejemplo) |
-| **Noticias en Vivo**       | Agregador RSS                               |
-| **Sobre Nosotros**         | Página EEAT con perfiles de autores         |
-| **Contacto**               | Formulario funcional                        |
-| **Política de Privacidad** | Cumplimiento RGPD                           |
-| **Aviso Legal**            | Límites de responsabilidad                  |
-| **Política de Cookies**    | Consentimiento AdSense                      |
-| **Cookie Banner**          | Banner de consentimiento GDPR               |
+| Sección | Contenido |
+|---|---|
+| **Inicio** | Hero, artículos destacados, stats |
+| **Programas MBA** | 9 artículos sobre programas globales |
+| **Carreras & Salarios** | 8 artículos sobre rutas profesionales |
+| **Finanzas Técnicas** | 8 artículos técnicos (DCF, LBO, VaR...) |
+| **Preparación GMAT** | 8 artículos sobre admisiones |
+| **Artículo Pillar** | Artículo completo +1,000 palabras (ejemplo) |
+| **Noticias en Vivo** | Agregador RSS |
+| **Sobre Nosotros** | Página EEAT con perfiles de autores |
+| **Contacto** | Formulario funcional |
+| **Política de Privacidad** | Cumplimiento RGPD |
+| **Aviso Legal** | Límites de responsabilidad |
+| **Política de Cookies** | Consentimiento AdSense |
+| **Cookie Banner** | Banner de consentimiento GDPR |
 
 ### Despliegue del frontend
 
 **Opción A: Hosting estático (recomendado para empezar)**
-
 - Netlify: arrastrar y soltar `index.html` en netlify.com/drop
 - Vercel: `vercel deploy`
 - GitHub Pages: subir al repo y activar Pages
 
 **Opción B: WordPress + conversión**
-
 - Usar el contenido de los artículos para crear posts en WordPress
 - Instalar tema Astra o GeneratePress (requerido para velocidad)
 - Plugins recomendados: Yoast SEO, WP Rocket, Cookie Notice
@@ -55,7 +53,7 @@ El `index.html` es un sitio web completo tipo SPA que incluye:
 ### ¿Por qué un servidor backend?
 
 Los navegadores bloquean peticiones directas a feeds RSS de otros dominios (política CORS).
-El servidor backend actúa como **proxy**: tu sitio le pide los feeds al _tuyo_ (sin CORS),
+El servidor backend actúa como **proxy**: tu sitio le pide los feeds al *tuyo* (sin CORS),
 y el servidor los obtiene de las fuentes externas en el servidor.
 
 ### Instalación
@@ -68,7 +66,6 @@ npm install
 ### Variables de entorno
 
 Crea un archivo `.env`:
-
 ```env
 PORT=3001
 ALLOWED_ORIGIN=https://tudominio.com   # Cambia por tu dominio real
@@ -84,16 +81,16 @@ npm run dev
 
 ### Endpoints de la API
 
-| Método | Ruta                                    | Descripción                               |
-| ------ | --------------------------------------- | ----------------------------------------- |
-| GET    | `/health`                               | Health check                              |
-| GET    | `/api/feeds`                            | Lista de feeds disponibles                |
-| GET    | `/api/feed`                             | Todos los artículos (todos los feeds)     |
-| GET    | `/api/feed?sources=reuters-business,ft` | Feeds específicos                         |
-| GET    | `/api/feed?lang=es`                     | Solo feeds en español                     |
-| GET    | `/api/feed?limit=5`                     | Máximo 5 artículos por feed               |
-| GET    | `/api/feed/reuters-business`            | Un feed específico                        |
-| POST   | `/api/cache/clear`                      | Limpiar caché (requiere x-api-key header) |
+| Método | Ruta | Descripción |
+|---|---|---|
+| GET | `/health` | Health check |
+| GET | `/api/feeds` | Lista de feeds disponibles |
+| GET | `/api/feed` | Todos los artículos (todos los feeds) |
+| GET | `/api/feed?sources=reuters-business,ft` | Feeds específicos |
+| GET | `/api/feed?lang=es` | Solo feeds en español |
+| GET | `/api/feed?limit=5` | Máximo 5 artículos por feed |
+| GET | `/api/feed/reuters-business` | Un feed específico |
+| POST | `/api/cache/clear` | Limpiar caché (requiere x-api-key header) |
 
 ### Ejemplo de respuesta
 
@@ -125,7 +122,7 @@ En `index.html`, reemplaza la función `fetchFeed` por llamadas a tu API:
 
 ```javascript
 async function loadAllFeeds() {
-  const res = await fetch("https://api.tudominio.com/api/feed?limit=6");
+  const res = await fetch('https://api.tudominio.com/api/feed?limit=6');
   const data = await res.json();
   allItems = data.items;
   renderFeed(allItems);
@@ -225,12 +222,12 @@ Antes de enviar la solicitud, verifica:
 
 ### Volumen recomendado de publicación
 
-| Mes               | Meta          | Tipo de contenido                      |
-| ----------------- | ------------- | -------------------------------------- |
-| 1-2               | 15 artículos  | Pillar pages (+1,500 palabras)         |
-| 3-4               | +10 artículos | Guías intermedias (800-1,200 palabras) |
-| 5-6               | +10 artículos | Artículos cortos, actualizaciones      |
-| Solicitud AdSense | 35+ artículos | Todos indexados                        |
+| Mes | Meta | Tipo de contenido |
+|---|---|---|
+| 1-2 | 15 artículos | Pillar pages (+1,500 palabras) |
+| 3-4 | +10 artículos | Guías intermedias (800-1,200 palabras) |
+| 5-6 | +10 artículos | Artículos cortos, actualizaciones |
+| Solicitud AdSense | 35+ artículos | Todos indexados |
 
 ### Palabras clave objetivo (alta intención)
 
@@ -247,4 +244,4 @@ Antes de enviar la solicitud, verifica:
 
 ---
 
-_Proyecto: MBAFinanzasPro | Versión: 1.0 | Junio 2025_
+*Proyecto: MBAFinanzasPro | Versión: 1.0 | Junio 2025*
