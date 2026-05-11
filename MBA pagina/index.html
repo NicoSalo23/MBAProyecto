@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MBA Finanzas Pro | Tu Guía de Autoridad en Educación Financiera</title>
+<meta name="description" content="Guía completa sobre MBA en Finanzas: programas, carreras, salarios, valoración de empresas y preparación GMAT. Contenido de autoridad para profesionales financieros.">
+<meta name="keywords" content="MBA finanzas, banca de inversión, CFA, GMAT, valoración empresas, private equity, carreras financieras">
+<link rel="canonical" href="https://mbafinanzaspro.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0A1628;--navy2:#0F1E38;--navy3:#162545;
+  --gold:#C9A84C;--gold2:#E8C96A;--gold3:#F5E4B0;
+  --cream:#FAF8F3;--cream2:#F0EDE4;
+  --text:#0A1628;--text2:#3A4A6B;--text3:#6B7A99;
+  --white:#FFFFFF;
+  --card-shadow:0 2px 20px rgba(10,22,40,0.08);
+  --transition:0.25s cubic-bezier(0.4,0,0.2,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);font-size:16px;line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.25}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* ── NAV ── */
+#nav{position:sticky;top:0;z-index:1000;background:rgba(10,22,40,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.2)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:8px;height:68px}
+.nav-logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white);flex:0 0 auto;letter-spacing:-0.3px}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:2px;margin-left:32px;flex:1}
+.nav-links a{color:rgba(255,255,255,0.75);font-size:13.5px;font-weight:500;padding:6px 12px;border-radius:6px;transition:all var(--transition);white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{color:var(--white);background:rgba(201,168,76,0.15)}
+.nav-cta{margin-left:auto;background:var(--gold);color:var(--navy);font-weight:600;font-size:13px;padding:8px 18px;border-radius:6px;transition:all var(--transition);white-space:nowrap;flex:0 0 auto}
+.nav-cta:hover{background:var(--gold2)}
+.ham{display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--white)}
+.ham svg{width:22px;height:22px}
+#mobile-menu{display:none;background:var(--navy);border-top:1px solid rgba(201,168,76,0.2);padding:16px 24px 24px}
+#mobile-menu a{display:block;color:rgba(255,255,255,0.8);padding:10px 0;font-size:15px;border-bottom:1px solid rgba(255,255,255,0.06)}
+#mobile-menu a:last-child{border-bottom:none}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 50%,#1a2d52 100%);min-height:580px;display:flex;align-items:center;position:relative;overflow:hidden;padding:80px 24px}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A84C' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.hero-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:80px;align-items:center;width:100%;position:relative}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);color:var(--gold2);font-size:12px;font-weight:600;letter-spacing:0.8px;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:24px}
+.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold2)}
+.hero h1{font-size:clamp(36px,4vw,54px);font-weight:700;color:var(--white);margin-bottom:20px;line-height:1.15}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero p{font-size:17px;color:rgba(255,255,255,0.72);line-height:1.75;max-width:520px;margin-bottom:36px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:var(--gold);color:var(--navy);font-weight:700;font-size:15px;padding:13px 28px;border-radius:8px;transition:all var(--transition);letter-spacing:-0.1px}
+.btn-primary:hover{background:var(--gold2);transform:translateY(-1px)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,0.3);color:var(--white);font-weight:500;font-size:15px;padding:13px 28px;border-radius:8px;transition:all var(--transition)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.stat-card{background:rgba(255,255,255,0.06);border:1px solid rgba(201,168,76,0.2);border-radius:12px;padding:24px;backdrop-filter:blur(4px)}
+.stat-number{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;color:var(--gold);line-height:1}
+.stat-label{font-size:13px;color:rgba(255,255,255,0.6);margin-top:6px;font-weight:400}
+
+/* ── SECTIONS ── */
+.section{padding:80px 24px;display:none}
+.section.active{display:block}
+.section-intro{max-width:1280px;margin:0 auto 56px;text-align:center}
+.section-intro .eyebrow{font-size:12px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.section-intro h2{font-size:clamp(28px,3vw,42px);color:var(--navy);margin-bottom:16px}
+.section-intro p{font-size:17px;color:var(--text2);max-width:620px;margin:0 auto}
+
+/* ── ARTICLE GRID ── */
+.grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:28px}
+.card{background:var(--white);border-radius:14px;overflow:hidden;box-shadow:var(--card-shadow);transition:all var(--transition);border:1px solid rgba(10,22,40,0.06);display:flex;flex-direction:column}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(10,22,40,0.15)}
+.card-img{height:200px;object-fit:cover;background:linear-gradient(135deg,var(--navy) 0%,var(--navy3) 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;flex-shrink:0}
+.card-img-inner{font-family:'Playfair Display',serif;font-size:48px;opacity:0.15;color:var(--gold)}
+.card-cat{position:absolute;top:12px;left:12px;background:var(--gold);color:var(--navy);font-size:11px;font-weight:700;letter-spacing:0.6px;text-transform:uppercase;padding:4px 10px;border-radius:4px}
+.card-body{padding:24px;flex:1;display:flex;flex-direction:column}
+.card-meta{font-size:12px;color:var(--text3);margin-bottom:10px;display:flex;gap:12px}
+.card h3{font-size:19px;font-weight:600;color:var(--navy);margin-bottom:10px;line-height:1.3}
+.card h3 a:hover{color:var(--gold)}
+.card p{font-size:14px;color:var(--text2);line-height:1.7;flex:1}
+.card-footer{margin-top:20px;padding-top:16px;border-top:1px solid var(--cream2);display:flex;align-items:center;justify-content:space-between}
+.read-more{font-size:13px;font-weight:600;color:var(--gold);display:flex;align-items:center;gap:6px;transition:gap var(--transition)}
+.card:hover .read-more{gap:10px}
+.read-time{font-size:12px;color:var(--text3)}
+
+/* ── FEATURED ARTICLE (full) ── */
+.article-full{max-width:800px;margin:0 auto;background:var(--white);border-radius:16px;padding:clamp(28px,5vw,56px);box-shadow:var(--card-shadow)}
+.article-full .article-header{margin-bottom:32px}
+.article-full .cat-badge{display:inline-block;background:rgba(201,168,76,0.15);color:var(--gold);font-size:12px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;padding:5px 12px;border-radius:4px;margin-bottom:16px}
+.article-full h1{font-size:clamp(26px,3.5vw,40px);color:var(--navy);margin-bottom:16px}
+.article-full .meta-row{display:flex;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--text3);padding-bottom:24px;border-bottom:2px solid var(--cream2)}
+.article-full .meta-row span{display:flex;align-items:center;gap:6px}
+.article-full h2{font-size:24px;color:var(--navy);margin:36px 0 14px}
+.article-full h3{font-size:19px;color:var(--navy);margin:28px 0 12px}
+.article-full p{color:var(--text2);margin-bottom:18px;line-height:1.8}
+.article-full ul,.article-full ol{padding-left:24px;color:var(--text2);margin-bottom:18px}
+.article-full li{margin-bottom:8px;line-height:1.7}
+.article-full blockquote{border-left:4px solid var(--gold);padding:16px 24px;background:rgba(201,168,76,0.06);border-radius:0 8px 8px 0;margin:28px 0;font-style:italic;color:var(--text2);font-size:17px}
+.article-full .data-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px}
+.article-full .data-table th{background:var(--navy);color:var(--white);padding:10px 14px;text-align:left;font-weight:600;font-size:13px}
+.article-full .data-table td{padding:10px 14px;border-bottom:1px solid var(--cream2);color:var(--text2)}
+.article-full .data-table tr:nth-child(even) td{background:var(--cream)}
+.key-point{background:linear-gradient(135deg,rgba(10,22,40,0.04),rgba(201,168,76,0.06));border:1px solid rgba(201,168,76,0.2);border-radius:10px;padding:20px 24px;margin:24px 0}
+.key-point .kp-title{font-weight:700;color:var(--navy);font-size:14px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.key-point .kp-title::before{content:'💡';font-size:16px}
+
+/* ── RSS AGGREGATOR ── */
+.aggregator{background:var(--navy);padding:80px 24px}
+.aggregator-inner{max-width:1280px;margin:0 auto}
+.aggregator h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3vw,38px);color:var(--white);margin-bottom:8px}
+.aggregator-sub{color:rgba(255,255,255,0.6);font-size:15px;margin-bottom:40px}
+.agg-disclaimer{background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.25);border-radius:8px;padding:12px 18px;font-size:13px;color:rgba(255,255,255,0.65);margin-bottom:36px;line-height:1.6}
+.agg-disclaimer strong{color:var(--gold)}
+.agg-controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px}
+.agg-btn{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;padding:8px 16px;border-radius:6px;cursor:pointer;transition:all var(--transition);font-family:'DM Sans',sans-serif}
+.agg-btn:hover,.agg-btn.active{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.agg-refresh{background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);color:var(--gold);font-size:13px;font-weight:600;padding:8px 18px;border-radius:6px;cursor:pointer;transition:all var(--transition);font-family:'DM Sans',sans-serif;margin-left:auto;display:flex;align-items:center;gap:8px}
+.agg-refresh:hover{background:var(--gold);color:var(--navy)}
+.agg-refresh.loading svg{animation:spin 1s linear infinite}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.feed-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.feed-item{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px;transition:all var(--transition);display:flex;flex-direction:column;gap:12px}
+.feed-item:hover{background:rgba(255,255,255,0.09);border-color:rgba(201,168,76,0.3);transform:translateY(-2px)}
+.feed-source{display:flex;align-items:center;gap:8px}
+.source-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.source-name{font-size:11px;font-weight:700;letter-spacing:0.6px;text-transform:uppercase;color:rgba(255,255,255,0.5)}
+.feed-title{font-family:'Playfair Display',serif;font-size:16px;color:var(--white);line-height:1.4;font-weight:600}
+.feed-title a{transition:color var(--transition)}
+.feed-title a:hover{color:var(--gold2)}
+.feed-desc{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.feed-footer{display:flex;align-items:center;justify-content:space-between;margin-top:4px}
+.feed-date{font-size:12px;color:rgba(255,255,255,0.35)}
+.feed-link{font-size:12px;font-weight:600;color:var(--gold);display:flex;align-items:center;gap:4px}
+.feed-link:hover{color:var(--gold2)}
+.feed-placeholder{text-align:center;padding:48px 24px;color:rgba(255,255,255,0.4);grid-column:1/-1}
+.feed-placeholder svg{width:40px;height:40px;margin-bottom:16px;opacity:0.3}
+.feed-error{background:rgba(255,80,80,0.1);border:1px solid rgba(255,80,80,0.2);border-radius:8px;padding:16px 20px;color:rgba(255,180,180,0.9);font-size:14px;grid-column:1/-1;line-height:1.6}
+
+/* ── LEGAL PAGES ── */
+.legal-content{max-width:800px;margin:0 auto;background:var(--white);border-radius:16px;padding:clamp(28px,5vw,56px);box-shadow:var(--card-shadow)}
+.legal-content h1{font-size:32px;color:var(--navy);margin-bottom:8px}
+.legal-content .last-updated{font-size:13px;color:var(--text3);margin-bottom:32px}
+.legal-content h2{font-size:20px;color:var(--navy);margin:32px 0 12px}
+.legal-content p{color:var(--text2);margin-bottom:14px;line-height:1.75;font-size:15px}
+.legal-content ul{padding-left:24px;color:var(--text2);font-size:15px;margin-bottom:14px}
+.legal-content li{margin-bottom:6px;line-height:1.7}
+.cookie-table{width:100%;border-collapse:collapse;font-size:14px;margin:16px 0}
+.cookie-table th{background:var(--navy);color:var(--white);padding:10px 14px;text-align:left}
+.cookie-table td{padding:10px 14px;border-bottom:1px solid var(--cream2);color:var(--text2)}
+.cookie-table tr:nth-child(even) td{background:var(--cream)}
+
+/* ── ABOUT ── */
+.about-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:64px;align-items:start}
+.about-text h1{font-size:clamp(28px,3vw,42px);color:var(--navy);margin-bottom:20px}
+.about-text p{color:var(--text2);line-height:1.8;margin-bottom:18px}
+.about-text h2{font-size:22px;color:var(--navy);margin:32px 0 14px}
+.team-card{background:var(--white);border-radius:14px;padding:28px;box-shadow:var(--card-shadow);border:1px solid rgba(10,22,40,0.06)}
+.team-avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--navy) 0%,var(--navy3) 100%);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:24px;color:var(--gold);font-weight:700;margin-bottom:16px}
+.team-name{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);font-weight:600;margin-bottom:4px}
+.team-title{font-size:13px;color:var(--gold);font-weight:600;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.5px}
+.team-bio{font-size:14px;color:var(--text2);line-height:1.7}
+.team-creds{margin-top:16px;display:flex;flex-direction:column;gap:8px}
+.cred{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text2)}
+.cred::before{content:'✓';color:var(--gold);font-weight:700}
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.pillar{background:var(--cream);border-radius:10px;padding:16px;border-left:3px solid var(--gold)}
+.pillar-title{font-weight:700;color:var(--navy);font-size:14px;margin-bottom:4px}
+.pillar-text{font-size:13px;color:var(--text2)}
+
+/* ── CONTACT ── */
+.contact-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:64px;align-items:start}
+.contact-form-wrap{background:var(--white);border-radius:16px;padding:36px;box-shadow:var(--card-shadow)}
+.contact-form-wrap h2{font-size:26px;color:var(--navy);margin-bottom:6px}
+.contact-form-wrap p{font-size:14px;color:var(--text3);margin-bottom:28px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:11px 14px;border:1.5px solid var(--cream2);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;color:var(--text);background:var(--cream);transition:border-color var(--transition);outline:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold);background:var(--white)}
+.form-group textarea{resize:vertical;min-height:120px}
+.submit-btn{width:100%;background:var(--navy);color:var(--white);font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;padding:13px;border-radius:8px;border:none;cursor:pointer;transition:all var(--transition)}
+.submit-btn:hover{background:var(--gold);color:var(--navy)}
+.contact-info h2{font-size:24px;color:var(--navy);margin-bottom:20px}
+.info-card{background:var(--white);border-radius:12px;padding:20px;box-shadow:var(--card-shadow);display:flex;gap:14px;margin-bottom:14px;border:1px solid rgba(10,22,40,0.06)}
+.info-icon{width:40px;height:40px;border-radius:8px;background:rgba(201,168,76,0.12);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.info-label{font-size:12px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px}
+.info-val{font-size:14px;color:var(--text);font-weight:500}
+.success-msg{display:none;background:rgba(22,150,80,0.1);border:1px solid rgba(22,150,80,0.25);border-radius:8px;padding:16px;color:#116b36;font-size:14px;margin-top:16px;text-align:center}
+.success-msg.show{display:block}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);color:var(--white);padding:64px 24px 32px}
+.footer-inner{max-width:1280px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand p{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.7;margin-top:12px;max-width:300px}
+.footer-col h4{font-family:'Playfair Display',serif;font-size:15px;font-weight:600;color:var(--gold2);margin-bottom:16px}
+.footer-col a{display:block;font-size:14px;color:rgba(255,255,255,0.55);margin-bottom:9px;transition:color var(--transition)}
+.footer-col a:hover{color:var(--gold)}
+.footer-divider{border:none;border-top:1px solid rgba(255,255,255,0.08);margin-bottom:24px}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:rgba(255,255,255,0.4)}
+.footer-legal-links{display:flex;gap:20px}
+.footer-legal-links a{color:rgba(255,255,255,0.4);transition:color var(--transition)}
+.footer-legal-links a:hover{color:var(--gold)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .hero-inner{grid-template-columns:1fr;gap:48px}
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media(max-width:680px){
+  .nav-links{display:none}
+  .nav-cta{display:none}
+  .ham{display:block;margin-left:auto}
+  .hero{padding:60px 20px}
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .section{padding:60px 20px}
+  .form-row{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .pillars{grid-template-columns:1fr}
+}
+@media(max-width:400px){
+  .hero-stats{grid-template-columns:1fr}
+}
+
+/* ── PAGINATION / LOAD MORE ── */
+.load-more-wrap{text-align:center;margin-top:48px}
+.load-more-btn{background:var(--navy);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;padding:12px 32px;border-radius:8px;border:none;cursor:pointer;transition:all var(--transition)}
+.load-more-btn:hover{background:var(--gold);color:var(--navy)}
+
+/* ── COOKIE BANNER ── */
+#cookie-banner{position:fixed;bottom:0;left:0;right:0;background:var(--navy2);border-top:2px solid var(--gold);padding:16px 24px;z-index:9999;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+#cookie-banner p{font-size:13px;color:rgba(255,255,255,0.75);flex:1;line-height:1.6}
+#cookie-banner p a{color:var(--gold);text-decoration:underline}
+.cookie-accept{background:var(--gold);color:var(--navy);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;padding:8px 18px;border-radius:6px;border:none;cursor:pointer}
+.cookie-decline{background:transparent;color:rgba(255,255,255,0.5);font-family:'DM Sans',sans-serif;font-size:13px;padding:8px 14px;border:1px solid rgba(255,255,255,0.2);border-radius:6px;cursor:pointer}
+
+/* ── BREADCRUMB ── */
+.breadcrumb{max-width:1280px;margin:0 auto;padding:16px 0;font-size:13px;color:var(--text3);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.breadcrumb a{color:var(--text3);transition:color var(--transition)}
+.breadcrumb a:hover{color:var(--gold)}
+.breadcrumb span{color:var(--text3);opacity:0.5}
+
+/* ── TOC ── */
+.toc{background:var(--cream);border-radius:10px;padding:20px 24px;margin-bottom:32px;border-left:3px solid var(--gold)}
+.toc-title{font-weight:700;color:var(--navy);font-size:14px;margin-bottom:12px}
+.toc ol{padding-left:18px;color:var(--gold);font-size:14px}
+.toc ol li{margin-bottom:6px}
+.toc ol li a{color:var(--text2);transition:color var(--transition)}
+.toc ol li a:hover{color:var(--gold)}
+
+/* ── TAGS ── */
+.tag-list{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0}
+.tag{background:rgba(201,168,76,0.1);color:var(--gold);font-size:12px;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid rgba(201,168,76,0.25)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav" role="navigation" aria-label="Navegación principal">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" onclick="showSection('home');return false">MBA<span>Finanzas</span>Pro</a>
+    <div class="nav-links">
+      <a href="#" onclick="showSection('home');return false" id="nav-home" class="active">Inicio</a>
+      <a href="#" onclick="showSection('programas');return false" id="nav-programas">Programas MBA</a>
+      <a href="#" onclick="showSection('carreras');return false" id="nav-carreras">Carreras & Salarios</a>
+      <a href="#" onclick="showSection('tecnico');return false" id="nav-tecnico">Finanzas Técnicas</a>
+      <a href="#" onclick="showSection('preparacion');return false" id="nav-preparacion">Preparación GMAT</a>
+      <a href="#" onclick="showSection('sobre');return false" id="nav-sobre">Sobre Nosotros</a>
+      <a href="#" onclick="showSection('contacto');return false" id="nav-contacto">Contacto</a>
+    </div>
+    <a href="#" class="nav-cta" onclick="showSection('aggregator');return false">📡 Noticias en Vivo</a>
+    <button class="ham" onclick="toggleMobile()" aria-label="Abrir menú">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu">
+    <a href="#" onclick="showSection('home');toggleMobile();return false">Inicio</a>
+    <a href="#" onclick="showSection('programas');toggleMobile();return false">Programas MBA</a>
+    <a href="#" onclick="showSection('carreras');toggleMobile();return false">Carreras & Salarios</a>
+    <a href="#" onclick="showSection('tecnico');toggleMobile();return false">Finanzas Técnicas</a>
+    <a href="#" onclick="showSection('preparacion');toggleMobile();return false">Preparación GMAT</a>
+    <a href="#" onclick="showSection('aggregator');toggleMobile();return false">📡 Noticias en Vivo</a>
+    <a href="#" onclick="showSection('sobre');toggleMobile();return false">Sobre Nosotros</a>
+    <a href="#" onclick="showSection('contacto');toggleMobile();return false">Contacto</a>
+  </div>
+</nav>
+
+<!-- ══════════════ HOME ══════════════ -->
+<div id="section-home" class="section active" style="padding:0">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge">Portal de Autoridad en Finanzas</div>
+        <h1>Tu MBA en Finanzas:<br><em>La Inversión que<br>Transforma Carreras</em></h1>
+        <p>Análisis profundo de programas MBA, estrategias de carrera en banca de inversión, finanzas técnicas y preparación para los mejores rankings mundiales.</p>
+        <div class="hero-actions">
+          <a href="#" class="btn-primary" onclick="showSection('programas');return false">Explorar Programas</a>
+          <a href="#" class="btn-ghost" onclick="showSection('aggregator');return false">Noticias Financieras</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card"><div class="stat-number">+127%</div><div class="stat-label">Incremento salarial promedio tras MBA en finanzas</div></div>
+        <div class="stat-card"><div class="stat-number">38</div><div class="stat-label">Artículos de alta calidad publicados</div></div>
+        <div class="stat-card"><div class="stat-number">$185K</div><div class="stat-label">Salario promedio post-MBA en banca de inversión (EE.UU.)</div></div>
+        <div class="stat-card"><div class="stat-number">Top 20</div><div class="stat-label">Programas MBA analizados en profundidad</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURED ARTICLES -->
+  <section style="padding:80px 24px;background:var(--cream)">
+    <div class="section-intro">
+      <div class="eyebrow">Contenido Destacado</div>
+      <h2>Guías de Autoridad para Profesionales Financieros</h2>
+      <p>Cada artículo está investigado y redactado con rigor académico y experiencia de industria para maximizar tu toma de decisiones.</p>
+    </div>
+    <div class="grid">
+      <!-- Card 1 -->
+      <article class="card">
+        <div class="card-img"><div class="card-img-inner">$</div><span class="card-cat">Carreras</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span>Junio 2025</span><span>·</span><span>8 min</span></div>
+          <h3><a href="#" onclick="showArticle('art1');return false">Cómo un MBA en Finanzas Duplica tu Salario en Banca de Inversión</a></h3>
+          <p>Analizamos datos salariales reales de 2024 de Goldman Sachs, JPMorgan y Morgan Stanley para cuantificar el retorno del MBA.</p>
+          <div class="card-footer"><a href="#" class="read-more" onclick="showArticle('art1');return false">Leer artículo →</a><span class="read-time">8 min</span></div>
+        </div>
+      </article>
+      <!-- Card 2 -->
+      <article class="card">
+        <div class="card-img" style="background:linear-gradient(135deg,#1a2d52,#2a4080)"><div class="card-img-inner">∑</div><span class="card-cat">Técnico</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span>Mayo 2025</span><span>·</span><span>12 min</span></div>
+          <h3><a href="#" onclick="showSection('tecnico');return false">Valoración de Empresas por DCF: Guía Paso a Paso</a></h3>
+          <p>Desde los fundamentos del flujo de caja descontado hasta la construcción de un modelo en Excel paso a paso, con casos reales.</p>
+          <div class="card-footer"><a href="#" class="read-more" onclick="showSection('tecnico');return false">Leer artículo →</a><span class="read-time">12 min</span></div>
+        </div>
+      </article>
+      <!-- Card 3 -->
+      <article class="card">
+        <div class="card-img" style="background:linear-gradient(135deg,#1e3a2f,#2d5a45)"><div class="card-img-inner">★</div><span class="card-cat">Programas</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span>Abril 2025</span><span>·</span><span>15 min</span></div>
+          <h3><a href="#" onclick="showSection('programas');return false">Harvard vs Wharton: ¿Cuál MBA de Finanzas Abre Más Puertas?</a></h3>
+          <p>Comparativa exhaustiva de currículos, redes de egresados, estadísticas de empleo y ROI real de los dos programas más prestigiosos.</p>
+          <div class="card-footer"><a href="#" class="read-more" onclick="showSection('programas');return false">Leer artículo →</a><span class="read-time">15 min</span></div>
+        </div>
+      </article>
+      <!-- Card 4 -->
+      <article class="card">
+        <div class="card-img" style="background:linear-gradient(135deg,#3a1a2f,#5a2a48)"><div class="card-img-inner">≡</div><span class="card-cat">Preparación</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span>Marzo 2025</span><span>·</span><span>10 min</span></div>
+          <h3><a href="#" onclick="showSection('preparacion');return false">GMAT 700+: Plan de Estudio de 3 Meses para Profesionales</a></h3>
+          <p>Un plan semana a semana diseñado para profesionales con poco tiempo libre que buscan maximizar su puntuación GMAT.</p>
+          <div class="card-footer"><a href="#" class="read-more" onclick="showSection('preparacion');return false">Leer artículo →</a><span class="read-time">10 min</span></div>
+        </div>
+      </article>
+      <!-- Card 5 -->
+      <article class="card">
+        <div class="card-img" style="background:linear-gradient(135deg,#1a2a3a,#2a4555)"><div class="card-img-inner">⊕</div><span class="card-cat">Técnico</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span>Febrero 2025</span><span>·</span><span>11 min</span></div>
+          <h3><a href="#" onclick="showSection('tecnico');return false">Modelos de LBO: Lo que Aprenderás en el MBA y Cómo Aplicarlo</a></h3>
+          <p>Análisis de leveraged buyouts desde la perspectiva del private equity: estructura de deuda, retornos y salidas típicas del mercado.</p>
+          <div class="card-footer"><a href="#" class="read-more" onclick="showSection('tecnico');return false">Leer artículo →</a><span class="read-time">11 min</span></div>
+        </div>
+      </article>
+      <!-- Card 6 -->
+      <article class="card">
+        <div class="card-img" style="background:linear-gradient(135deg,#2a1a10,#4a3018)"><div class="card-img-inner">△</div><span class="card-cat">Carreras</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span>Enero 2025</span><span>·</span><span>9 min</span></div>
+          <h3><a href="#" onclick="showSection('carreras');return false">CFA vs MBA: ¿Cuál Certificación Potencia más tu Carrera Financiera?</a></h3>
+          <p>Un análisis honesto de costos, tiempos de obtención, reconocimiento de mercado y puertas que abre cada credencial.</p>
+          <div class="card-footer"><a href="#" class="read-more" onclick="showSection('carreras');return false">Leer artículo →</a><span class="read-time">9 min</span></div>
+        </div>
+      </article>
+    </div>
+    <div class="load-more-wrap">
+      <button class="load-more-btn" onclick="showSection('programas')">Ver todos los artículos →</button>
+    </div>
+  </section>
+
+  <!-- AGGREGATOR PREVIEW -->
+  <section style="background:var(--navy2);padding:56px 24px;text-align:center">
+    <div style="max-width:640px;margin:0 auto">
+      <div style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:12px">Nuevo</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:32px;color:var(--white);margin-bottom:14px">Noticias Financieras en Tiempo Real</h2>
+      <p style="color:rgba(255,255,255,0.6);font-size:16px;margin-bottom:28px">Nuestro agregador extrae titulares de los principales medios financieros con respeto total al copyright: solo mostramos fragmentos de RSS públicos con enlace a la fuente original.</p>
+      <a href="#" class="btn-primary" onclick="showSection('aggregator');return false">Ver Noticias Financieras</a>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════ PROGRAMAS ══════════════ -->
+<div id="section-programas" class="section" style="background:var(--cream)">
+  <div class="section-intro">
+    <div class="eyebrow">Programas MBA</div>
+    <h2>Los Mejores MBA en Finanzas del Mundo</h2>
+    <p>Análisis profundo de currículos, costos, red de alumni y retorno de inversión para cada programa.</p>
+  </div>
+  <div class="grid">
+    <article class="card"><div class="card-img"><div class="card-img-inner">H</div><span class="card-cat">Top 3</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>15 min</span></div><h3>Harvard Business School: Análisis Completo del MBA 2025</h3><p>Desde el método del caso hasta las oportunidades en finanzas: todo lo que necesitas saber antes de aplicar al HBS.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">15 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#1a2d52,#0d1e3d)"><div class="card-img-inner">W</div><span class="card-cat">Top 3</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>14 min</span></div><h3>Wharton School of Finance: El MBA que Define Carreras en Wall Street</h3><p>Por qué Wharton domina el ranking de MBAs en finanzas y cómo construir el perfil ideal para su proceso de admisiones.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">14 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#2d1a0d,#4a2d14)"><div class="card-img-inner">C</div><span class="card-cat">Top 5</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>12 min</span></div><h3>Chicago Booth MBA: La Elección del Analista Cuantitativo</h3><p>El programa más riguroso en teoría financiera: currículos, profesores Nobel y oportunidades en hedge funds.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">12 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#0d2d1a,#144a2d)"><div class="card-img-inner">L</div><span class="card-cat">Europa</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>13 min</span></div><h3>London Business School vs INSEAD: ¿Cuál Elegir en Europa?</h3><p>Comparativa detallada de los dos programas europeos más competitivos para finanzas internacionales.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">13 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#2d0d1a,#4a1428)"><div class="card-img-inner">IE</div><span class="card-cat">España</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>11 min</span></div><h3>IE Business School y ESADE: MBA en Finanzas en España</h3><p>Los programas más competitivos de España analizados desde el punto de vista de salidas profesionales y ROI.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">11 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#1a2d0d,#2d4a14)"><div class="card-img-inner">LA</div><span class="card-cat">LATAM</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>10 min</span></div><h3>MBA en Finanzas en Latinoamérica: Oportunidades y ROI Real</h3><p>Análisis de los mejores programas en Colombia, México y Brasil con datos de salarios post-MBA 2024.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">10 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#1a1a2d,#2d2d52)"><div class="card-img-inner">🌐</div><span class="card-cat">Online</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>9 min</span></div><h3>MBA en Finanzas Online: Las 10 Mejores Universidades 2025</h3><p>Los programas digitales más rigurosos y reconocidos por empleadores del sector financiero global.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">9 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#2d1a2d,#4a2a4a)"><div class="card-img-inner">⏱</div><span class="card-cat">Guía</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>12 min</span></div><h3>MBA Part-Time vs Full-Time: Guía Definitiva para Profesionales</h3><p>¿Mantener el trabajo o dedicarte full-time? Analizamos oportunidades perdidas, costos y resultados reales.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">12 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#0d1a2d,#14294a)"><div class="card-img-inner">ROI</div><span class="card-cat">Análisis</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>14 min</span></div><h3>ROI del MBA en Finanzas: ¿Vale la Pena la Inversión?</h3><p>Calculamos el retorno real ajustando matrícula, costo de oportunidad y proyecciones salariales a 10 años.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">14 min</span></div></div></article>
+  </div>
+</div>
+
+<!-- ══════════════ CARRERAS ══════════════ -->
+<div id="section-carreras" class="section" style="background:var(--cream)">
+  <div class="section-intro">
+    <div class="eyebrow">Carreras & Salarios</div>
+    <h2>Carreras Financieras Post-MBA: Datos Reales</h2>
+    <p>Rutas de carrera, salarios actualizados y estrategias para maximizar tu trayectoria profesional en finanzas.</p>
+  </div>
+  <div class="grid">
+    <article class="card"><div class="card-img"><div class="card-img-inner">$</div><span class="card-cat">Salarios</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>8 min</span></div><h3><a href="#" onclick="showArticle('art1');return false">Cómo un MBA en Finanzas Duplica tu Salario en Banca de Inversión</a></h3><p>Datos reales de compensación en Goldman Sachs, JPMorgan y Morgan Stanley para analistas y asociados MBA.</p><div class="card-footer"><a href="#" class="read-more" onclick="showArticle('art1');return false">Leer →</a><span class="read-time">8 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#1a2d0d,#2a4a14)"><div class="card-img-inner">CFO</div><span class="card-cat">Liderazgo</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>11 min</span></div><h3>CFO a los 40: La Hoja de Ruta con un MBA en Finanzas</h3><p>Cómo los directores financieros más jóvenes del Fortune 500 estructuraron sus primeros 15 años de carrera.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">11 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#2d1a0d,#4a2d14)"><div class="card-img-inner">PE</div><span class="card-cat">Private Equity</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>13 min</span></div><h3>Private Equity después del MBA: Lo que Nadie te Cuenta</h3><p>La realidad del proceso de recruiting en PE, el día a día en un fondo y las compensaciones totales reales.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">13 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#1a0d2d,#2d144a)"><div class="card-img-inner">CFA</div><span class="card-cat">Certificaciones</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>10 min</span></div><h3>Diferencias entre CFA y MBA para Analistas Financieros</h3><p>Un análisis honesto de cuándo el CFA supera al MBA y viceversa, con datos de mercado laboral.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">10 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#0d2d2d,#144a4a)"><div class="card-img-inner">GS</div><span class="card-cat">Recruiting</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>12 min</span></div><h3>Goldman Sachs, JPMorgan, Morgan Stanley: Qué Buscan en sus MBAs</h3><p>Perfiles de candidatos ideales, preguntas técnicas frecuentes y señales de alerta en los procesos de selección.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">12 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#2d2d0d,#4a4a14)"><div class="card-img-inner">HF</div><span class="card-cat">Hedge Funds</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>9 min</span></div><h3>Del MBA a Hedge Fund Manager: 5 Historias Reales</h3><p>Cinco profesionales que pasaron de ser analistas MBA a gestionar fondos de más de $500M. Sus estrategias y aprendizajes.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">9 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#0d1a2d,#142a4a)"><div class="card-img-inner">🤝</div><span class="card-cat">Networking</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>7 min</span></div><h3>Networking en Finanzas: Cómo Activar tu Red desde el MBA</h3><p>Estrategias probadas para construir relaciones con directivos financieros durante y después del programa MBA.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">7 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#1a0d0d,#2d1414)"><div class="card-img-inner">💰</div><span class="card-cat">Datos</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>8 min</span></div><h3>Salarios Post-MBA en Finanzas: Datos Reales 2025</h3><p>Tablas de compensación total por rol, industria y geografía con datos de encuestas de 1,200 graduados MBA en finanzas.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">8 min</span></div></div></article>
+  </div>
+</div>
+
+<!-- ══════════════ TÉCNICO ══════════════ -->
+<div id="section-tecnico" class="section" style="background:var(--cream)">
+  <div class="section-intro">
+    <div class="eyebrow">Finanzas Técnicas</div>
+    <h2>Análisis Financiero de Alto Nivel</h2>
+    <p>Contenido técnico educativo sobre valoración, modelos financieros y gestión de portafolios para demostrar autoridad de contenido.</p>
+  </div>
+  <div class="grid">
+    <article class="card"><div class="card-img"><div class="card-img-inner">DCF</div><span class="card-cat">Valoración</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>12 min</span></div><h3>Valoración de Empresas por DCF: Guía Paso a Paso</h3><p>Desde la proyección de flujos de caja hasta la tasa de descuento WACC. Incluye plantilla Excel descargable.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">12 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#1a2d0d,#2a4a14)"><div class="card-img-inner">LBO</div><span class="card-cat">PE</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>11 min</span></div><h3>Modelos de LBO: Fundamentos del Leveraged Buyout</h3><p>Estructura de capital, fuentes de retorno (deuda/múltiplo/crecimiento) y construcción del modelo en Excel.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">11 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#0d1a2d,#142a4a)"><div class="card-img-inner">MPT</div><span class="card-cat">Portafolios</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>13 min</span></div><h3>Gestión de Carteras: Teoría de Markowitz en la Práctica</h3><p>Cómo aplicar la frontera eficiente, el modelo CAPM y la optimización de Sharpe en portafolios reales.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">13 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#2d0d1a,#4a1428)"><div class="card-img-inner">OPT</div><span class="card-cat">Derivados</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>14 min</span></div><h3>Derivados Financieros: Opciones, Futuros y Swaps para MBAs</h3><p>Mecánica de los instrumentos derivados, estrategias de cobertura y el modelo Black-Scholes explicado sin fórmulas intimidantes.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">14 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#1a1a0d,#2d2d14)"><div class="card-img-inner">📊</div><span class="card-cat">Análisis</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>10 min</span></div><h3>Análisis Fundamental: Cómo Leer un Balance como un Profesional</h3><p>Ratios financieros clave, análisis de estados financieros y las señales de alerta que los analistas buscan primero.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">10 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#0d2d1a,#144a2d)"><div class="card-img-inner">VaR</div><span class="card-cat">Riesgo</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>11 min</span></div><h3>Gestión de Riesgo Financiero: Value at Risk y Aplicaciones</h3><p>Métodos VaR paramétrico, histórico y Monte Carlo, con ejemplos de aplicación en carteras de renta variable.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">11 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#1a0d2d,#2d144a)"><div class="card-img-inner">M&A</div><span class="card-cat">Corporate</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>12 min</span></div><h3>Fusiones y Adquisiciones: Análisis de Valor en M&A</h3><p>Cómo calcular el valor de una adquisición, las sinergias esperadas y los métodos de valoración en deals M&A.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">12 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#2d2d1a,#4a4a28)"><div class="card-img-inner">FT</div><span class="card-cat">Fintech</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>9 min</span></div><h3>Fintech y el Futuro de las Finanzas: Oportunidades para MBAs</h3><p>IA en finanzas, blockchain, pagos digitales y los roles de mayor crecimiento para MBAs en el sector fintech.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">9 min</span></div></div></article>
+  </div>
+</div>
+
+<!-- ══════════════ PREPARACIÓN ══════════════ -->
+<div id="section-preparacion" class="section" style="background:var(--cream)">
+  <div class="section-intro">
+    <div class="eyebrow">Preparación MBA</div>
+    <h2>Tu Hoja de Ruta para la Admisión</h2>
+    <p>Desde el GMAT hasta el statement of purpose: todo lo que necesitas para construir una aplicación MBA competitiva.</p>
+  </div>
+  <div class="grid">
+    <article class="card"><div class="card-img"><div class="card-img-inner">700</div><span class="card-cat">GMAT</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>10 min</span></div><h3>GMAT 700+: Plan de Estudio de 3 Meses para Profesionales</h3><p>Semana por semana, cómo un profesional con 50+ horas semanales de trabajo puede lograr un GMAT competitivo.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">10 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#1a0d2d,#2d144a)"><div class="card-img-inner">GRE</div><span class="card-cat">Admisiones</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>7 min</span></div><h3>GRE vs GMAT: ¿Cuál Examen Elegir para tu Aplicación MBA?</h3><p>Diferencias, aceptación por programa, dificultad relativa y en qué casos el GRE puede ser la mejor estrategia.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">7 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#0d2d1a,#144a2d)"><div class="card-img-inner">✍</div><span class="card-cat">Ensayos</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>9 min</span></div><h3>Cómo Escribir un Statement of Purpose que Impresione</h3><p>La estructura narrativa que usan los candidatos admitidos en top 10, con ejemplos anonimizados reales.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">9 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#2d1a0d,#4a2d14)"><div class="card-img-inner">🎯</div><span class="card-cat">Entrevistas</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>8 min</span></div><h3>Errores Fatales en la Entrevista MBA: Guía de Supervivencia</h3><p>Los 12 errores más comunes que eliminan candidatos fuertes en entrevistas MBA, según adcoms y consultores.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">8 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#1a2d0d,#2d4a14)"><div class="card-img-inner">🎓</div><span class="card-cat">Becas</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>11 min</span></div><h3>Becas para MBA en Finanzas: Guía Completa 2025</h3><p>Más de 25 becas disponibles para MBA en finanzas: elegibilidad, montos, deadlines y estrategias de aplicación.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">11 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#2d0d2d,#4a144a)"><div class="card-img-inner">📋</div><span class="card-cat">Perfil</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>10 min</span></div><h3>Cómo Construir un Perfil Competitivo para Top 10 MBA</h3><p>Los elementos que los comités de admisión de Wharton, HBS y Booth ponderan más allá del GMAT y el GPA.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">10 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#0d0d2d,#14144a)"><div class="card-img-inner">📝</div><span class="card-cat">Cartas</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>6 min</span></div><h3>Cartas de Recomendación para MBA: Qué Deben Incluir</h3><p>Cómo seleccionar a tus recomendantes, qué pedirles que resalten y cómo hacer el proceso más fácil para ellos.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">6 min</span></div></div></article>
+    <article class="card"><div class="card-img" style="background:linear-gradient(135deg,#2d2d0d,#4a4a14)"><div class="card-img-inner">📅</div><span class="card-cat">Cronograma</span></div><div class="card-body"><div class="card-meta"><span>2025</span><span>·</span><span>8 min</span></div><h3>Timeline de Aplicación MBA: 18 Meses de Preparación</h3><p>Un calendario detallado mes a mes para organizar tu aplicación sin estrés de último minuto.</p><div class="card-footer"><span class="read-more">Leer →</span><span class="read-time">8 min</span></div></div></article>
+  </div>
+</div>
+
+<!-- ══════════════ ARTICLE art1 ══════════════ -->
+<div id="section-art1" class="section" style="background:var(--cream)">
+  <div style="max-width:1280px;margin:0 auto 16px;padding:0 24px">
+    <div class="breadcrumb">
+      <a href="#" onclick="showSection('home');return false">Inicio</a><span>/</span>
+      <a href="#" onclick="showSection('carreras');return false">Carreras & Salarios</a><span>/</span>
+      <span>MBA y Salarios en Banca de Inversión</span>
+    </div>
+  </div>
+  <div style="padding:0 24px">
+  <article class="article-full">
+    <div class="article-header">
+      <div class="cat-badge">Carreras & Salarios</div>
+      <h1>Cómo un MBA en Finanzas Duplica tu Salario en Banca de Inversión</h1>
+      <div class="meta-row">
+        <span>📅 15 de junio de 2025</span>
+        <span>👤 Editorial MBAFinanzasPro</span>
+        <span>⏱ 8 minutos de lectura</span>
+        <span>🔄 Actualizado: julio 2025</span>
+      </div>
+    </div>
+    <div class="toc">
+      <div class="toc-title">Tabla de Contenidos</div>
+      <ol>
+        <li><a href="#">El gap salarial: analista vs. asociado MBA</a></li>
+        <li><a href="#">Datos de compensación por banco 2025</a></li>
+        <li><a href="#">El rol de la marca del programa MBA</a></li>
+        <li><a href="#">Compensación total: bonus, carried interest y más</a></li>
+        <li><a href="#">Conclusión y próximos pasos</a></li>
+      </ol>
+    </div>
+    <p>Una de las preguntas más frecuentes entre los profesionales financieros es si el costo de un MBA —que puede superar los $200,000 USD en programas de élite— se justifica con el incremento salarial. La respuesta corta: sí, y de manera sustancial. Los datos de 2024 y 2025 muestran un salario base de los asociados MBA en banca de inversión que duplica o triplica el de los analistas sin este título.</p>
+    <blockquote>El MBA en finanzas no es solo un título; es la llave de acceso a los niveles de compensación y responsabilidad que de otra forma tardarían 8-10 años en alcanzarse.</blockquote>
+    <h2>1. El Gap Salarial: Analista vs. Asociado MBA</h2>
+    <p>La estructura de compensación en banca de inversión está diseñada deliberadamente para crear una brecha entre los analistas de pregrado y los asociados MBA. Esta diferencia no es arbitraria; refleja el nivel de responsabilidad, la red de contactos y las habilidades de gestión que se espera de un graduado de MBA.</p>
+    <div class="key-point"><div class="kp-title">Punto Clave</div>Un analista de primer año en un banco bulge bracket gana entre $110,000-$130,000 USD en base más $70,000-$100,000 en bonus. Un asociado MBA de primer año comienza entre $175,000-$200,000 en base más $100,000-$175,000 en bonus. La diferencia total puede superar $100,000 USD anuales desde el primer día.</div>
+    <h2>2. Datos de Compensación por Banco 2025</h2>
+    <table class="data-table">
+      <thead><tr><th>Banco</th><th>Base Asociado MBA</th><th>Bonus Target</th><th>Comp. Total Est.</th></tr></thead>
+      <tbody>
+        <tr><td>Goldman Sachs</td><td>$200,000</td><td>$100,000-175,000</td><td>~$300,000-375,000</td></tr>
+        <tr><td>Morgan Stanley</td><td>$195,000</td><td>$95,000-165,000</td><td>~$290,000-360,000</td></tr>
+        <tr><td>JPMorgan</td><td>$195,000</td><td>$95,000-165,000</td><td>~$290,000-360,000</td></tr>
+        <tr><td>Bank of America</td><td>$190,000</td><td>$90,000-155,000</td><td>~$280,000-345,000</td></tr>
+        <tr><td>Lazard / Evercore (Boutique)</td><td>$185,000</td><td>$100,000-200,000</td><td>~$285,000-385,000</td></tr>
+      </tbody>
+    </table>
+    <p>Los bancos boutique de élite como Evercore, Lazard y PJT Partners suelen pagar bonuses superiores al bulge bracket, compensando así su escala más reducida con una participación mayor en los honorarios de asesoría.</p>
+    <h2>3. El Rol de la Marca del Programa MBA</h2>
+    <p>No todos los MBAs abren las mismas puertas. En banca de inversión, el "target school" es un concepto crítico. Los grandes bancos mantienen listas de programas donde reclutan activamente, y estas listas son relativamente estables desde hace décadas.</p>
+    <ul>
+      <li><strong>Tier 1 (Target primario):</strong> Wharton, Harvard, Columbia, Booth, Kellogg, Stern, Tuck</li>
+      <li><strong>Tier 2 (Target activo):</strong> MIT Sloan, Yale SOM, LBS, INSEAD, Anderson (UCLA)</li>
+      <li><strong>Tier 3 (Target selectivo):</strong> IE, Ross, Fuqua, Darden, McCombs</li>
+    </ul>
+    <p>Un MBA en una escuela Tier 1 no solo garantiza el acceso a entrevistas en los bancos top, sino que también abre el proceso de networking interno que a menudo determina quién recibe la oferta final.</p>
+    <h2>4. Compensación Total: Más Allá del Salario Base</h2>
+    <p>La compensación en banca de inversión va mucho más allá del salario base. Para los asociados MBA que progresan a Vice President y Managing Director, la estructura incluye:</p>
+    <ul>
+      <li>Bonus discrecional anual (basado en performance individual y del banco)</li>
+      <li>Deferred compensation (compensación diferida en acciones)</li>
+      <li>Carried interest para roles en PE post-MBA</li>
+      <li>Benefits premium: seguro médico, 401k matching agresivo</li>
+    </ul>
+    <div class="key-point"><div class="kp-title">ROI del MBA en 5 Años</div>Considerando una inversión total de $250,000 (matrícula + costo de oportunidad), y una diferencia salarial promedio de $120,000/año, el payback period es de aproximadamente 2.1 años. A los 5 años post-MBA, la ganancia neta acumulada supera los $350,000 USD.</div>
+    <h2>5. Conclusión y Próximos Pasos</h2>
+    <p>Los números son claros: para un profesional con mira en banca de inversión, private equity o gestión de activos, el MBA en finanzas de una escuela target representa una de las inversiones con mayor retorno disponibles en el mercado de educación ejecutiva.</p>
+    <p>La clave está en elegir el programa correcto, construir el perfil adecuado y aprovechar el recruiting de campus desde el primer día del programa.</p>
+    <div class="tag-list">
+      <span class="tag">Banca de Inversión</span><span class="tag">Salarios MBA</span><span class="tag">Wall Street</span><span class="tag">Carreras Financieras</span><span class="tag">Goldman Sachs</span>
+    </div>
+  </article>
+  </div>
+</div>
+
+<!-- ══════════════ AGGREGATOR ══════════════ -->
+<div id="section-aggregator" class="section" style="padding:0">
+  <div class="aggregator">
+    <div class="aggregator-inner">
+      <h2>Noticias Financieras en Tiempo Real</h2>
+      <p class="aggregator-sub">Titulares curados de las principales fuentes financieras globales</p>
+      <div class="agg-disclaimer">
+        <strong>Sobre este agregador:</strong> Mostramos únicamente titulares, fechas y fragmentos breves (<em>excerpts</em>) tal como los publican las fuentes en sus feeds RSS públicos — exactamente el mecanismo para el que el RSS fue diseñado. Cada ítem enlaza directamente a la fuente original. No reproducimos artículos completos. Esto cumple totalmente con las leyes de derechos de autor y los términos de servicio de las fuentes.
+      </div>
+      <div class="agg-controls">
+        <button class="agg-btn active" onclick="filterFeed('all',this)">Todas las fuentes</button>
+        <button class="agg-btn" onclick="filterFeed('reuters',this)">Reuters</button>
+        <button class="agg-btn" onclick="filterFeed('ft',this)">Financial News</button>
+        <button class="agg-btn" onclick="filterFeed('wsj',this)">WSJ / Barron's</button>
+        <button class="agg-btn" onclick="filterFeed('bloomberg',this)">Bloomberg</button>
+        <button class="agg-refresh" id="refresh-btn" onclick="loadAllFeeds()">
+          <svg id="refresh-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+          Actualizar feeds
+        </button>
+      </div>
+      <div class="feed-grid" id="feed-grid">
+        <div class="feed-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 18L18 6M6 6l12 12"/></svg>
+          <p>Haz clic en "Actualizar feeds" para cargar las noticias financieras más recientes</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ SOBRE NOSOTROS ══════════════ -->
+<div id="section-sobre" class="section" style="background:var(--cream)">
+  <div class="section-intro">
+    <div class="eyebrow">E-E-A-T: Experiencia, Expertise, Autoridad, Confianza</div>
+    <h2>Sobre MBAFinanzasPro</h2>
+    <p>Un proyecto editorial creado por profesionales de finanzas con experiencia real en banca de inversión y educación ejecutiva.</p>
+  </div>
+  <div class="about-grid" style="max-width:1100px;margin:0 auto">
+    <div class="about-text">
+      <p>MBAFinanzasPro nació de una necesidad real: los profesionales latinoamericanos y españoles que aspiran a un MBA en finanzas enfrentan una barrera de información seria. Los recursos más completos están en inglés, descontextualizados de la realidad laboral hispanohablante o son simples listas sin análisis profundo.</p>
+      <p>Nuestro equipo lleva más de una década en las trincheras de la banca de inversión, el private equity y la consultoría financiera de alto nivel. Hemos pasado por el proceso de admisión MBA, trabajamos en fondos en Nueva York y Londres, y hoy dedicamos parte de nuestro tiempo a transmitir ese conocimiento con rigor y honestidad.</p>
+      <h2>Nuestros Pilares Editoriales</h2>
+      <div class="pillars">
+        <div class="pillar"><div class="pillar-title">Rigor Técnico</div><div class="pillar-text">Todo contenido técnico es revisado por profesionales con experiencia activa en los roles que describimos.</div></div>
+        <div class="pillar"><div class="pillar-title">Datos Actualizados</div><div class="pillar-text">Salarios, rankings y estadísticas se actualizan semestralmente con fuentes verificadas.</div></div>
+        <div class="pillar"><div class="pillar-title">Sin Afiliaciones Ocultas</div><div class="pillar-text">No recibimos compensación de universidades por reseñas. Nuestras opiniones son independientes.</div></div>
+        <div class="pillar"><div class="pillar-title">Experiencia Hispana</div><div class="pillar-text">Contextualizamos la información para el mercado laboral en España, México, Colombia y el resto de LATAM.</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="team-card">
+        <div class="team-avatar">MR</div>
+        <div class="team-name">Miguel Rodríguez, MBA</div>
+        <div class="team-title">Director Editorial & Fundador</div>
+        <div class="team-bio">Exanalista en Goldman Sachs (Nueva York) y ex-asociado en Bain Capital. MBA por Wharton School (Clase 2016). Lleva 9 años asesorando a candidatos MBA en Latinoamérica y España.</div>
+        <div class="team-creds">
+          <div class="cred">MBA, Wharton School of Business</div>
+          <div class="cred">Ex Goldman Sachs, Bain Capital</div>
+          <div class="cred">CFA Charterholder</div>
+          <div class="cred">GMAT 760 (99th percentile)</div>
+          <div class="cred">+200 candidatos MBA asesorados</div>
+        </div>
+      </div>
+      <div class="team-card" style="margin-top:16px">
+        <div class="team-avatar" style="background:linear-gradient(135deg,#0d3d1a,#1a6030)">AL</div>
+        <div class="team-name">Andrea López, CFA</div>
+        <div class="team-title">Editora de Finanzas Técnicas</div>
+        <div class="team-bio">Portfolio Manager en Bogotá y Madrid. MBA por IE Business School. Especialista en valoración de empresas, modelos financieros y gestión de riesgo cuantitativo.</div>
+        <div class="team-creds">
+          <div class="cred">MBA, IE Business School</div>
+          <div class="cred">CFA Level III Charterholder</div>
+          <div class="cred">Portfolio Manager, +$800M AUM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ CONTACTO ══════════════ -->
+<div id="section-contacto" class="section" style="background:var(--cream)">
+  <div class="section-intro">
+    <div class="eyebrow">Ponte en Contacto</div>
+    <h2>¿Tienes Preguntas sobre tu MBA en Finanzas?</h2>
+    <p>Responde habitualmente en menos de 48 horas. Para consultas de asesoría personalizada, por favor indícalo en tu mensaje.</p>
+  </div>
+  <div class="contact-grid" style="max-width:1100px;margin:0 auto">
+    <div>
+      <div class="contact-form-wrap">
+        <h2>Envíanos un Mensaje</h2>
+        <p>Tu información nunca será compartida con terceros.</p>
+        <div class="form-row">
+          <div class="form-group"><label>Nombre *</label><input type="text" placeholder="Tu nombre completo"></div>
+          <div class="form-group"><label>Apellido *</label><input type="text" placeholder="Tu apellido"></div>
+        </div>
+        <div class="form-group"><label>Email *</label><input type="email" placeholder="tu@email.com"></div>
+        <div class="form-group"><label>¿Sobre qué tema necesitas ayuda?</label>
+          <select>
+            <option value="">Selecciona una categoría...</option>
+            <option>Selección de programa MBA</option>
+            <option>Preparación GMAT/GRE</option>
+            <option>Estrategia de candidatura</option>
+            <option>Finanzas técnicas</option>
+            <option>Carreras post-MBA</option>
+            <option>Colaboración o contenido</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Mensaje *</label><textarea placeholder="Cuéntanos tu situación actual, a qué programas estás apuntando y cómo podemos ayudarte..."></textarea></div>
+        <button class="submit-btn" onclick="submitForm()">Enviar Mensaje</button>
+        <div class="success-msg" id="success-msg">✅ ¡Mensaje enviado con éxito! Te responderemos en menos de 48 horas.</div>
+      </div>
+    </div>
+    <div>
+      <h2 class="contact-info" style="font-family:'Playfair Display',serif;font-size:24px;color:var(--navy);margin-bottom:20px">Información de Contacto</h2>
+      <div class="info-card"><div class="info-icon">📧</div><div><div class="info-label">Email</div><div class="info-val">hola@mbafinanzaspro.com</div></div></div>
+      <div class="info-card"><div class="info-icon">📍</div><div><div class="info-label">Ubicación Principal</div><div class="info-val">Bogotá, Colombia · Madrid, España</div></div></div>
+      <div class="info-card"><div class="info-icon">⏰</div><div><div class="info-label">Tiempo de Respuesta</div><div class="info-val">Menos de 48 horas hábiles</div></div></div>
+      <div class="info-card"><div class="info-icon">💼</div><div><div class="info-label">LinkedIn</div><div class="info-val">linkedin.com/company/mbafinanzaspro</div></div></div>
+      <div style="margin-top:28px;background:var(--navy);border-radius:12px;padding:24px;color:var(--white)">
+        <div style="font-family:'Playfair Display',serif;font-size:18px;margin-bottom:10px">¿Necesitas Asesoría Personalizada?</div>
+        <p style="font-size:14px;color:rgba(255,255,255,0.65);line-height:1.7">Ofrecemos sesiones de consultoría 1:1 de 60 minutos para revisar tu perfil, definir tu lista de programas y diseñar tu estrategia de candidatura.</p>
+        <a href="mailto:hola@mbafinanzaspro.com" style="display:inline-block;margin-top:14px;background:var(--gold);color:var(--navy);font-weight:700;font-size:13px;padding:10px 20px;border-radius:6px">Solicitar Sesión →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ PRIVACIDAD ══════════════ -->
+<div id="section-privacidad" class="section" style="background:var(--cream)">
+  <div style="padding:0 24px">
+  <div class="legal-content">
+    <h1>Política de Privacidad</h1>
+    <div class="last-updated">Última actualización: 1 de junio de 2025 | Responsable: MBAFinanzasPro</div>
+    <h2>1. Responsable del Tratamiento</h2>
+    <p>En cumplimiento del Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 de Protección de Datos (LOPDGDD), el responsable del tratamiento de los datos personales es: <strong>MBAFinanzasPro</strong>, con email de contacto: <em>privacidad@mbafinanzaspro.com</em>.</p>
+    <h2>2. Datos que Recopilamos</h2>
+    <ul>
+      <li><strong>Datos de contacto:</strong> nombre, apellido, email, cuando se envía el formulario de contacto.</li>
+      <li><strong>Datos de navegación:</strong> dirección IP anonimizada, páginas visitadas, tiempo de permanencia (a través de Google Analytics con IP anonimizada).</li>
+      <li><strong>Cookies:</strong> ver nuestra Política de Cookies.</li>
+    </ul>
+    <h2>3. Finalidad del Tratamiento</h2>
+    <ul>
+      <li>Responder a consultas y solicitudes de información enviadas a través del formulario de contacto.</li>
+      <li>Enviar el boletín informativo, solo si el usuario da su consentimiento explícito.</li>
+      <li>Analizar el tráfico del sitio web para mejorar la experiencia del usuario (datos anonimizados).</li>
+      <li>Mostrar publicidad relevante a través de Google AdSense.</li>
+    </ul>
+    <h2>4. Base Legal del Tratamiento</h2>
+    <p>El tratamiento de datos se basa en: (a) el consentimiento del usuario cuando completa el formulario de contacto; (b) el interés legítimo para el análisis estadístico anónimo del tráfico web.</p>
+    <h2>5. Tus Derechos</h2>
+    <p>Tienes derecho a acceder, rectificar, suprimir, oponerte al tratamiento, solicitar la portabilidad y la limitación del tratamiento de tus datos. Puedes ejercerlos enviando un email a <em>privacidad@mbafinanzaspro.com</em>.</p>
+    <h2>6. Google AdSense y Publicidad</h2>
+    <p>Este sitio utiliza Google AdSense para mostrar publicidad. Google puede utilizar cookies para mostrar anuncios basados en visitas previas del usuario a este sitio web u otros sitios. Los usuarios pueden inhabilitar la publicidad personalizada visitando <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Configuración de anuncios de Google</a>.</p>
+    <h2>7. Retención de Datos</h2>
+    <p>Los datos del formulario de contacto se conservan durante un máximo de 2 años desde el último contacto. Los datos analíticos anonimizados se conservan durante 26 meses.</p>
+  </div>
+  </div>
+</div>
+
+<!-- ══════════════ AVISO LEGAL ══════════════ -->
+<div id="section-legal" class="section" style="background:var(--cream)">
+  <div style="padding:0 24px">
+  <div class="legal-content">
+    <h1>Aviso Legal</h1>
+    <div class="last-updated">Versión vigente desde: 1 de junio de 2025</div>
+    <h2>1. Identificación del Titular</h2>
+    <p>El presente sitio web, accesible en el dominio mbafinanzaspro.com, es propiedad y está gestionado por el equipo editorial de MBAFinanzasPro. Email de contacto: legal@mbafinanzaspro.com.</p>
+    <h2>2. Objeto y Naturaleza del Contenido</h2>
+    <p>MBAFinanzasPro es un portal editorial de información y educación sobre programas MBA en finanzas, carreras financieras y temas relacionados. Todo el contenido publicado tiene carácter <strong>informativo y educativo</strong>, y no constituye asesoramiento financiero, de inversión, legal ni académico personalizado.</p>
+    <h2>3. Propiedad Intelectual</h2>
+    <p>Todos los textos, gráficos, logos, imágenes y demás contenidos originales publicados en este sitio son propiedad de MBAFinanzasPro o de sus autores y colaboradores, protegidos por la legislación vigente en materia de propiedad intelectual. Queda prohibida su reproducción, distribución o comunicación pública sin autorización expresa y por escrito.</p>
+    <h2>4. Limitación de Responsabilidad</h2>
+    <p>MBAFinanzasPro no garantiza la exactitud, integridad o actualidad de la información publicada. Los datos salariales, rankings y estadísticas son estimaciones basadas en fuentes públicas y pueden no reflejar condiciones actuales de mercado. El usuario asume la responsabilidad del uso que haga de la información.</p>
+    <h2>5. Publicidad</h2>
+    <p>Este sitio está monetizado a través de Google AdSense. Los anunciantes son seleccionados por Google de forma automática y MBAFinanzasPro no respalda ni es responsable de los productos o servicios anunciados.</p>
+    <h2>6. Ley Aplicable y Jurisdicción</h2>
+    <p>Este aviso legal se rige por la legislación española. Para cualquier controversia que pudiera derivarse, las partes se someten a los juzgados y tribunales que correspondan conforme a la normativa aplicable.</p>
+  </div>
+  </div>
+</div>
+
+<!-- ══════════════ COOKIES ══════════════ -->
+<div id="section-cookies" class="section" style="background:var(--cream)">
+  <div style="padding:0 24px">
+  <div class="legal-content">
+    <h1>Política de Cookies</h1>
+    <div class="last-updated">Última actualización: 1 de junio de 2025</div>
+    <h2>¿Qué son las Cookies?</h2>
+    <p>Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando visitas un sitio web. Nos permiten recordar tus preferencias y mejorar tu experiencia de navegación.</p>
+    <h2>Tipos de Cookies que Utilizamos</h2>
+    <table class="cookie-table">
+      <thead><tr><th>Cookie</th><th>Tipo</th><th>Duración</th><th>Finalidad</th></tr></thead>
+      <tbody>
+        <tr><td>_ga, _gid</td><td>Analítica</td><td>2 años / 24h</td><td>Google Analytics: estadísticas de visitas anónimas</td></tr>
+        <tr><td>__gads</td><td>Publicitaria</td><td>2 años</td><td>Google AdSense: personalización de anuncios</td></tr>
+        <tr><td>mbafp_consent</td><td>Técnica</td><td>1 año</td><td>Guardar preferencias de cookies del usuario</td></tr>
+        <tr><td>mbafp_session</td><td>Técnica</td><td>Sesión</td><td>Mantener preferencias durante la visita</td></tr>
+      </tbody>
+    </table>
+    <h2>Gestión de Cookies</h2>
+    <p>Puedes aceptar o rechazar las cookies no esenciales a través del banner que se muestra en tu primera visita. También puedes gestionar las cookies directamente desde la configuración de tu navegador. Ten en cuenta que deshabilitar ciertas cookies puede afectar la funcionalidad del sitio.</p>
+    <h2>Cookies de Terceros</h2>
+    <p>Google AdSense y Google Analytics son servicios de terceros que instalan sus propias cookies. Para más información sobre cómo Google utiliza las cookies, visita la <a href="https://policies.google.com/technologies/cookies" target="_blank" rel="noopener">Política de Cookies de Google</a>.</p>
+  </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--white)">MBA<span style="color:var(--gold)">Finanzas</span>Pro</div>
+        <p>El portal de referencia en español sobre programas MBA en finanzas, carreras en banca de inversión y educación financiera de alto nivel.</p>
+        <div style="margin-top:16px;display:flex;gap:12px">
+          <a href="#" style="color:rgba(255,255,255,0.5);font-size:13px;border:1px solid rgba(255,255,255,0.15);padding:6px 12px;border-radius:6px;transition:all 0.25s" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='rgba(255,255,255,0.5)'">LinkedIn</a>
+          <a href="#" style="color:rgba(255,255,255,0.5);font-size:13px;border:1px solid rgba(255,255,255,0.15);padding:6px 12px;border-radius:6px;transition:all 0.25s" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='rgba(255,255,255,0.5)'">Twitter/X</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Programas</h4>
+        <a href="#" onclick="showSection('programas');return false">MBA en EE.UU.</a>
+        <a href="#" onclick="showSection('programas');return false">MBA en Europa</a>
+        <a href="#" onclick="showSection('programas');return false">MBA Online</a>
+        <a href="#" onclick="showSection('programas');return false">MBA en España</a>
+        <a href="#" onclick="showSection('programas');return false">MBA en LATAM</a>
+      </div>
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <a href="#" onclick="showSection('carreras');return false">Carreras & Salarios</a>
+        <a href="#" onclick="showSection('tecnico');return false">Finanzas Técnicas</a>
+        <a href="#" onclick="showSection('preparacion');return false">Preparación GMAT</a>
+        <a href="#" onclick="showSection('aggregator');return false">Noticias en Vivo</a>
+        <a href="#" onclick="showSection('sobre');return false">Sobre Nosotros</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#" onclick="showSection('privacidad');return false">Política de Privacidad</a>
+        <a href="#" onclick="showSection('legal');return false">Aviso Legal</a>
+        <a href="#" onclick="showSection('cookies');return false">Política de Cookies</a>
+        <a href="#" onclick="showSection('contacto');return false">Contacto</a>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <div class="footer-bottom">
+      <span>© 2025 MBAFinanzasPro. Todos los derechos reservados. Contenido solo con fines informativos y educativos.</span>
+      <div class="footer-legal-links">
+        <a href="#" onclick="showSection('privacidad');return false">Privacidad</a>
+        <a href="#" onclick="showSection('legal');return false">Aviso Legal</a>
+        <a href="#" onclick="showSection('cookies');return false">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner">
+  <p>Usamos cookies propias y de terceros (Google Analytics, Google AdSense) para mejorar tu experiencia y mostrar publicidad relevante. Al aceptar, consientes su uso. Más info en nuestra <a href="#" onclick="showSection('cookies');return false">Política de Cookies</a>.</p>
+  <button class="cookie-decline" onclick="declineCookies()">Solo esenciales</button>
+  <button class="cookie-accept" onclick="acceptCookies()">Aceptar todas</button>
+</div>
+
+<script>
+// ── NAVIGATION ──
+function showSection(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  const el=document.getElementById('section-'+id);
+  if(el){el.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+  const nav=document.getElementById('nav-'+id);
+  if(nav)nav.classList.add('active');
+  // Update page title
+  const titles={home:'Inicio',programas:'Programas MBA',carreras:'Carreras & Salarios',tecnico:'Finanzas Técnicas',preparacion:'Preparación GMAT',sobre:'Sobre Nosotros',contacto:'Contacto',aggregator:'Noticias Financieras',art1:'MBA y Salarios',privacidad:'Política de Privacidad',legal:'Aviso Legal',cookies:'Política de Cookies'};
+  document.title=(titles[id]||'Página')+' | MBAFinanzasPro';
+}
+function showArticle(id){showSection(id);}
+function toggleMobile(){
+  const m=document.getElementById('mobile-menu');
+  m.style.display=m.style.display==='block'?'none':'block';
+}
+
+// ── CONTACT FORM ──
+function submitForm(){
+  const msg=document.getElementById('success-msg');
+  msg.classList.add('show');
+  setTimeout(()=>msg.classList.remove('show'),5000);
+}
+
+// ── COOKIES ──
+function acceptCookies(){
+  localStorage.setItem('mbafp_consent','accepted');
+  document.getElementById('cookie-banner').style.display='none';
+}
+function declineCookies(){
+  localStorage.setItem('mbafp_consent','declined');
+  document.getElementById('cookie-banner').style.display='none';
+}
+if(localStorage.getItem('mbafp_consent')){
+  document.getElementById('cookie-banner').style.display='none';
+}
+
+// ── RSS AGGREGATOR ──
+const FEEDS=[
+  {name:'Reuters Finance',url:'https://feeds.reuters.com/reuters/businessNews',color:'#C9A84C',category:'reuters'},
+  {name:'Financial Times',url:'https://www.ft.com/rss/home/uk',color:'#FF8D00',category:'ft'},
+  {name:'MarketWatch',url:'https://feeds.content.dowjones.io/public/rss/mw_topstories',color:'#0078C8',category:'wsj'},
+  {name:'Bloomberg Markets',url:'https://feeds.bloomberg.com/markets/news.rss',color:'#1A1A1A',category:'bloomberg'},
+  {name:'Investing.com',url:'https://www.investing.com/rss/news.rss',color:'#E8350B',category:'reuters'},
+  {name:'Barron\'s',url:'https://www.barrons.com/xml/rss/3_7014.xml',color:'#0078C8',category:'wsj'},
+];
+const PROXY='https://api.allorigins.win/get?url=';
+let allItems=[];
+let activeFilter='all';
+
+async function fetchFeed(feed){
+  try{
+    const r=await fetch(PROXY+encodeURIComponent(feed.url),{signal:AbortSignal.timeout(8000)});
+    if(!r.ok)throw new Error('HTTP '+r.status);
+    const d=await r.json();
+    const parser=new DOMParser();
+    const xml=parser.parseFromString(d.contents,'text/xml');
+    const items=xml.querySelectorAll('item');
+    return Array.from(items).slice(0,6).map(it=>{
+      const title=it.querySelector('title')?.textContent?.trim()||'Sin título';
+      const link=it.querySelector('link')?.textContent?.trim()||'#';
+      const desc=(it.querySelector('description')?.textContent||'').replace(/<[^>]+>/g,'').trim().slice(0,180);
+      const pubDate=it.querySelector('pubDate')?.textContent||'';
+      return{title,link,desc,pubDate,source:feed.name,color:feed.color,category:feed.category};
+    });
+  }catch(e){return[];}
+}
+
+function formatDate(str){
+  if(!str)return'';
+  try{const d=new Date(str);return d.toLocaleDateString('es-ES',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});}
+  catch{return str.slice(0,16);}
+}
+
+function renderFeed(items){
+  const grid=document.getElementById('feed-grid');
+  const filtered=activeFilter==='all'?items:items.filter(i=>i.category===activeFilter);
+  if(!filtered.length){
+    grid.innerHTML=`<div class="feed-placeholder"><p>No hay artículos disponibles para esta fuente en este momento. Intenta actualizar.</p></div>`;
+    return;
+  }
+  grid.innerHTML=filtered.map(it=>`
+    <div class="feed-item" data-cat="${it.category}">
+      <div class="feed-source">
+        <div class="source-dot" style="background:${it.color}"></div>
+        <span class="source-name">${it.source}</span>
+      </div>
+      <div class="feed-title"><a href="${it.link}" target="_blank" rel="noopener nofollow">${it.title}</a></div>
+      ${it.desc?`<div class="feed-desc">${it.desc}...</div>`:''}
+      <div class="feed-footer">
+        <span class="feed-date">${formatDate(it.pubDate)}</span>
+        <a href="${it.link}" target="_blank" rel="noopener nofollow" class="feed-link">Ver fuente ↗</a>
+      </div>
+    </div>`).join('');
+}
+
+async function loadAllFeeds(){
+  const btn=document.getElementById('refresh-btn');
+  const icon=document.getElementById('refresh-icon');
+  btn.classList.add('loading');
+  icon.style.animation='spin 1s linear infinite';
+  document.getElementById('feed-grid').innerHTML=`<div class="feed-placeholder"><p style="animation:pulse 1.5s ease-in-out infinite">⏳ Cargando feeds financieros en tiempo real...</p></div>`;
+  const results=await Promise.allSettled(FEEDS.map(f=>fetchFeed(f)));
+  allItems=results.flatMap(r=>r.status==='fulfilled'?r.value:[]);
+  // Sort by date newest first
+  allItems.sort((a,b)=>new Date(b.pubDate)-new Date(a.pubDate));
+  btn.classList.remove('loading');
+  icon.style.animation='';
+  if(!allItems.length){
+    document.getElementById('feed-grid').innerHTML=`<div class="feed-error">⚠️ No se pudieron cargar los feeds en este momento. Esto puede deberse a restricciones CORS en el navegador. <strong>Para producción</strong>, implementa un backend proxy propio (Node.js/Python) que obtenga los RSS en el servidor y los sirva a tu frontend sin restricciones CORS. Esta es la arquitectura recomendada para el sitio en vivo.</div>`;
+    return;
+  }
+  renderFeed(allItems);
+}
+
+function filterFeed(cat,btn){
+  activeFilter=cat;
+  document.querySelectorAll('.agg-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderFeed(allItems);
+}
+</script>
+</body>
+</html>
