@@ -15,7 +15,32 @@
       "WebFetch(domain:github.com)",
       "WebFetch(domain:raw.githubusercontent.com)",
       "Bash(find /tmp/cult-ui -type f -name \"*.md\" | grep -i readme | head -10)",
-      "Read(//tmp/**)"
+      "Read(//tmp/**)",
+      "Bash(curl -s \"https://raw.githubusercontent.com/msitarzewski/agency-agents/main/engineering/engineering-devops-automator.md\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/msitarzewski/agency-agents/main/engineering/engineering-email-intelligence-engineer.md\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/msitarzewski/agency-agents/main/engineering/engineering-feishu-integration-developer.md\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/msitarzewski/agency-agents/main/engineering/engineering-minimal-change-engineer.md\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/msitarzewski/agency-agents/main/engineering/engineering-mobile-app-builder.md\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/msitarzewski/agency-agents/main/engineering/engineering-incident-response-commander.md\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/msitarzewski/agency-agents/main/engineering/engineering-filament-optimization-specialist.md\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/msitarzewski/agency-agents/main/engineering/engineering-rapid-prototyper.md\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/msitarzewski/agency-agents/main/engineering/engineering-security-engineer.md\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/msitarzewski/agency-agents/main/engineering/engineering-senior-developer.md\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/msitarzewski/agency-agents/main/engineering/engineering-software-architect.md\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/msitarzewski/agency-agents/main/engineering/engineering-solidity-smart-contract-engineer.md\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/msitarzewski/agency-agents/main/engineering/engineering-sre.md\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/msitarzewski/agency-agents/main/engineering/engineering-technical-writer.md\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/msitarzewski/agency-agents/main/engineering/engineering-threat-detection-engineer.md\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/msitarzewski/agency-agents/main/engineering/engineering-voice-ai-integration-engineer.md\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/msitarzewski/agency-agents/main/engineering/engineering-wechat-mini-program-developer.md\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/msitarzewski/agency-agents/main/engineering/engineering-data-engineer.md\")",
+      "Bash(ls \"C:/Users/ERLY23/.claude/agents/\" | grep \"engineering-\" | wc -l *)",
+      "Read(//c/Users/ERLY23/.claude/agents/**)",
+      "Bash(awk '{print $5, $9}')",
+      "Bash(python -c \"from PIL import Image; print\\('Pillow OK'\\)\")",
+      "PowerShell(python3 --version 2>$null)",
+      "PowerShell(py --version 2>$null)",
+      "PowerShell(Get-Command magick -ErrorAction SilentlyContinue)"
     ]
   }
 }
