@@ -11,7 +11,11 @@
       "Bash(rename \"favicon.png.png\" \"favicon.png\")",
       "PowerShell(Rename-Item \"c:\\\\Users\\\\ERLY23\\\\Documents\\\\Programacion\\\\logo\\\\logo.png.jpg\" \"logo.png\")",
       "PowerShell(Rename-Item \"c:\\\\Users\\\\ERLY23\\\\Documents\\\\Programacion\\\\logo\\\\favicon.png.png\" \"favicon.png\")",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(find /tmp/cult-ui -type f -name \"*.md\" | grep -i readme | head -10)",
+      "Read(//tmp/**)"
     ]
   }
 }
