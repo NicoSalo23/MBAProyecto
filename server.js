@@ -1,7 +1,7 @@
 /**
- * MBAFinanzasPro — Servidor RSS Aggregator
+ * MBA Finance Guide — RSS Aggregator Server
  * ==========================================
- * Servidor Node.js que actúa como proxy para feeds RSS públicos.
+ * Node.js server acting as a proxy for public RSS feeds.
  * 
  * RESPETO AL COPYRIGHT:
  *   - Solo extrae: título, fecha, descripción breve (excerpt del feed), y URL original.
@@ -33,7 +33,7 @@ const cache = new NodeCache({ stdTTL: 900, checkperiod: 120 });
 // ── SEGURIDAD Y CORS ──
 app.use(helmet());
 app.use(cors({
-  origin: process.env.ALLOWED_ORIGIN || 'http://localhost:8080',
+  origin: process.env.ALLOWED_ORIGIN || 'http://localhost:3000',
   methods: ['GET'],
 }));
 app.use(express.json());
@@ -46,7 +46,7 @@ const FEEDS = [
     id:       'reuters-business',
     name:     'Reuters Business',
     url:      'https://feeds.reuters.com/reuters/businessNews',
-    category: 'Mercados',
+    category: 'Markets',
     color:    '#C9A84C',
     language: 'en',
   },
@@ -54,7 +54,7 @@ const FEEDS = [
     id:       'reuters-finance',
     name:     'Reuters Finance',
     url:      'https://feeds.reuters.com/reuters/financialNews',
-    category: 'Finanzas',
+    category: 'Finance',
     color:    '#E8A840',
     language: 'en',
   },
@@ -62,7 +62,7 @@ const FEEDS = [
     id:       'marketwatch',
     name:     'MarketWatch Top Stories',
     url:      'https://feeds.content.dowjones.io/public/rss/mw_topstories',
-    category: 'Mercados',
+    category: 'Markets',
     color:    '#0078C8',
     language: 'en',
   },
@@ -70,7 +70,7 @@ const FEEDS = [
     id:       'barrons',
     name:     "Barron's",
     url:      'https://www.barrons.com/xml/rss/3_7014.xml',
-    category: 'Inversiones',
+    category: 'Investments',
     color:    '#1D4E8F',
     language: 'en',
   },
@@ -78,7 +78,7 @@ const FEEDS = [
     id:       'seeking-alpha',
     name:     'Seeking Alpha',
     url:      'https://seekingalpha.com/market_currents.xml',
-    category: 'Análisis',
+    category: 'Analysis',
     color:    '#2E8B57',
     language: 'en',
   },
@@ -94,7 +94,7 @@ const FEEDS = [
     id:       'expansion',
     name:     'Expansión',
     url:      'https://e00-expansion.uecdn.es/rss/portada.xml',
-    category: 'España',
+    category: 'Spain',
     color:    '#003087',
     language: 'es',
   },
@@ -199,7 +199,7 @@ app.get('/api/feed', async (req, res) => {
     const ids = sources.split(',').map((s) => s.trim());
     selectedFeeds = FEEDS.filter((f) => ids.includes(f.id));
     if (!selectedFeeds.length) {
-      return res.status(400).json({ error: 'Ningún feed válido en el parámetro "sources".' });
+      return res.status(400).json({ error: 'No valid feeds found in the "sources" parameter.' });
     }
   }
   if (lang !== 'all') {
@@ -222,9 +222,9 @@ app.get('/api/feed', async (req, res) => {
     sources:   selectedFeeds.length,
     cacheAge:  '≤15 min',
     disclaimer:
-      'Solo se muestran excerpts de feeds RSS públicos. ' +
-      'Todos los artículos enlazan a la fuente original. ' +
-      'Sin reproducción de contenido completo.',
+      'Only public RSS feed excerpts are shown. ' +
+      'All articles link back to the original source. ' +
+      'No full article content is reproduced.',
     items: allItems,
   });
 });
@@ -236,7 +236,7 @@ app.get('/api/feed', async (req, res) => {
 app.get('/api/feed/:feedId', async (req, res) => {
   const feed = FEEDS.find((f) => f.id === req.params.feedId);
   if (!feed) {
-    return res.status(404).json({ error: 'Feed no encontrado.', available: FEEDS.map((f) => f.id) });
+    return res.status(404).json({ error: 'Feed not found.', available: FEEDS.map((f) => f.id) });
   }
   const maxItems = Math.min(parseInt(req.query.limit) || 10, 20);
   const items    = await fetchFeed(feed, maxItems);
@@ -250,10 +250,10 @@ app.get('/api/feed/:feedId', async (req, res) => {
 app.post('/api/cache/clear', (req, res) => {
   const apiKey = req.headers['x-api-key'];
   if (apiKey !== process.env.ADMIN_API_KEY) {
-    return res.status(401).json({ error: 'No autorizado.' });
+    return res.status(401).json({ error: 'Unauthorized.' });
   }
   cache.flushAll();
-  res.json({ message: 'Caché limpiado correctamente.' });
+  res.json({ message: 'Cache cleared successfully.' });
 });
 
 // ── HEALTH CHECK ──
@@ -264,10 +264,10 @@ app.get('/health', (req, res) => {
 // ── INICIO ──
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-  console.log(`\n🚀 MBAFinanzasPro RSS Server corriendo en http://localhost:${PORT}`);
-  console.log(`   GET /api/feeds          — lista de fuentes`);
-  console.log(`   GET /api/feed           — todos los artículos`);
-  console.log(`   GET /api/feed/:feedId   — artículos de una fuente`);
+  console.log(`\n🚀 MBA Finance Guide RSS Server running at http://localhost:${PORT}`);
+  console.log(`   GET /api/feeds          — list of sources`);
+  console.log(`   GET /api/feed           — all articles`);
+  console.log(`   GET /api/feed/:feedId   — articles from one source`);
   console.log(`   GET /health             — health check\n`);
 });
 
