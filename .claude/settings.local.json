@@ -6,7 +6,12 @@
       "Bash(Sort-Object FullName)",
       "Bash(Format-Table -AutoSize)",
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(rename \"logo.png.jpg\" \"logo.png\")",
+      "Bash(rename \"favicon.png.png\" \"favicon.png\")",
+      "PowerShell(Rename-Item \"c:\\\\Users\\\\ERLY23\\\\Documents\\\\Programacion\\\\logo\\\\logo.png.jpg\" \"logo.png\")",
+      "PowerShell(Rename-Item \"c:\\\\Users\\\\ERLY23\\\\Documents\\\\Programacion\\\\logo\\\\favicon.png.png\" \"favicon.png\")",
+      "Bash(git push *)"
     ]
   }
 }

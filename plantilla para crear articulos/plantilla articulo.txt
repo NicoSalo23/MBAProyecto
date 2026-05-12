@@ -1,0 +1,106 @@
+El sistema que vas a usar
+Cada artículo nuevo necesita dos cosas en el código:
+
+Una tarjeta (card) — el resumen que aparece en la sección correspondiente
+El artículo completo — la página que se abre al hacer clic
+PLANTILLA 1 — La tarjeta (card)
+Copia esto y rellena los campos en MAYÚSCULAS:
+
+
+<article class="card">
+  <div class="card-img" style="background:linear-gradient(135deg,#0A1628,#162545)">
+    <div class="card-img-inner">$</div>
+    <span class="card-cat">CATEGORÍA</span>
+  </div>
+  <div class="card-body">
+    <div class="card-meta"><span>MES AÑO</span><span>·</span><span>X min</span></div>
+    <h3><a href="#" onclick="showArticle('artNUMERO');return false">TÍTULO DEL ARTÍCULO</a></h3>
+    <p>RESUMEN DE 2 LÍNEAS DEL ARTÍCULO.</p>
+    <div class="card-footer">
+      <a href="#" class="read-more" onclick="showArticle('artNUMERO');return false">Read article →</a>
+      <span class="read-time">X min</span>
+    </div>
+  </div>
+</article>
+PLANTILLA 2 — El artículo completo
+Copia esto justo antes de la línea <!-- FOOTER --> en el index.html:
+
+
+<!-- ══════════════ ARTICLE artNUMERO ══════════════ -->
+<div id="section-artNUMERO" class="section" style="background:var(--cream)">
+  <div style="max-width:1280px;margin:0 auto 16px;padding:0 24px">
+    <div class="breadcrumb">
+      <a href="#" onclick="showSection('home');return false">Home</a><span>/</span>
+      <a href="#" onclick="showSection('SECCION');return false">NOMBRE SECCIÓN</a><span>/</span>
+      <span>TÍTULO CORTO</span>
+    </div>
+  </div>
+  <div style="padding:0 24px">
+  <article class="article-full">
+    <div class="article-header">
+      <div class="cat-badge">CATEGORÍA</div>
+      <h1>TÍTULO COMPLETO DEL ARTÍCULO</h1>
+      <div class="meta-row">
+        <span>📅 DATE</span>
+        <span>👤 MBA Finance Guide Editorial</span>
+        <span>⏱ X-minute read</span>
+        <span>🔄 Updated: MES AÑO</span>
+      </div>
+    </div>
+
+    PEGA AQUÍ EL CONTENIDO HTML DEL ARTÍCULO
+
+    <div class="tag-list">
+      <span class="tag">TAG 1</span>
+      <span class="tag">TAG 2</span>
+      <span class="tag">TAG 3</span>
+    </div>
+  </article>
+  </div>
+</div>
+Valores para SECCION según el tema
+Si el artículo es sobre...	Escribe en SECCION
+MBA Programs	programas
+Careers & Salaries	carreras
+Technical Finance	tecnico
+GMAT Prep	preparacion
+PASO FINAL — Registrar el artículo en el JavaScript
+En index.html busca esta línea (cerca del final del archivo):
+
+
+const titles={home:'Home',programas:'MBA Programs',...,art1:'MBA Salaries',...};
+Agrégale el nuevo artículo al final, antes del }:
+
+
+,art2:'Título corto del artículo'
+El prompt exacto para ChatGPT
+Copia esto y solo cambia el tema:
+
+
+Write a professional finance article in English for the website MBA Finance Guide 
+(mbafinanceguide.com), targeting U.S. professionals interested in Finance MBAs 
+and investment banking careers.
+
+Topic: [ESCRIBE EL TEMA AQUÍ]
+
+Requirements:
+- 800 to 1,200 words
+- Tone: authoritative, professional, data-driven
+- Include: an intro paragraph, 3 to 4 H2 sections, bullet points where relevant, 
+  one blockquote with a key insight, and a conclusion
+- Format the output in clean HTML using these exact tags:
+  <p>, <h2>, <h3>, <ul>, <li>, <blockquote>, <strong>
+- Do NOT include <html>, <head>, <body> or <style> tags
+- End with 4 relevant tags for the article (single words or short phrases)
+ChatGPT te devolverá el HTML listo para pegar directamente en la Plantilla 2.
+
+Resumen del proceso completo
+
+1. Copia el prompt → pégalo en ChatGPT → cambia solo el tema
+2. Copia el HTML que devuelve ChatGPT
+3. Pégalo en la Plantilla 2 donde dice "PEGA AQUÍ EL CONTENIDO"
+4. Rellena la Plantilla 1 con el título y resumen
+5. Pega la Plantilla 1 en la sección correcta del index.html
+6. Agrega el artículo al JavaScript (art2, art3, etc.)
+7. Sube a GitHub: git push origin main
+8. Listo — en 2 minutos el sitio se actualiza
