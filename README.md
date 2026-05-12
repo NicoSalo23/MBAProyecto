@@ -1,105 +1,143 @@
-# MBAFinanzasPro — Guía de Despliegue Completa
+# MBA Finance Guide — Complete Deployment Guide
 
-## Estructura del Proyecto
+**Domain:** mbafinanceguide.com  
+**Contact:** mbafinanceguide@outlook.com  
+**GitHub:** [NicoSalo23](https://github.com/NicoSalo23)
+
+---
+
+## Project Structure
 
 ```
-mba-finanzas/
-├── index.html              ← Sitio web completo (frontend SPA)
-├── rss-server/
-│   ├── server.js           ← Servidor proxy RSS (Node.js/Express)
-│   ├── package.json
-│   └── README.md           ← Este archivo
-└── README.md
+mbafinanceguide/
+├── index.html        ← Full website (SPA frontend) — English, US-focused
+├── styles.css        ← External stylesheet (extracted from index.html)
+├── server.js         ← RSS proxy server (Node.js / Express)
+├── package.json      ← Server dependencies
+├── .env              ← Environment variables (DO NOT commit)
+├── .gitignore        ← Excludes .env and node_modules
+├── CNAME             ← GitHub Pages custom domain (mbafinanceguide.com)
+└── README.md         ← This file
 ```
 
 ---
 
-## 🌐 1. El Sitio Web (index.html)
+## 1. The Website (index.html + styles.css)
 
-El `index.html` es un sitio web completo tipo SPA que incluye:
+`index.html` is a complete Single Page Application (SPA) targeting **U.S. and English-speaking audiences**.  
+All styles live in the separate `styles.css` file.
 
-| Sección | Contenido |
+| Section | Content |
 |---|---|
-| **Inicio** | Hero, artículos destacados, stats |
-| **Programas MBA** | 9 artículos sobre programas globales |
-| **Carreras & Salarios** | 8 artículos sobre rutas profesionales |
-| **Finanzas Técnicas** | 8 artículos técnicos (DCF, LBO, VaR...) |
-| **Preparación GMAT** | 8 artículos sobre admisiones |
-| **Artículo Pillar** | Artículo completo +1,000 palabras (ejemplo) |
-| **Noticias en Vivo** | Agregador RSS |
-| **Sobre Nosotros** | Página EEAT con perfiles de autores |
-| **Contacto** | Formulario funcional |
-| **Política de Privacidad** | Cumplimiento RGPD |
-| **Aviso Legal** | Límites de responsabilidad |
-| **Política de Cookies** | Consentimiento AdSense |
-| **Cookie Banner** | Banner de consentimiento GDPR |
+| **Home** | Hero, featured articles, key stats |
+| **MBA Programs** | 9 articles on global top programs |
+| **Careers & Salaries** | 8 articles on post-MBA career paths |
+| **Technical Finance** | 8 technical articles (DCF, LBO, VaR, M&A…) |
+| **GMAT Prep** | 8 articles on MBA admissions |
+| **Pillar Article** | Full 1,000+ word article (Investment Banking salaries) |
+| **Live News** | Real-time RSS aggregator (calls own backend) |
+| **About Us** | E-E-A-T page with author profiles |
+| **Contact** | Functional contact form |
+| **Privacy Policy** | CCPA-compliant |
+| **Legal Notice** | U.S. jurisdiction |
+| **Cookie Policy** | AdSense consent |
+| **Cookie Banner** | GDPR/CCPA consent banner |
 
-### Despliegue del frontend
+### RSS Aggregator — Backend Integration
 
-**Opción A: Hosting estático (recomendado para empezar)**
-- Netlify: arrastrar y soltar `index.html` en netlify.com/drop
-- Vercel: `vercel deploy`
-- GitHub Pages: subir al repo y activar Pages
+The aggregator in `index.html` automatically detects environment:
 
-**Opción B: WordPress + conversión**
-- Usar el contenido de los artículos para crear posts en WordPress
-- Instalar tema Astra o GeneratePress (requerido para velocidad)
-- Plugins recomendados: Yoast SEO, WP Rocket, Cookie Notice
+```javascript
+const API_BASE = window.location.hostname === 'localhost'
+  ? 'http://localhost:3001'           // local development
+  : 'https://api.mbafinanceguide.com'; // production
+```
+
+In production, `api.mbafinanceguide.com` must point to the deployed RSS server.
+
+### Deploying the Frontend
+
+**Option A: GitHub Pages (recommended — free)**
+1. Push the repo to GitHub (user: `NicoSalo23`)
+2. Go to **Settings → Pages → Branch: main / root**
+3. The `CNAME` file already contains `mbafinanceguide.com`
+4. Point your domain's DNS `A` records to GitHub Pages IPs
+
+**Option B: Netlify (drag & drop)**
+- Drag the project folder to [netlify.com/drop](https://netlify.com/drop)
+- Set custom domain to `mbafinanceguide.com`
 
 ---
 
-## 🔌 2. El Servidor RSS (rss-server/)
+## 2. The RSS Server (server.js)
 
-### ¿Por qué un servidor backend?
+### Why a backend server?
 
-Los navegadores bloquean peticiones directas a feeds RSS de otros dominios (política CORS).
-El servidor backend actúa como **proxy**: tu sitio le pide los feeds al *tuyo* (sin CORS),
-y el servidor los obtiene de las fuentes externas en el servidor.
+Browsers block direct RSS requests to external domains (CORS policy).  
+The backend acts as a **proxy**: the frontend calls *your own* server (no CORS),  
+and the server fetches the external feeds server-side.
 
-### Instalación
+### Installation
 
 ```bash
-cd rss-server
 npm install
 ```
 
-### Variables de entorno
+### Environment Variables
 
-Crea un archivo `.env`:
+The `.env` file is already created. **Fill in your values before deploying:**
+
 ```env
 PORT=3001
-ALLOWED_ORIGIN=https://tudominio.com   # Cambia por tu dominio real
-ADMIN_API_KEY=tu_clave_secreta_admin   # Para limpiar caché
+ALLOWED_ORIGIN=https://mbafinanceguide.com
+ADMIN_API_KEY=change_this_to_a_strong_random_key
 ```
 
-### Desarrollo local
+> ⚠️ `.env` is listed in `.gitignore` — it will never be uploaded to GitHub.
+
+### Local Development
 
 ```bash
 npm run dev
-# Servidor en http://localhost:3001
+# Server running at http://localhost:3001
 ```
 
-### Endpoints de la API
+Open `index.html` in a local server (e.g. VS Code Live Server) and click **Refresh Feeds**.
 
-| Método | Ruta | Descripción |
+### API Endpoints
+
+| Method | Route | Description |
 |---|---|---|
-| GET | `/health` | Health check |
-| GET | `/api/feeds` | Lista de feeds disponibles |
-| GET | `/api/feed` | Todos los artículos (todos los feeds) |
-| GET | `/api/feed?sources=reuters-business,ft` | Feeds específicos |
-| GET | `/api/feed?lang=es` | Solo feeds en español |
-| GET | `/api/feed?limit=5` | Máximo 5 artículos por feed |
-| GET | `/api/feed/reuters-business` | Un feed específico |
-| POST | `/api/cache/clear` | Limpiar caché (requiere x-api-key header) |
+| GET | `/health` | Health check (uptime, cache keys) |
+| GET | `/api/feeds` | List of available feeds + cache status |
+| GET | `/api/feed` | All articles (all feeds) |
+| GET | `/api/feed?sources=reuters-business,ft` | Specific feeds |
+| GET | `/api/feed?lang=en` | English-only feeds |
+| GET | `/api/feed?limit=5` | Max 5 articles per feed |
+| GET | `/api/feed/reuters-business` | One specific feed |
+| POST | `/api/cache/clear` | Clear cache (requires `x-api-key` header) |
 
-### Ejemplo de respuesta
+### Configured RSS Sources
+
+| ID | Name | Category | Language |
+|---|---|---|---|
+| reuters-business | Reuters Business | Markets | EN |
+| reuters-finance | Reuters Finance | Finance | EN |
+| marketwatch | MarketWatch Top Stories | Markets | EN |
+| barrons | Barron's | Investments | EN |
+| seeking-alpha | Seeking Alpha | Analysis | EN |
+| ft | Financial Times | Global | EN |
+| expansion | Expansión | Spain | ES |
+| portafolio | Portafolio Colombia | LATAM | ES |
+
+### API Response Example
 
 ```json
 {
   "count": 48,
   "sources": 8,
   "cacheAge": "≤15 min",
-  "disclaimer": "Solo se muestran excerpts de feeds RSS públicos...",
+  "disclaimer": "Only public RSS feed excerpts are shown...",
   "items": [
     {
       "id": "https://reuters.com/...",
@@ -108,7 +146,7 @@ npm run dev
       "excerpt": "The Federal Reserve indicated Wednesday that...",
       "pubDate": "2025-06-15T14:30:00Z",
       "source": "Reuters Business",
-      "category": "Mercados",
+      "category": "Markets",
       "color": "#C9A84C",
       "language": "en"
     }
@@ -116,50 +154,39 @@ npm run dev
 }
 ```
 
-### Integración con el frontend
-
-En `index.html`, reemplaza la función `fetchFeed` por llamadas a tu API:
-
-```javascript
-async function loadAllFeeds() {
-  const res = await fetch('https://api.tudominio.com/api/feed?limit=6');
-  const data = await res.json();
-  allItems = data.items;
-  renderFeed(allItems);
-}
-```
-
 ---
 
-## ☁️ 3. Despliegue en Producción
+## 3. Production Deployment
 
-### Opción A: Railway (más fácil, ~$5/mes)
+### Option A: Render (free plan available) — Recommended
+
+1. Connect your GitHub repo (`NicoSalo23/mbafinanceguide`) to [render.com](https://render.com)
+2. New Web Service → your repo → **root directory** (not a subdirectory)
+3. Build command: `npm install`
+4. Start command: `node server.js`
+5. Add environment variables from `.env` in the Render dashboard
+6. Note the URL Render gives you (e.g. `mbafinanceguide-rss.onrender.com`)
+7. In your DNS, create a `CNAME` record: `api.mbafinanceguide.com → mbafinanceguide-rss.onrender.com`
+
+### Option B: Railway (~$5/month)
 
 ```bash
-# Instala Railway CLI
 npm install -g @railway/cli
-
-cd rss-server
 railway login
 railway init
 railway up
 ```
 
-### Opción B: Render (plan gratuito disponible)
+Add environment variables in the Railway dashboard.
 
-1. Conecta tu repo GitHub a render.com
-2. New Web Service → tu repo → directorio `rss-server/`
-3. Build command: `npm install`
-4. Start command: `node server.js`
-5. Añade las variables de entorno
-
-### Opción C: VPS propio (DigitalOcean, Hostinger, etc.)
+### Option C: VPS (DigitalOcean, Hostinger, etc.)
 
 ```bash
-# En el servidor
-git clone https://github.com/tu-usuario/mbafinanzaspro
-cd mbafinanzaspro/rss-server
+# On the server
+git clone https://github.com/NicoSalo23/mbafinanceguide
+cd mbafinanceguide
 npm install
+cp .env.example .env    # fill in your values
 npm install -g pm2
 pm2 start server.js --name "rss-server"
 pm2 save
@@ -168,80 +195,103 @@ pm2 startup
 
 ---
 
-## 📋 4. Checklist para Solicitar Google AdSense
+## 4. Full Go-Live Checklist
 
-Antes de enviar la solicitud, verifica:
+### DNS Setup
+- [ ] `mbafinanceguide.com` → GitHub Pages (A records: 185.199.108.153 / .109 / .110 / .111)
+- [ ] `www.mbafinanceguide.com` → CNAME to `NicoSalo23.github.io`
+- [ ] `api.mbafinanceguide.com` → CNAME to your Render/Railway backend URL
 
-- [ ] **+30 artículos** publicados y indexados en Google Search Console
-- [ ] Artículos pillar de **+1,000 palabras** (los cortos deben tener +500 palabras)
-- [ ] Página **Sobre Nosotros** con información real y verificable del autor
-- [ ] Página de **Contacto** con formulario funcional y email visible
-- [ ] **Política de Privacidad** que mencione explícitamente AdSense
-- [ ] **Aviso Legal** visible desde el footer
-- [ ] **Política de Cookies** con banner de consentimiento funcional
-- [ ] Sitio **indexado** por Google (verificar en Search Console)
-- [ ] **Sin otros anuncios de terceros** antes de la aprobación
-- [ ] Dominio propio (no subdominios gratuitos como .blogspot o .wix)
-- [ ] Sitio funcionando correctamente en **móvil** (Mobile-Friendly Test de Google)
-- [ ] Velocidad de carga **>70 puntos** en PageSpeed Insights
-- [ ] **Navegación clara** con categorías en el menú
-- [ ] Contenido **original** (no copiado ni parafraseado de otras fuentes)
-- [ ] Sitio activo mínimo **3-6 meses** (recomendado, especialmente fuera de EE.UU.)
+### Backend
+- [ ] RSS server deployed and accessible at `https://api.mbafinanceguide.com/health`
+- [ ] Environment variables set: `PORT`, `ALLOWED_ORIGIN`, `ADMIN_API_KEY`
+- [ ] Test: `GET https://api.mbafinanceguide.com/api/feed?limit=3` returns JSON
 
----
-
-## ⚖️ 5. Marco Legal del Agregador RSS
-
-### ¿Por qué el RSS no infringe copyright?
-
-1. **Diseño explícito**: El formato RSS fue creado específicamente para distribución y sindicación de contenido.
-2. **Publicación voluntaria**: Los sitios publican feeds RSS deliberadamente para que otros los lean y enlacen.
-3. **Uso mínimo**: Solo mostramos título, fecha y el excerpt que el propio sitio incluye en su feed.
-4. **Siempre enlazamos**: Cada ítem enlaza directamente a la fuente original (esto es fundamental).
-5. **Sin reproducción completa**: Nunca mostramos el texto completo del artículo.
-
-### Qué NO debes hacer
-
-- ❌ Copiar artículos completos de otros sitios
-- ❌ Parafrasear artículos extensamente sin añadir valor
-- ❌ Scraping de páginas que no tienen RSS (sin permiso)
-- ❌ Usar imágenes de otros sitios sin licencia
-- ❌ Presentar contenido ajeno como propio
-
-### Qué SÍ puedes hacer (y es lo que hace este sistema)
-
-- ✅ Mostrar titulares de feeds RSS públicos
-- ✅ Mostrar el excerpt que el sitio publica en su propio RSS
-- ✅ Enlazar siempre a la fuente original
-- ✅ Añadir tu propio análisis y comentario al contenido agregado
-- ✅ Usar noticias como punto de partida para crear contenido original
+### Frontend
+- [ ] `index.html` and `styles.css` in repo root
+- [ ] `CNAME` file contains `mbafinanceguide.com`
+- [ ] GitHub Pages enabled (Settings → Pages → main branch)
+- [ ] Site loads correctly at `https://mbafinanceguide.com`
+- [ ] Click **Refresh Feeds** in Live News — articles load from backend
 
 ---
 
-## 📈 6. Estrategia de Contenido para AdSense
+## 5. Google AdSense Checklist
 
-### Volumen recomendado de publicación
+Before submitting your application, verify:
 
-| Mes | Meta | Tipo de contenido |
+- [ ] **30+ articles** published and indexed in Google Search Console
+- [ ] Pillar articles with **1,000+ words** (shorter articles must have 500+)
+- [ ] **About Us** page with real, verifiable author information
+- [ ] **Contact** page with a working form and visible email
+- [ ] **Privacy Policy** that explicitly mentions AdSense
+- [ ] **Legal Notice** visible from the footer
+- [ ] **Cookie Policy** with a functional consent banner
+- [ ] Site **indexed** by Google (check in Search Console)
+- [ ] **No other third-party ads** before approval
+- [ ] Custom domain (not free subdomains like .blogspot or .wix)
+- [ ] Site works correctly on **mobile** (Google Mobile-Friendly Test)
+- [ ] Page speed **70+ points** on PageSpeed Insights
+- [ ] **Clear navigation** with categories in the menu
+- [ ] **Original content** (not copied or heavily paraphrased from other sources)
+- [ ] Site active for at least **3–6 months** (recommended for non-US sites)
+
+---
+
+## 6. Content Strategy for AdSense
+
+### Recommended Publishing Volume
+
+| Month | Goal | Content Type |
 |---|---|---|
-| 1-2 | 15 artículos | Pillar pages (+1,500 palabras) |
-| 3-4 | +10 artículos | Guías intermedias (800-1,200 palabras) |
-| 5-6 | +10 artículos | Artículos cortos, actualizaciones |
-| Solicitud AdSense | 35+ artículos | Todos indexados |
+| 1–2 | 15 articles | Pillar pages (1,500+ words) |
+| 3–4 | +10 articles | Intermediate guides (800–1,200 words) |
+| 5–6 | +10 articles | Short articles, updates |
+| AdSense application | 35+ articles | All indexed |
 
-### Palabras clave objetivo (alta intención)
+### Target Keywords (high intent, U.S. market)
 
 ```
-"mejor MBA finanzas" (Búsq/mes: 2,400)
-"MBA banca inversión" (Búsq/mes: 1,900)
-"costo MBA harvard" (Búsq/mes: 3,200)
-"salario post MBA" (Búsq/mes: 1,600)
-"GMAT preparación" (Búsq/mes: 8,100)
-"CFA vs MBA" (Búsq/mes: 2,900)
-"valoración empresas DCF" (Búsq/mes: 4,400)
-"private equity MBA" (Búsq/mes: 1,800)
+"best MBA for finance"          (Vol: 4,400/mo)
+"MBA investment banking"        (Vol: 3,600/mo)
+"Harvard MBA cost"              (Vol: 5,400/mo)
+"MBA salary investment banking" (Vol: 2,900/mo)
+"GMAT study plan"               (Vol: 8,100/mo)
+"CFA vs MBA"                    (Vol: 4,400/mo)
+"DCF valuation model"           (Vol: 5,200/mo)
+"private equity MBA"            (Vol: 2,400/mo)
+"Wharton vs Harvard MBA"        (Vol: 1,900/mo)
+"finance MBA ROI"               (Vol: 1,600/mo)
 ```
 
 ---
 
-*Proyecto: MBAFinanzasPro | Versión: 1.0 | Junio 2025*
+## 7. RSS Aggregator — Legal Framework
+
+### Why RSS does not infringe copyright
+
+1. **Explicit design**: RSS was created specifically for content distribution and syndication.
+2. **Voluntary publishing**: Sites publish RSS feeds deliberately so others can read and link them.
+3. **Minimal use**: We only display the title, date, and the excerpt the site itself includes in its feed.
+4. **Always link back**: Every item links directly to the original source (this is fundamental).
+5. **No full reproduction**: We never display the complete text of any article.
+
+### What NOT to do
+
+- ❌ Copy full articles from other sites
+- ❌ Extensively paraphrase articles without adding value
+- ❌ Scrape pages that don't have RSS (without permission)
+- ❌ Use images from other sites without a license
+- ❌ Present third-party content as your own
+
+### What you CAN do (what this system does)
+
+- ✅ Show headlines from public RSS feeds
+- ✅ Show the excerpt the site publishes in its own RSS
+- ✅ Always link to the original source
+- ✅ Add your own analysis and commentary to aggregated content
+- ✅ Use news as a starting point to create original content
+
+---
+
+*Project: MBA Finance Guide | Domain: mbafinanceguide.com | Updated: May 2026*
