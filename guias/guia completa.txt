@@ -245,3 +245,32 @@ Antes de enviar la solicitud, verifica:
 ---
 
 *Proyecto: MBAFinanzasPro | Versión: 1.0 | Junio 2025*
+
+
+
+
+
+
+
+
+
+
+Todo listo. Aquí está el resumen de lo que se hizo:
+
+Cambios completados:
+
+Archivo	Cambio
+index.html	Traducido 100% al inglés, marca → MBA Finance Guide, CSS extraído, RSS usa backend propio
+styles.css	Nuevo archivo CSS externo (extraído del HTML)
+server.js	Categorías en inglés, mensajes de log actualizados
+package.json	Nombre, descripción y keywords en inglés
+.env	Creado con PORT=3001, ALLOWED_ORIGIN=https://mbafinanceguide.com, ADMIN_API_KEY
+.gitignore	Nuevo — excluye .env y node_modules de git
+Próximos pasos para el despliegue:
+
+Subir a GitHub — git push origin main (con tu usuario NicoSalo23)
+Backend (servidor RSS) — Despliega en Render.com (gratuito):
+Conecta el repo → directorio raíz → Build: npm install → Start: node server.js
+Agrega las variables de entorno del .env en el panel de Render
+Frontend (GitHub Pages) — Activa GitHub Pages en el repo apuntando a la rama main, el CNAME ya tiene mbafinanceguide.com
+DNS — Apunta api.mbafinanceguide.com a la URL de Render para que el agregador funcione en producción
