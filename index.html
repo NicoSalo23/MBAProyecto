@@ -15,6 +15,7 @@
 </head>
 <body>
 
+<div id="scroll-bar"></div>
 <!-- NAV -->
 <nav id="nav" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
@@ -52,21 +53,22 @@
 
   <!-- HERO -->
   <div class="hero">
+    <canvas id="hero-canvas" class="hero-canvas"></canvas>
     <div class="hero-inner">
       <div>
         <div class="hero-badge">Finance Authority Portal</div>
         <h1>Your Finance MBA:<br><em>The Investment That<br>Transforms Careers</em></h1>
-        <p>In-depth analysis of top MBA programs, investment banking career strategies, technical finance models, and preparation for the world's best rankings.</p>
+        <p id="hero-typewriter" data-text="In-depth analysis of top MBA programs, investment banking career strategies, technical finance models, and preparation for the world's best rankings."></p>
         <div class="hero-actions">
           <a href="#" class="btn-primary" onclick="showSection('programas');return false">Explore Programs</a>
           <a href="#" class="btn-ghost" onclick="showSection('aggregator');return false">Financial News</a>
         </div>
       </div>
       <div class="hero-stats">
-        <div class="stat-card"><div class="stat-number">+127%</div><div class="stat-label">Average salary increase after a Finance MBA</div></div>
-        <div class="stat-card"><div class="stat-number">38</div><div class="stat-label">High-quality articles published</div></div>
-        <div class="stat-card"><div class="stat-number">$185K</div><div class="stat-label">Average post-MBA salary in investment banking (U.S.)</div></div>
-        <div class="stat-card"><div class="stat-number">Top 20</div><div class="stat-label">MBA programs analyzed in depth</div></div>
+        <div class="stat-card"><div class="stat-number" data-counter data-value="127" data-prefix="+" data-suffix="%">+127%</div><div class="stat-label">Average salary increase after a Finance MBA</div></div>
+        <div class="stat-card"><div class="stat-number" data-counter data-value="38">38</div><div class="stat-label">High-quality articles published</div></div>
+        <div class="stat-card"><div class="stat-number" data-counter data-value="185" data-prefix="$" data-suffix="K">$185K</div><div class="stat-label">Average post-MBA salary in investment banking (U.S.)</div></div>
+        <div class="stat-card"><div class="stat-number">Top <span data-counter data-value="20">20</span></div><div class="stat-label">MBA programs analyzed in depth</div></div>
       </div>
     </div>
   </div>
@@ -566,11 +568,29 @@
 </div>
 
 <script>
-// ── NAVIGATION ──
+// ══════════════════════════════════════════
+//  NAVIGATION
+// ══════════════════════════════════════════
+function revealCards(section){
+  section.querySelectorAll('.card').forEach((c,i)=>{
+    c.classList.remove('card-visible');
+    c.style.transitionDelay='';
+    void c.offsetWidth;
+    c.style.transitionDelay=`${i*0.07}s`;
+    requestAnimationFrame(()=>requestAnimationFrame(()=>c.classList.add('card-visible')));
+  });
+}
+
 function showSection(id){
   document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
   const el=document.getElementById('section-'+id);
-  if(el){el.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
+  if(el){
+    el.classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+    revealCards(el);
+    const intro=el.querySelector('.section-intro');
+    if(intro){intro.classList.remove('revealed');requestAnimationFrame(()=>requestAnimationFrame(()=>intro.classList.add('revealed')));}
+  }
   document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
   const nav=document.getElementById('nav-'+id);
   if(nav)nav.classList.add('active');
@@ -583,27 +603,151 @@ function toggleMobile(){
   m.style.display=m.style.display==='block'?'none':'block';
 }
 
-// ── CONTACT FORM ──
+// ══════════════════════════════════════════
+//  CONTACT FORM
+// ══════════════════════════════════════════
 function submitForm(){
   const msg=document.getElementById('success-msg');
   msg.classList.add('show');
   setTimeout(()=>msg.classList.remove('show'),5000);
 }
 
-// ── COOKIES ──
-function acceptCookies(){
-  localStorage.setItem('mbafp_consent','accepted');
-  document.getElementById('cookie-banner').style.display='none';
-}
-function declineCookies(){
-  localStorage.setItem('mbafp_consent','declined');
-  document.getElementById('cookie-banner').style.display='none';
-}
-if(localStorage.getItem('mbafp_consent')){
-  document.getElementById('cookie-banner').style.display='none';
-}
+// ══════════════════════════════════════════
+//  COOKIES
+// ══════════════════════════════════════════
+function acceptCookies(){localStorage.setItem('mbafp_consent','accepted');document.getElementById('cookie-banner').style.display='none';}
+function declineCookies(){localStorage.setItem('mbafp_consent','declined');document.getElementById('cookie-banner').style.display='none';}
+if(localStorage.getItem('mbafp_consent'))document.getElementById('cookie-banner').style.display='none';
 
-// ── RSS AGGREGATOR ──
+// ══════════════════════════════════════════
+//  SCROLL PROGRESS BAR
+// ══════════════════════════════════════════
+(function(){
+  const bar=document.getElementById('scroll-bar');
+  window.addEventListener('scroll',()=>{
+    const total=document.documentElement.scrollHeight-window.innerHeight;
+    bar.style.width=(total>0?(window.scrollY/total)*100:0)+'%';
+  },{passive:true});
+})();
+
+// ══════════════════════════════════════════
+//  HERO CANVAS — Connected Floating Particles
+// ══════════════════════════════════════════
+(function(){
+  const canvas=document.getElementById('hero-canvas');
+  if(!canvas)return;
+  const ctx=canvas.getContext('2d');
+  const resize=()=>{canvas.width=canvas.offsetWidth;canvas.height=canvas.offsetHeight;};
+  resize();
+  window.addEventListener('resize',resize,{passive:true});
+
+  const dots=Array.from({length:60},()=>({
+    x:Math.random()*canvas.width,y:Math.random()*canvas.height,
+    r:Math.random()*1.6+0.5,
+    vx:(Math.random()-0.5)*0.22,vy:(Math.random()-0.5)*0.22,
+    a:Math.random()*0.4+0.1
+  }));
+
+  function frame(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    for(let i=0;i<dots.length;i++){
+      for(let j=i+1;j<dots.length;j++){
+        const dx=dots[i].x-dots[j].x,dy=dots[i].y-dots[j].y;
+        const dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<130){
+          ctx.beginPath();ctx.moveTo(dots[i].x,dots[i].y);ctx.lineTo(dots[j].x,dots[j].y);
+          ctx.strokeStyle=`rgba(201,168,76,${0.09*(1-dist/130)})`;ctx.lineWidth=0.6;ctx.stroke();
+        }
+      }
+    }
+    dots.forEach(d=>{
+      ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,Math.PI*2);
+      ctx.fillStyle=`rgba(201,168,76,${d.a})`;ctx.fill();
+      d.x+=d.vx;d.y+=d.vy;
+      if(d.x<0){d.x=0;d.vx*=-1;}if(d.x>canvas.width){d.x=canvas.width;d.vx*=-1;}
+      if(d.y<0){d.y=0;d.vy*=-1;}if(d.y>canvas.height){d.y=canvas.height;d.vy*=-1;}
+    });
+    requestAnimationFrame(frame);
+  }
+  frame();
+})();
+
+// ══════════════════════════════════════════
+//  TYPEWRITER — Hero paragraph
+// ══════════════════════════════════════════
+(function(){
+  const el=document.getElementById('hero-typewriter');
+  if(!el)return;
+  const text=el.dataset.text||'';
+  el.innerHTML='<span class="tw-cursor"></span>';
+  const cursor=el.querySelector('.tw-cursor');
+  let i=0;
+  const type=()=>{
+    if(i<text.length){
+      cursor.insertAdjacentText('beforebegin',text[i++]);
+      setTimeout(type,26+Math.random()*16);
+    }
+  };
+  setTimeout(type,900);
+})();
+
+// ══════════════════════════════════════════
+//  ANIMATED NUMBER COUNTERS
+// ══════════════════════════════════════════
+(function(){
+  function animateNum(el){
+    const prefix=el.dataset.prefix||'',suffix=el.dataset.suffix||'';
+    const target=parseFloat(el.dataset.value);
+    const dur=1800,start=performance.now();
+    el.classList.add('counting');
+    const tick=now=>{
+      const p=Math.min((now-start)/dur,1);
+      const ease=1-Math.pow(1-p,3);
+      const val=ease*target;
+      el.textContent=prefix+(Number.isInteger(target)?Math.round(val):val.toFixed(1))+suffix;
+      if(p<1)requestAnimationFrame(tick);
+      else{el.textContent=prefix+target+suffix;el.classList.remove('counting');}
+    };
+    requestAnimationFrame(tick);
+  }
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting&&!e.target.dataset.done){
+        e.target.dataset.done='1';animateNum(e.target);
+      }
+    });
+  },{threshold:0.6});
+  document.querySelectorAll('[data-counter]').forEach(el=>obs.observe(el));
+})();
+
+// ══════════════════════════════════════════
+//  SECTION INTRO REVEAL (Intersection Observer)
+// ══════════════════════════════════════════
+(function(){
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('revealed');obs.unobserve(e.target);}});
+  },{threshold:0.15});
+  document.querySelectorAll('.section-intro').forEach(el=>obs.observe(el));
+})();
+
+// ══════════════════════════════════════════
+//  GRADIENT ANIMATED HEADINGS
+// ══════════════════════════════════════════
+document.querySelectorAll('.section-intro h2').forEach(h=>h.classList.add('gradient-heading'));
+
+// ══════════════════════════════════════════
+//  HOME SECTION — initial card reveal
+// ══════════════════════════════════════════
+window.addEventListener('DOMContentLoaded',()=>{
+  const home=document.getElementById('section-home');
+  if(home)setTimeout(()=>revealCards(home),400);
+  const homeIntro=home&&home.querySelector('.section-intro');
+  if(homeIntro)setTimeout(()=>homeIntro.classList.add('revealed'),300);
+});
+
+// ══════════════════════════════════════════
+//  RSS AGGREGATOR
+// ══════════════════════════════════════════
 const API_BASE=window.location.hostname==='localhost'||window.location.hostname==='127.0.0.1'
   ?'http://localhost:3001'
   :'https://api.mbafinanceguide.com';
@@ -631,8 +775,8 @@ function renderFeed(items){
     grid.innerHTML=`<div class="feed-placeholder"><p>No articles available for this source right now. Try refreshing.</p></div>`;
     return;
   }
-  grid.innerHTML=filtered.map(it=>`
-    <div class="feed-item">
+  grid.innerHTML=filtered.map((it,idx)=>`
+    <div class="feed-item" style="animation-delay:${idx*0.065}s">
       <div class="feed-source">
         <div class="source-dot" style="background:${it.color}"></div>
         <span class="source-name">${it.source}</span>
@@ -658,16 +802,14 @@ async function loadAllFeeds(){
     const data=await res.json();
     allItems=data.items||[];
     allItems.sort((a,b)=>new Date(b.pubDate)-new Date(a.pubDate));
-    btn.classList.remove('loading');
-    icon.style.animation='';
+    btn.classList.remove('loading');icon.style.animation='';
     if(!allItems.length){
       document.getElementById('feed-grid').innerHTML=`<div class="feed-error">⚠️ No feeds available at this time. Please try again later.</div>`;
       return;
     }
     renderFeed(allItems);
   }catch(e){
-    btn.classList.remove('loading');
-    icon.style.animation='';
+    btn.classList.remove('loading');icon.style.animation='';
     document.getElementById('feed-grid').innerHTML=`<div class="feed-error">⚠️ Could not load financial feeds. Make sure the RSS server is running at <strong>${API_BASE}</strong>. In production, deploy the backend and point <strong>api.mbafinanceguide.com</strong> to it.</div>`;
   }
 }
