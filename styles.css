@@ -20,6 +20,8 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.25}
 .nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:8px;height:68px}
 .nav-logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white);flex:0 0 auto;letter-spacing:-0.3px}
 .nav-logo span{color:var(--gold)}
+.nav-logo-img{height:44px;width:auto;display:block;filter:brightness(1.05)}
+.footer-logo-img{height:64px;width:auto;display:block;margin-bottom:12px;filter:brightness(1.1)}
 .nav-links{display:flex;align-items:center;gap:2px;margin-left:32px;flex:1}
 .nav-links a{color:rgba(255,255,255,0.75);font-size:13.5px;font-weight:500;padding:6px 12px;border-radius:6px;transition:all var(--transition);white-space:nowrap}
 .nav-links a:hover,.nav-links a.active{color:var(--white);background:rgba(201,168,76,0.15)}
