@@ -28,6 +28,7 @@
       <a href="#" onclick="showSection('carreras');return false" id="nav-carreras">Careers & Salaries</a>
       <a href="#" onclick="showSection('tecnico');return false" id="nav-tecnico">Technical Finance</a>
       <a href="#" onclick="showSection('preparacion');return false" id="nav-preparacion">GMAT Prep</a>
+      <a href="#" onclick="showSection('markets');return false" id="nav-markets">Markets</a>
       <a href="#" onclick="showSection('sobre');return false" id="nav-sobre">About Us</a>
       <a href="#" onclick="showSection('contacto');return false" id="nav-contacto">Contact</a>
     </div>
@@ -43,10 +44,37 @@
     <a href="#" onclick="showSection('tecnico');toggleMobile();return false">Technical Finance</a>
     <a href="#" onclick="showSection('preparacion');toggleMobile();return false">GMAT Prep</a>
     <a href="#" onclick="showSection('aggregator');toggleMobile();return false">📡 Live News</a>
+    <a href="#" onclick="showSection('markets');toggleMobile();return false">Markets</a>
     <a href="#" onclick="showSection('sobre');toggleMobile();return false">About Us</a>
     <a href="#" onclick="showSection('contacto');toggleMobile();return false">Contact</a>
   </div>
 </nav>
+
+<!-- ══════════════ TICKER TAPE ══════════════ -->
+<div id="ticker-tape-wrap">
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+      "symbols": [
+        {"proName":"FOREXCOM:SPXUSD","title":"S&P 500"},
+        {"proName":"NASDAQ:NDX","title":"NASDAQ 100"},
+        {"proName":"FOREXCOM:DJI","title":"DOW"},
+        {"proName":"CBOE:VIX","title":"VIX"},
+        {"proName":"COMEX:GC1!","title":"Gold"},
+        {"proName":"NYMEX:CL1!","title":"WTI Oil"},
+        {"proName":"BINANCE:BTCUSDT","title":"Bitcoin"},
+        {"proName":"TVC:US10Y","title":"10Y Treasury"}
+      ],
+      "showSymbolLogo": true,
+      "isTransparent": true,
+      "displayMode": "adaptive",
+      "colorTheme": "dark",
+      "locale": "en"
+    }
+    </script>
+  </div>
+</div>
 
 <!-- ══════════════ HOME ══════════════ -->
 <div id="section-home" class="section active" style="padding:0">
@@ -72,6 +100,85 @@
       </div>
     </div>
   </div>
+
+  <!-- MARKET OVERVIEW -->
+  <section id="market-overview-section">
+    <div class="market-overview-inner">
+      <div class="market-overview-header">
+        <div class="eyebrow" style="color:var(--gold)">Live Markets</div>
+        <h2>Market Overview</h2>
+        <p>Real-time performance of key indices, commodities, and asset classes relevant to finance professionals.</p>
+      </div>
+      <div class="tradingview-widget-container market-overview-widget">
+        <div class="tradingview-widget-container__widget"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+        {
+          "colorTheme": "dark",
+          "dateRange": "1D",
+          "showChart": true,
+          "locale": "en",
+          "largeChartUrl": "",
+          "isTransparent": true,
+          "showSymbolLogo": true,
+          "showFloatingTooltip": false,
+          "width": "100%",
+          "height": "660",
+          "plotLineColorGrowing": "rgba(201,168,76,1)",
+          "plotLineColorFalling": "rgba(220,80,80,1)",
+          "gridLineColor": "rgba(255,255,255,0.06)",
+          "scaleFontColor": "rgba(255,255,255,0.45)",
+          "belowLineFillColorGrowing": "rgba(201,168,76,0.08)",
+          "belowLineFillColorFalling": "rgba(220,80,80,0.08)",
+          "belowLineFillColorGrowingBottom": "rgba(201,168,76,0)",
+          "belowLineFillColorFallingBottom": "rgba(220,80,80,0)",
+          "symbolActiveColor": "rgba(201,168,76,0.12)",
+          "tabs": [
+            {
+              "title": "Indices",
+              "symbols": [
+                {"s":"FOREXCOM:SPXUSD","d":"S&P 500"},
+                {"s":"NASDAQ:NDX","d":"NASDAQ 100"},
+                {"s":"FOREXCOM:DJI","d":"Dow Jones"},
+                {"s":"CBOE:VIX","d":"VIX"},
+                {"s":"TVC:RUT","d":"Russell 2000"}
+              ],
+              "originalTitle": "Indices"
+            },
+            {
+              "title": "Commodities",
+              "symbols": [
+                {"s":"COMEX:GC1!","d":"Gold"},
+                {"s":"NYMEX:CL1!","d":"WTI Crude Oil"},
+                {"s":"COMEX:SI1!","d":"Silver"},
+                {"s":"NYMEX:NG1!","d":"Natural Gas"}
+              ],
+              "originalTitle": "Commodities"
+            },
+            {
+              "title": "Fixed Income",
+              "symbols": [
+                {"s":"TVC:US10Y","d":"10Y Treasury"},
+                {"s":"TVC:US02Y","d":"2Y Treasury"},
+                {"s":"TVC:US30Y","d":"30Y Treasury"},
+                {"s":"TVC:DE10Y","d":"Germany 10Y Bund"}
+              ],
+              "originalTitle": "Fixed Income"
+            },
+            {
+              "title": "Crypto",
+              "symbols": [
+                {"s":"BINANCE:BTCUSDT","d":"Bitcoin"},
+                {"s":"BINANCE:ETHUSDT","d":"Ethereum"},
+                {"s":"BINANCE:SOLUSDT","d":"Solana"}
+              ],
+              "originalTitle": "Crypto"
+            }
+          ]
+        }
+        </script>
+      </div>
+    </div>
+  </section>
 
   <!-- FEATURED ARTICLES -->
   <section style="padding:80px 24px;background:var(--cream)">
@@ -334,6 +441,115 @@
   </div>
 </div>
 
+<!-- ══════════════ LIVE MARKETS ══════════════ -->
+<div id="section-markets" class="section" style="padding:0">
+
+  <!-- Ambient glow orbs -->
+  <div class="markets-glow-left"></div>
+  <div class="markets-glow-right"></div>
+
+  <!-- Ticker tape -->
+  <div class="markets-ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <!-- First copy -->
+      <span class="ticker-item"><span class="ticker-sym">SPX</span><span class="ticker-price">5,342.16</span><span class="ticker-change up">+0.74%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">NDX</span><span class="ticker-price">18,742.85</span><span class="ticker-change up">+1.02%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">DJI</span><span class="ticker-price">39,118.44</span><span class="ticker-change dn">-0.18%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">VIX</span><span class="ticker-price">14.28</span><span class="ticker-change dn">-3.41%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">GOLD</span><span class="ticker-price">$2,408</span><span class="ticker-change up">+0.55%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">WTI</span><span class="ticker-price">$78.62</span><span class="ticker-change dn">-0.33%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">BTC</span><span class="ticker-price">$67,420</span><span class="ticker-change up">+2.11%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">10Y</span><span class="ticker-price">4.312%</span><span class="ticker-change up">+0.04</span></span>
+      <span class="ticker-item"><span class="ticker-sym">EUR/USD</span><span class="ticker-price">1.0842</span><span class="ticker-change dn">-0.12%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">GBP/USD</span><span class="ticker-price">1.2718</span><span class="ticker-change up">+0.08%</span></span>
+      <!-- Duplicate for seamless loop -->
+      <span class="ticker-item"><span class="ticker-sym">SPX</span><span class="ticker-price">5,342.16</span><span class="ticker-change up">+0.74%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">NDX</span><span class="ticker-price">18,742.85</span><span class="ticker-change up">+1.02%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">DJI</span><span class="ticker-price">39,118.44</span><span class="ticker-change dn">-0.18%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">VIX</span><span class="ticker-price">14.28</span><span class="ticker-change dn">-3.41%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">GOLD</span><span class="ticker-price">$2,408</span><span class="ticker-change up">+0.55%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">WTI</span><span class="ticker-price">$78.62</span><span class="ticker-change dn">-0.33%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">BTC</span><span class="ticker-price">$67,420</span><span class="ticker-change up">+2.11%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">10Y</span><span class="ticker-price">4.312%</span><span class="ticker-change up">+0.04</span></span>
+      <span class="ticker-item"><span class="ticker-sym">EUR/USD</span><span class="ticker-price">1.0842</span><span class="ticker-change dn">-0.12%</span></span>
+      <span class="ticker-item"><span class="ticker-sym">GBP/USD</span><span class="ticker-price">1.2718</span><span class="ticker-change up">+0.08%</span></span>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="markets-inner">
+
+    <!-- Header -->
+    <div class="markets-header">
+      <div class="markets-eyebrow" id="markets-eyebrow">
+        <span class="markets-eyebrow-dot"></span>
+        Live Markets
+      </div>
+      <h2 class="markets-title" id="markets-title">Global Financial Markets</h2>
+      <div class="markets-rule" id="markets-rule">
+        <span class="markets-rule-line"></span>
+        <span class="markets-rule-diamond"></span>
+        <span class="markets-rule-line"></span>
+      </div>
+      <p class="markets-subtitle" id="markets-subtitle">Real-time charts and market data — equities, fixed income, forex, and commodities. Powered by TradingView.</p>
+    </div>
+
+    <!-- Widget glass container -->
+    <div class="markets-widget-wrap" id="markets-widget-wrap">
+
+      <!-- Chrome window header -->
+      <div class="markets-chrome">
+        <div class="markets-chrome-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <span class="markets-chrome-label">MBA Finance Guide — Market Terminal</span>
+        <span class="markets-chrome-live">Live</span>
+      </div>
+
+      <!-- Glass iframe surface — replace src with your TradingView embed URL -->
+      <div class="markets-glass">
+        <iframe
+          src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_markets&symbol=SP%3ASPX&interval=D&hidesidetoolbar=0&symboledit=1&saveimage=0&toolbarbg=0A1628&studies=%5B%5D&theme=dark&style=1&timezone=America%2FNew_York&withdateranges=1&showpopupbutton=1&studies_overrides=%7B%7D&overrides=%7B%22paneProperties.background%22%3A%22%230A1628%22%2C%22paneProperties.vertGridProperties.color%22%3A%22%231a2a44%22%2C%22paneProperties.horzGridProperties.color%22%3A%22%231a2a44%22%7D&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=en&utm_source=mbafinanceguide.com&utm_medium=widget&utm_campaign=chart"
+          height="520"
+          title="Global market chart — TradingView"
+          loading="lazy"
+          allow="fullscreen"
+        ></iframe>
+      </div>
+
+      <!-- Data strip beneath widget -->
+      <div class="markets-data-strip">
+        <div class="markets-data-item">
+          <span class="markets-data-label">S&amp;P 500</span>
+          <span class="markets-data-value">5,342</span>
+          <span class="markets-data-change up">+0.74% today</span>
+        </div>
+        <div class="markets-data-item">
+          <span class="markets-data-label">NASDAQ 100</span>
+          <span class="markets-data-value">18,742</span>
+          <span class="markets-data-change up">+1.02% today</span>
+        </div>
+        <div class="markets-data-item">
+          <span class="markets-data-label">Gold (XAU/USD)</span>
+          <span class="markets-data-value">$2,408</span>
+          <span class="markets-data-change up">+0.55% today</span>
+        </div>
+        <div class="markets-data-item">
+          <span class="markets-data-label">10Y Treasury</span>
+          <span class="markets-data-value">4.31%</span>
+          <span class="markets-data-change dn">+4bp today</span>
+        </div>
+      </div>
+
+    </div><!-- /markets-widget-wrap -->
+
+    <p class="markets-footer-note">
+      Market data delayed ~15 min. Chart powered by <a href="https://www.tradingview.com/" target="_blank" rel="noopener">TradingView</a>. For informational purposes only — not investment advice.
+    </p>
+
+  </div><!-- /markets-inner -->
+</div>
+
 <!-- ══════════════ ABOUT US ══════════════ -->
 <div id="section-sobre" class="section" style="background:var(--cream)">
   <div class="section-intro">
@@ -594,7 +810,7 @@ function showSection(id){
   document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
   const nav=document.getElementById('nav-'+id);
   if(nav)nav.classList.add('active');
-  const titles={home:'Home',programas:'MBA Programs',carreras:'Careers & Salaries',tecnico:'Technical Finance',preparacion:'GMAT Prep',sobre:'About Us',contacto:'Contact',aggregator:'Financial News',art1:'MBA Salaries',privacidad:'Privacy Policy',legal:'Legal Notice',cookies:'Cookie Policy'};
+  const titles={home:'Home',programas:'MBA Programs',carreras:'Careers & Salaries',tecnico:'Technical Finance',preparacion:'GMAT Prep',markets:'Live Markets',sobre:'About Us',contacto:'Contact',aggregator:'Financial News',art1:'MBA Salaries',privacidad:'Privacy Policy',legal:'Legal Notice',cookies:'Cookie Policy'};
   document.title=(titles[id]||'Page')+' | MBA Finance Guide';
 }
 function showArticle(id){showSection(id);}
@@ -820,6 +1036,28 @@ function filterFeed(cat,btn){
   btn.classList.add('active');
   renderFeed(allItems);
 }
+
+// ══════════════════════════════════════════
+//  MARKETS SECTION — entry reveal
+// ══════════════════════════════════════════
+(function(){
+  const IDS=['markets-eyebrow','markets-title','markets-rule','markets-subtitle','markets-widget-wrap'];
+  function revealMarkets(){
+    IDS.forEach((id,i)=>{
+      const el=document.getElementById(id);
+      if(!el)return;
+      el.classList.remove('revealed');
+      void el.offsetWidth;
+      setTimeout(()=>el.classList.add('revealed'),i*80);
+    });
+  }
+  // Hook into showSection: observe when markets section becomes active
+  const origShow=window.showSection;
+  window.showSection=function(id){
+    origShow(id);
+    if(id==='markets')setTimeout(revealMarkets,60);
+  };
+})();
 </script>
 </body>
 </html>
