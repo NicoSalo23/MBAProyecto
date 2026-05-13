@@ -6,6 +6,18 @@
 <title>MBA Finance Guide | Your Authority Resource for Finance Education</title>
 <meta name="description" content="Comprehensive guide to Finance MBAs: top programs, careers, salaries, company valuation, and GMAT prep. Expert content for finance professionals targeting Wall Street.">
 <meta name="google-site-verification" content="eiEUy5p9kem2Exf_SfAGrc_XP2mM1IF-H2FVUkZqJN8">
+<!-- Google Analytics 4 + Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-715Y62F9D6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('consent', 'default', {'analytics_storage': 'denied', 'ad_storage': 'denied'});
+  gtag('config', 'G-715Y62F9D6');
+  if(localStorage.getItem('mbafp_consent')==='accepted'){
+    gtag('consent', 'update', {'analytics_storage': 'granted', 'ad_storage': 'granted'});
+  }
+</script>
 <link rel="canonical" href="https://mbafinanceguide.com/">
 <link rel="icon" type="image/png" href="logo/favicon.png">
 
@@ -1295,7 +1307,7 @@ async function handleFormSubmit(e){
 // ══════════════════════════════════════════
 //  COOKIES
 // ══════════════════════════════════════════
-function acceptCookies(){localStorage.setItem('mbafp_consent','accepted');document.getElementById('cookie-banner').style.display='none';}
+function acceptCookies(){localStorage.setItem('mbafp_consent','accepted');document.getElementById('cookie-banner').style.display='none';if(typeof gtag==='function')gtag('consent','update',{'analytics_storage':'granted','ad_storage':'granted'});}
 function declineCookies(){localStorage.setItem('mbafp_consent','declined');document.getElementById('cookie-banner').style.display='none';}
 if(localStorage.getItem('mbafp_consent'))document.getElementById('cookie-banner').style.display='none';
 
