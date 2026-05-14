@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MBA Finance Guide — Publish Tool</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:system-ui,sans-serif;background:#0d1526;color:#fff;min-height:100vh;padding:32px 24px}
+    h1{font-size:1.6rem;color:#c9a84c;margin-bottom:6px}
+    .subtitle{color:rgba(255,255,255,0.5);font-size:14px;margin-bottom:32px}
+    label{display:block;font-size:13px;font-weight:600;color:rgba(255,255,255,0.6);margin-bottom:8px;text-transform:uppercase;letter-spacing:.8px}
+    select{width:100%;max-width:680px;padding:12px 16px;background:#1a2744;border:1px solid rgba(255,255,255,0.15);border-radius:8px;color:#fff;font-size:15px;cursor:pointer;margin-bottom:32px}
+    select:focus{outline:none;border-color:#c9a84c}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;max-width:1100px}
+    .card{background:#1a2744;border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,0.08)}
+    .card-header{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+    .net-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;flex-shrink:0}
+    .twitter  .net-icon{background:#000;color:#fff}
+    .linkedin .net-icon{background:#0077b5;color:#fff}
+    .reddit   .net-icon{background:#ff4500;color:#fff}
+    .net-name{font-weight:700;font-size:15px}
+    .char-count{margin-left:auto;font-size:12px;color:rgba(255,255,255,0.4)}
+    .char-count.warn{color:#f59e0b}
+    .char-count.over{color:#ef4444}
+    textarea{width:100%;background:#0d1526;border:1px solid rgba(255,255,255,0.12);border-radius:8px;color:#e2e8f0;font-size:13px;line-height:1.6;padding:12px;resize:vertical;min-height:130px;font-family:inherit}
+    textarea:focus{outline:none;border-color:#c9a84c}
+    .actions{display:flex;gap:8px;margin-top:12px}
+    .btn{padding:8px 16px;border-radius:6px;border:none;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;flex:1;text-align:center}
+    .btn-copy{background:#c9a84c;color:#0d1526}
+    .btn-copy:hover{background:#d4b366}
+    .btn-open{background:rgba(255,255,255,0.08);color:#fff;text-decoration:none;display:flex;align-items:center;justify-content:center}
+    .btn-open:hover{background:rgba(255,255,255,0.15)}
+    .copied{background:#10b981!important;color:#fff!important}
+    .hint{font-size:12px;color:rgba(255,255,255,0.35);margin-top:8px}
+    .step-badge{display:inline-block;background:#c9a84c;color:#0d1526;font-size:11px;font-weight:900;padding:2px 8px;border-radius:20px;margin-bottom:20px}
+  </style>
+</head>
+<body>
+  <h1>📣 Article Publisher</h1>
+  <p class="subtitle">Select an article and copy the ready-to-post text for each network.</p>
+
+  <label for="article-select">Select article to publish</label>
+  <select id="article-select" onchange="generate()">
+    <option value="">— Choose article —</option>
+  </select>
+
+  <div class="cards" id="cards" style="display:none">
+    <!-- Twitter -->
+    <div class="card twitter">
+      <div class="card-header">
+        <div class="net-icon">𝕏</div>
+        <span class="net-name">Twitter / X</span>
+        <span class="char-count" id="tw-count">0 / 280</span>
+      </div>
+      <div class="step-badge">Max 280 chars</div>
+      <textarea id="tw-text" oninput="updateCount('tw')" rows="5"></textarea>
+      <div class="actions">
+        <button class="btn btn-copy" onclick="copy('tw-text',this)">Copy text</button>
+        <a class="btn btn-open" id="tw-link" href="https://twitter.com/compose/tweet" target="_blank" rel="noopener">Open Twitter ↗</a>
+      </div>
+      <p class="hint">Paste in the Twitter compose box. Add the image manually from /images/artN.png</p>
+    </div>
+
+    <!-- LinkedIn -->
+    <div class="card linkedin">
+      <div class="card-header">
+        <div class="net-icon">in</div>
+        <span class="net-name">LinkedIn</span>
+        <span class="char-count" id="li-count">0 / 3000</span>
+      </div>
+      <div class="step-badge">Ideal: 1200–1500 chars</div>
+      <textarea id="li-text" oninput="updateCount('li')" rows="8"></textarea>
+      <div class="actions">
+        <button class="btn btn-copy" onclick="copy('li-text',this)">Copy text</button>
+        <a class="btn btn-open" href="https://www.linkedin.com/in/mba-finance-guide-9639b5409/" target="_blank" rel="noopener">Open LinkedIn ↗</a>
+      </div>
+      <p class="hint">Paste in LinkedIn post editor. Upload the article image for better reach.</p>
+    </div>
+
+    <!-- Reddit warning -->
+    <div class="card" style="border-color:#ef4444;background:#1a0d0d">
+      <div class="card-header">
+        <div class="net-icon" style="background:#ff4500">R</div>
+        <span class="net-name" style="color:#ef4444">Reddit — Read before posting</span>
+      </div>
+      <div style="background:#2d0d0d;border-radius:8px;padding:14px;font-size:13px;line-height:1.7;color:rgba(255,255,255,0.8)">
+        <p style="margin-bottom:10px">⚠️ <strong>Reddit bans new accounts that post links.</strong> No uses esta tarjeta para publicar directamente.</p>
+        <p style="margin-bottom:10px"><strong>Estrategia correcta:</strong></p>
+        <ol style="padding-left:18px;margin-bottom:10px">
+          <li>Crea una cuenta nueva</li>
+          <li>Durante 3-4 semanas: comenta y ayuda en <strong>r/MBA, r/finance, r/financialcareers</strong> sin poner links</li>
+          <li>Cuando tengas +100 karma, comparte artículos de forma natural respondiendo preguntas relevantes</li>
+        </ol>
+        <p><strong>Ejemplo correcto:</strong><br>
+        <em>"Someone asks: How to prepare for GMAT?"</em><br>
+        → Respondes con consejos reales + al final: "I wrote a detailed guide here if it helps: [link]"</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const ARTICLES = [
+      { id:'art1',  title:'Best MBA Programs for Investment Banking in 2026',                                    cat:'MBA Programs',     tags:['MBA','InvestmentBanking','WallStreet','Finance'] },
+      { id:'art2',  title:'Harvard MBA vs Wharton MBA: Which Is Better for Finance?',                           cat:'MBA Programs',     tags:['MBA','Harvard','Wharton','BusinessSchool'] },
+      { id:'art3',  title:'How Investment Banking Recruiting Really Works in 2026',                              cat:'IB Recruiting',    tags:['InvestmentBanking','IBRecruiting','Finance','MBA'] },
+      { id:'art4',  title:'Is an MBA Worth It in 2026? A Straight Answer',                                      cat:'MBA Value',        tags:['MBA','ROI','BusinessSchool','Finance'] },
+      { id:'art5',  title:'Financial Modeling Skills Every Finance Student Needs',                               cat:'Technical',        tags:['FinancialModeling','Excel','InvestmentBanking','Finance'] },
+      { id:'art6',  title:'Private Equity Careers in 2026: What Nobody Tells You',                              cat:'Finance Careers',  tags:['PrivateEquity','Finance','MBA','WallStreet'] },
+      { id:'art7',  title:'Hedge Fund Careers: How the Industry Really Works in 2026',                          cat:'Finance Careers',  tags:['HedgeFunds','Finance','InvestmentManagement','MBA'] },
+      { id:'art8',  title:'Consulting vs Investment Banking: Which Path in 2026?',                              cat:'Finance Careers',  tags:['Consulting','InvestmentBanking','Finance','MBA'] },
+      { id:'art9',  title:'CFA vs MBA in 2026: Which Credential Is Better?',                                   cat:'Credentials',      tags:['CFA','MBA','Finance','CareerAdvice'] },
+      { id:'art10', title:'Best Finance Internships for College Students in 2026',                              cat:'Internships',      tags:['FinanceInternship','WallStreet','StudentFinance','MBA'] },
+      { id:'art11', title:'Venture Capital Careers: How Investors Find Billion-Dollar Startups',                cat:'Finance Careers',  tags:['VentureCapital','VC','Startups','Finance'] },
+      { id:'art12', title:'Wall Street Salaries in 2026: How Much Finance Pros Earn',                          cat:'Compensation',     tags:['WallStreet','Finance','Salary','InvestmentBanking'] },
+      { id:'art13', title:'How to Build a Finance Resume for Investment Banking',                               cat:'Career Advice',    tags:['FinanceResume','InvestmentBanking','CareerAdvice','Finance'] },
+      { id:'art14', title:'Best Finance Careers for College Students in 2026',                                  cat:'Career Guide',     tags:['FinanceCareers','WallStreet','MBA','Students'] },
+      { id:'art15', title:'MBA Application Strategy 2026: How Top Applicants Stand Out',                        cat:'MBA Admissions',   tags:['MBA','BusinessSchool','MBAAdmissions','GMAT'] },
+      { id:'art16', title:'Mergers & Acquisitions Careers in 2026: The M&A Banker Path',                       cat:'M&A Banking',      tags:['MA','MergersAndAcquisitions','InvestmentBanking','Finance'] },
+      { id:'art17', title:'Asset Management Careers After MBA: Road to Portfolio Manager',                      cat:'Asset Management', tags:['AssetManagement','PortfolioManager','MBA','Finance'] },
+      { id:'art18', title:'Finance MBA Programs 2026: Salaries, Recruiting & Wall Street Path',                 cat:'MBA Guide',        tags:['MBA','WallStreet','Finance','InvestmentBanking'] },
+      { id:'art19', title:'GMAT Study Plan: How to Score 700+ in 3 Months',                                    cat:'GMAT Prep',        tags:['GMAT','MBAAdmissions','BusinessSchool','TestPrep'] },
+    ];
+
+    const BASE = 'https://mbafinanceguide.com';
+    const select = document.getElementById('article-select');
+
+    ARTICLES.forEach(a => {
+      const opt = document.createElement('option');
+      opt.value = a.id;
+      opt.textContent = `${a.id.toUpperCase()} — ${a.title}`;
+      select.appendChild(opt);
+    });
+
+    function generate() {
+      const id = select.value;
+      if (!id) { document.getElementById('cards').style.display='none'; return; }
+      const art = ARTICLES.find(a => a.id === id);
+      const url = `${BASE}/${id}/`;
+      const hashtags = art.tags.map(t => '#'+t).join(' ');
+      const hashtagsShort = art.tags.slice(0,3).map(t => '#'+t).join(' ');
+
+      // Twitter (max 280 chars)
+      const tw = `📊 ${art.title}\n\n${url}\n\n${hashtagsShort} #MBAFinanceGuide`;
+      document.getElementById('tw-text').value = tw;
+
+      // LinkedIn (longer, more professional)
+      const li = `${art.title}\n\n` +
+        `We just published a new guide on MBA Finance Guide covering everything you need to know about ${art.cat.toLowerCase()}.\n\n` +
+        `Whether you're a student, MBA candidate, or finance professional, this article breaks down the key insights to help you make smarter career and education decisions.\n\n` +
+        `📖 Read the full article: ${url}\n\n` +
+        `What's your experience with ${art.cat.toLowerCase()}? Drop your thoughts in the comments 👇\n\n` +
+        `${art.tags.map(t => '#'+t).join(' ')} #MBAFinanceGuide #Finance #MBA`;
+      document.getElementById('li-text').value = li;
+
+      updateCount('tw');
+      updateCount('li');
+      document.getElementById('cards').style.display='grid';
+    }
+
+    function updateCount(net) {
+      const text = document.getElementById(net+'-text').value;
+      const len  = text.length;
+      const el   = document.getElementById(net+'-count');
+      if (net === 'tw') {
+        el.textContent = `${len} / 280`;
+        el.className = 'char-count' + (len > 280 ? ' over' : len > 250 ? ' warn' : '');
+      } else if (net === 'li') {
+        el.textContent = `${len} / 3000`;
+        el.className = 'char-count' + (len > 3000 ? ' over' : '');
+      } else {
+        el.textContent = `${len} chars`;
+        el.className = 'char-count';
+      }
+    }
+
+    function copy(id, btn) {
+      const text = document.getElementById(id).value;
+      navigator.clipboard.writeText(text).then(() => {
+        const orig = btn.textContent;
+        btn.textContent = '✅ Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
