@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MBA Finance Guide</title>
+  <script>
+    // SPA redirect for GitHub Pages
+    // Stores the full path and redirects to index.html which restores the section
+    var path = window.location.pathname;
+    var search = window.location.search;
+    var hash = window.location.hash;
+    sessionStorage.setItem('spa_redirect', path + search + hash);
+    window.location.replace('/');
+  </script>
+</head>
+<body></body>
+</html>
