@@ -3087,22 +3087,25 @@
 <!-- ══════════════ MBA ROI CALCULATOR ══════════════ -->
 <div id="section-calculator" class="section" style="background:#0d1526;padding:0">
 
+  <!-- HERO -->
   <div style="background:linear-gradient(135deg,#0d1526 0%,#1a2744 100%);padding:64px 24px 48px;text-align:center;border-bottom:1px solid rgba(201,168,76,.2)">
-    <span style="background:#c9a84c;color:#0d1526;font-size:11px;font-weight:900;padding:4px 12px;border-radius:20px;letter-spacing:1px;text-transform:uppercase">Free Tool</span>
+    <span style="background:#c9a84c;color:#0d1526;font-size:11px;font-weight:900;padding:4px 12px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;font-family:'DM Sans',sans-serif">Free Tool</span>
     <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);color:#fff;margin:16px 0 12px;line-height:1.2">MBA ROI Calculator</h1>
-    <p style="color:rgba(255,255,255,.6);font-size:17px;max-width:560px;margin:0 auto">Find out if an MBA is worth it — and exactly when you will break even on your investment.</p>
+    <p style="color:rgba(255,255,255,.6);font-size:17px;max-width:560px;margin:0 auto;font-family:'DM Sans',sans-serif">Find out if an MBA is worth it — and exactly when you will break even on your investment.</p>
   </div>
 
-  <div class="calc-grid">
+  <!-- TWO-COLUMN LAYOUT -->
+  <div style="display:flex;flex-wrap:wrap;gap:32px;max-width:1100px;margin:0 auto;padding:48px 24px 64px">
 
     <!-- LEFT: INPUTS -->
-    <div class="calc-panel">
-      <h2 class="calc-panel-title">📋 Your Situation</h2>
+    <div style="flex:1;min-width:0;background:#1a2744;border-radius:16px;padding:32px;border:1px solid rgba(255,255,255,.08)">
+      <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:#c9a84c;margin:0 0 28px">&#128203; Your Situation</h2>
 
-      <div class="calc-field">
-        <label class="calc-label">MBA Program</label>
-        <select id="calc-school" onchange="calcPrefillCost()" class="calc-select">
-          <option value="">— Select school —</option>
+      <!-- School -->
+      <div style="margin-bottom:20px">
+        <label style="display:block;color:rgba(255,255,255,.5);font-size:12px;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;font-family:'DM Sans',sans-serif;font-weight:600">MBA Program</label>
+        <select id="calc-school" onchange="calcPrefillCost()" style="background:#0d1526;border:1px solid rgba(255,255,255,.2);border-radius:8px;color:#fff;font-size:15px;padding:12px 14px;width:100%;box-sizing:border-box;font-family:'DM Sans',sans-serif;outline:none;cursor:pointer">
+          <option value="">&#8212; Select school &#8212;</option>
           <option value="harvard"  data-cost="230000">Harvard Business School</option>
           <option value="wharton"  data-cost="225000">Wharton (UPenn)</option>
           <option value="booth"    data-cost="215000">Chicago Booth</option>
@@ -3117,97 +3120,109 @@
         </select>
       </div>
 
-      <div class="calc-field">
-        <label class="calc-label">Total MBA Cost <span class="calc-label-note">(tuition + living, 2 years)</span></label>
-        <div class="calc-input-wrap">
-          <span class="calc-prefix">$</span>
-          <input type="number" id="calc-cost" min="0" max="500000" step="1000" placeholder="220,000" oninput="calcSync('cost','range')" class="calc-input">
+      <!-- Total MBA Cost -->
+      <div style="margin-bottom:20px">
+        <label style="display:block;color:rgba(255,255,255,.5);font-size:12px;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;font-family:'DM Sans',sans-serif;font-weight:600">Total MBA Cost <span style="text-transform:none;letter-spacing:0;font-weight:400;font-size:11px">(tuition + living, 2 years)</span></label>
+        <div style="position:relative">
+          <span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#c9a84c;font-size:15px;font-family:'DM Sans',sans-serif;font-weight:600;pointer-events:none">$</span>
+          <input type="number" id="calc-cost" min="0" max="500000" step="1000" placeholder="220,000" oninput="calcSync('cost','range')" style="background:#0d1526;border:1px solid rgba(255,255,255,.2);border-radius:8px;color:#fff;font-size:15px;padding:12px 14px 12px 28px;width:100%;box-sizing:border-box;font-family:'DM Sans',sans-serif;outline:none">
         </div>
-        <input type="range" id="calc-cost-range" min="50000" max="350000" step="5000" value="220000" oninput="calcSync('cost','input')" class="calc-range">
-        <div class="calc-range-labels"><span>$50k</span><span>$350k</span></div>
+        <input type="range" id="calc-cost-range" min="50000" max="350000" step="5000" value="220000" oninput="calcSync('cost','input')" style="accent-color:#c9a84c;width:100%;margin-top:10px;cursor:pointer;display:block">
+        <div style="display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.35);margin-top:4px;font-family:'DM Sans',sans-serif"><span>$50k</span><span>$350k</span></div>
       </div>
 
-      <div class="calc-field">
-        <label class="calc-label">Current Annual Salary <span class="calc-label-note">(pre-MBA)</span></label>
-        <div class="calc-input-wrap">
-          <span class="calc-prefix">$</span>
-          <input type="number" id="calc-cursalary" min="0" max="500000" step="1000" placeholder="85,000" oninput="calcSync('cursalary','range')" class="calc-input">
+      <!-- Current Annual Salary -->
+      <div style="margin-bottom:20px">
+        <label style="display:block;color:rgba(255,255,255,.5);font-size:12px;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;font-family:'DM Sans',sans-serif;font-weight:600">Current Annual Salary <span style="text-transform:none;letter-spacing:0;font-weight:400;font-size:11px">(pre-MBA)</span></label>
+        <div style="position:relative">
+          <span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#c9a84c;font-size:15px;font-family:'DM Sans',sans-serif;font-weight:600;pointer-events:none">$</span>
+          <input type="number" id="calc-cursalary" min="0" max="500000" step="1000" placeholder="85,000" oninput="calcSync('cursalary','range')" style="background:#0d1526;border:1px solid rgba(255,255,255,.2);border-radius:8px;color:#fff;font-size:15px;padding:12px 14px 12px 28px;width:100%;box-sizing:border-box;font-family:'DM Sans',sans-serif;outline:none">
         </div>
-        <input type="range" id="calc-cursalary-range" min="20000" max="300000" step="5000" value="85000" oninput="calcSync('cursalary','input')" class="calc-range">
-        <div class="calc-range-labels"><span>$20k</span><span>$300k</span></div>
+        <input type="range" id="calc-cursalary-range" min="20000" max="300000" step="5000" value="85000" oninput="calcSync('cursalary','input')" style="accent-color:#c9a84c;width:100%;margin-top:10px;cursor:pointer;display:block">
+        <div style="display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.35);margin-top:4px;font-family:'DM Sans',sans-serif"><span>$20k</span><span>$300k</span></div>
       </div>
 
-      <div class="calc-field">
-        <label class="calc-label">Expected Post-MBA Salary <span class="calc-label-note">(year 1)</span></label>
-        <div class="calc-input-wrap">
-          <span class="calc-prefix">$</span>
-          <input type="number" id="calc-postsalary" min="0" max="1000000" step="1000" placeholder="175,000" oninput="calcSync('postsalary','range')" class="calc-input">
+      <!-- Expected Post-MBA Salary -->
+      <div style="margin-bottom:20px">
+        <label style="display:block;color:rgba(255,255,255,.5);font-size:12px;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;font-family:'DM Sans',sans-serif;font-weight:600">Expected Post-MBA Salary <span style="text-transform:none;letter-spacing:0;font-weight:400;font-size:11px">(year 1)</span></label>
+        <div style="position:relative">
+          <span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#c9a84c;font-size:15px;font-family:'DM Sans',sans-serif;font-weight:600;pointer-events:none">$</span>
+          <input type="number" id="calc-postsalary" min="0" max="1000000" step="1000" placeholder="175,000" oninput="calcSync('postsalary','range')" style="background:#0d1526;border:1px solid rgba(255,255,255,.2);border-radius:8px;color:#fff;font-size:15px;padding:12px 14px 12px 28px;width:100%;box-sizing:border-box;font-family:'DM Sans',sans-serif;outline:none">
         </div>
-        <input type="range" id="calc-postsalary-range" min="50000" max="500000" step="5000" value="175000" oninput="calcSync('postsalary','input')" class="calc-range">
-        <div class="calc-range-labels"><span>$50k</span><span>$500k</span></div>
+        <input type="range" id="calc-postsalary-range" min="50000" max="500000" step="5000" value="175000" oninput="calcSync('postsalary','input')" style="accent-color:#c9a84c;width:100%;margin-top:10px;cursor:pointer;display:block">
+        <div style="display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.35);margin-top:4px;font-family:'DM Sans',sans-serif"><span>$50k</span><span>$500k</span></div>
       </div>
 
-      <div class="calc-two-col">
-        <div class="calc-field">
-          <label class="calc-label">Annual Raise %</label>
-          <input type="number" id="calc-growth" min="0" max="20" step="0.5" value="3" class="calc-input" style="padding-left:14px">
+      <!-- Annual Raise % + Discount Rate % side by side -->
+      <div style="display:flex;gap:16px;margin-bottom:28px">
+        <div style="flex:1;min-width:0">
+          <label style="display:block;color:rgba(255,255,255,.5);font-size:12px;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;font-family:'DM Sans',sans-serif;font-weight:600">Annual Raise %</label>
+          <input type="number" id="calc-growth" min="0" max="20" step="0.5" value="3" style="background:#0d1526;border:1px solid rgba(255,255,255,.2);border-radius:8px;color:#fff;font-size:15px;padding:12px 14px;width:100%;box-sizing:border-box;font-family:'DM Sans',sans-serif;outline:none">
         </div>
-        <div class="calc-field">
-          <label class="calc-label">Discount Rate %</label>
-          <input type="number" id="calc-discount" min="1" max="20" step="0.5" value="7" class="calc-input" style="padding-left:14px">
+        <div style="flex:1;min-width:0">
+          <label style="display:block;color:rgba(255,255,255,.5);font-size:12px;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;font-family:'DM Sans',sans-serif;font-weight:600">Discount Rate %</label>
+          <input type="number" id="calc-discount" min="1" max="20" step="0.5" value="7" style="background:#0d1526;border:1px solid rgba(255,255,255,.2);border-radius:8px;color:#fff;font-size:15px;padding:12px 14px;width:100%;box-sizing:border-box;font-family:'DM Sans',sans-serif;outline:none">
         </div>
       </div>
 
-      <button onclick="calculateROI()" class="calc-btn">Calculate My ROI →</button>
+      <!-- CTA Button -->
+      <button onclick="calculateROI()" style="background:#c9a84c;color:#0d1526;border:none;border-radius:10px;padding:15px;font-size:16px;font-weight:900;cursor:pointer;width:100%;letter-spacing:.5px;font-family:'DM Sans',sans-serif;margin-top:8px;transition:opacity .2s" onmouseover="this.style.opacity='.88'" onmouseout="this.style.opacity='1'">Calculate My ROI &#8594;</button>
     </div>
 
     <!-- RIGHT: RESULTS -->
-    <div id="calc-results-panel">
+    <div style="flex:1;min-width:0;display:flex;flex-direction:column">
 
-      <div id="calc-empty" class="calc-empty">
-        <div style="font-size:52px;margin-bottom:16px">📊</div>
-        <p style="color:rgba(255,255,255,.5);font-size:15px;line-height:1.7;max-width:300px;margin:0 auto">Fill in your details and click <strong style="color:#c9a84c">Calculate My ROI</strong> to see your personalized breakdown.</p>
+      <!-- Empty state -->
+      <div id="calc-empty" style="flex:1;background:#1a2744;border-radius:16px;border:2px dashed rgba(201,168,76,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 32px;text-align:center;min-height:320px">
+        <div style="font-size:52px;margin-bottom:16px">&#128202;</div>
+        <p style="color:rgba(255,255,255,.5);font-size:15px;line-height:1.7;max-width:300px;margin:0 auto;font-family:'DM Sans',sans-serif">Fill in your details and click <strong style="color:#c9a84c">Calculate My ROI</strong> to see your personalized breakdown.</p>
       </div>
 
-      <div id="calc-output" style="display:none">
+      <!-- Results -->
+      <div id="calc-output" style="display:none;flex-direction:column;gap:20px">
 
-        <div class="calc-breakeven-card">
-          <p class="calc-metric-label">Break-Even Point</p>
-          <p id="calc-breakeven" class="calc-breakeven-value">--</p>
-          <p style="font-size:14px;color:rgba(255,255,255,.45);margin-top:4px">years after graduation</p>
+        <!-- Break-Even Card -->
+        <div style="background:linear-gradient(135deg,#1a2744,#243355);border-radius:16px;border:1px solid rgba(201,168,76,.3);padding:32px;text-align:center">
+          <p style="font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:rgba(255,255,255,.45);margin:0 0 8px;font-family:'DM Sans',sans-serif;font-weight:600">Break-Even Point</p>
+          <p id="calc-breakeven" style="font-size:4rem;font-weight:900;color:#c9a84c;margin:0;line-height:1;font-family:'DM Sans',sans-serif">--</p>
+          <p style="font-size:14px;color:rgba(255,255,255,.45);margin:8px 0 0;font-family:'DM Sans',sans-serif">years after graduation</p>
         </div>
 
-        <div class="calc-metrics">
-          <div class="calc-metric-card">
-            <p class="calc-metric-label">5-Year ROI</p>
-            <p id="calc-roi5" class="calc-metric-big" style="color:#10b981">--</p>
-            <p id="calc-gain5" class="calc-metric-sub">Net gain: --</p>
+        <!-- 2x2 Metrics Grid -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div style="background:#1a2744;border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,.07);text-align:center">
+            <p style="font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:rgba(255,255,255,.45);margin:0 0 6px;font-family:'DM Sans',sans-serif;font-weight:600">5-Year ROI</p>
+            <p id="calc-roi5" style="font-size:1.6rem;font-weight:900;color:#10b981;margin:0;font-family:'DM Sans',sans-serif">--</p>
+            <p id="calc-gain5" style="font-size:12px;color:rgba(255,255,255,.4);margin:6px 0 0;font-family:'DM Sans',sans-serif">Net gain: --</p>
           </div>
-          <div class="calc-metric-card">
-            <p class="calc-metric-label">10-Year ROI</p>
-            <p id="calc-roi10" class="calc-metric-big" style="color:#10b981">--</p>
-            <p id="calc-gain10" class="calc-metric-sub">Net gain: --</p>
+          <div style="background:#1a2744;border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,.07);text-align:center">
+            <p style="font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:rgba(255,255,255,.45);margin:0 0 6px;font-family:'DM Sans',sans-serif;font-weight:600">10-Year ROI</p>
+            <p id="calc-roi10" style="font-size:1.6rem;font-weight:900;color:#10b981;margin:0;font-family:'DM Sans',sans-serif">--</p>
+            <p id="calc-gain10" style="font-size:12px;color:rgba(255,255,255,.4);margin:6px 0 0;font-family:'DM Sans',sans-serif">Net gain: --</p>
           </div>
-          <div class="calc-metric-card">
-            <p class="calc-metric-label">Net Present Value</p>
-            <p id="calc-npv" class="calc-metric-big" style="color:#c9a84c">--</p>
-            <p class="calc-metric-sub">Discounted 10-year</p>
+          <div style="background:#1a2744;border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,.07);text-align:center">
+            <p style="font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:rgba(255,255,255,.45);margin:0 0 6px;font-family:'DM Sans',sans-serif;font-weight:600">Net Present Value</p>
+            <p id="calc-npv" style="font-size:1.6rem;font-weight:900;color:#c9a84c;margin:0;font-family:'DM Sans',sans-serif">--</p>
+            <p style="font-size:12px;color:rgba(255,255,255,.4);margin:6px 0 0;font-family:'DM Sans',sans-serif">Discounted 10-year</p>
           </div>
-          <div class="calc-metric-card">
-            <p class="calc-metric-label">Salary Increase</p>
-            <p id="calc-pct" class="calc-metric-big" style="color:#c9a84c">--</p>
-            <p id="calc-increase-abs" class="calc-metric-sub">Per year, year 1</p>
+          <div style="background:#1a2744;border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,.07);text-align:center">
+            <p style="font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:rgba(255,255,255,.45);margin:0 0 6px;font-family:'DM Sans',sans-serif;font-weight:600">Salary Increase</p>
+            <p id="calc-pct" style="font-size:1.6rem;font-weight:900;color:#c9a84c;margin:0;font-family:'DM Sans',sans-serif">--</p>
+            <p id="calc-increase-abs" style="font-size:12px;color:rgba(255,255,255,.4);margin:6px 0 0;font-family:'DM Sans',sans-serif">Per year, year 1</p>
           </div>
         </div>
 
-        <div class="calc-bars-card">
-          <p class="calc-metric-label" style="margin-bottom:16px">Cumulative Gain vs. MBA Cost</p>
+        <!-- Progress Bars Card -->
+        <div style="background:#1a2744;border-radius:12px;padding:24px;border:1px solid rgba(255,255,255,.07)">
+          <p style="font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:rgba(255,255,255,.45);margin:0 0 16px;font-family:'DM Sans',sans-serif;font-weight:600">Cumulative Gain vs. MBA Cost</p>
           <div id="calc-bars"></div>
         </div>
 
-        <p style="text-align:center;margin-top:20px;font-size:13px;color:rgba(255,255,255,.35)">
-          Want more context? Read <a href="/art4/" onclick="showSection('art4');return false" style="color:#c9a84c">Is an MBA Worth It in 2026?</a>
+        <!-- Article link -->
+        <p style="text-align:center;font-size:13px;color:rgba(255,255,255,.35);margin:0;font-family:'DM Sans',sans-serif">
+          Want more context? Read <a href="/art4/" onclick="showSection('art4');return false" style="color:#c9a84c;text-decoration:none">Is an MBA Worth It in 2026?</a>
         </p>
+
       </div>
     </div>
 
