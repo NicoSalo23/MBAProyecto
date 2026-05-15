@@ -67,6 +67,7 @@
       <a href="/carreras/" onclick="showSection('carreras');return false" id="nav-carreras">Careers & Salaries</a>
       <a href="/tecnico/" onclick="showSection('tecnico');return false" id="nav-tecnico">Technical Finance</a>
       <a href="/preparacion/" onclick="showSection('preparacion');return false" id="nav-preparacion">GMAT Prep</a>
+      <a href="/calculator/" onclick="showSection('calculator');return false" id="nav-calculator">🧮 ROI Calc</a>
       <a href="/markets/" onclick="showSection('markets');return false" id="nav-markets">Markets</a>
       <a href="/sobre/" onclick="showSection('sobre');return false" id="nav-sobre">About Us</a>
       <a href="/contacto/" onclick="showSection('contacto');return false" id="nav-contacto">Contact</a>
@@ -82,6 +83,7 @@
     <a href="/carreras/" onclick="showSection('carreras');toggleMobile();return false">Careers & Salaries</a>
     <a href="/tecnico/" onclick="showSection('tecnico');toggleMobile();return false">Technical Finance</a>
     <a href="/preparacion/" onclick="showSection('preparacion');toggleMobile();return false">GMAT Prep</a>
+    <a href="/calculator/" onclick="showSection('calculator');toggleMobile();return false">🧮 ROI Calculator</a>
     <a href="/aggregator/" onclick="showSection('aggregator');toggleMobile();return false">📡 Live News</a>
     <a href="/markets/" onclick="showSection('markets');toggleMobile();return false">Markets</a>
     <a href="/sobre/" onclick="showSection('sobre');toggleMobile();return false">About Us</a>
@@ -3082,6 +3084,136 @@
   </div>
 </div>
 
+<!-- ══════════════ MBA ROI CALCULATOR ══════════════ -->
+<div id="section-calculator" class="section" style="background:#0d1526;padding:0">
+
+  <div style="background:linear-gradient(135deg,#0d1526 0%,#1a2744 100%);padding:64px 24px 48px;text-align:center;border-bottom:1px solid rgba(201,168,76,.2)">
+    <span style="background:#c9a84c;color:#0d1526;font-size:11px;font-weight:900;padding:4px 12px;border-radius:20px;letter-spacing:1px;text-transform:uppercase">Free Tool</span>
+    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);color:#fff;margin:16px 0 12px;line-height:1.2">MBA ROI Calculator</h1>
+    <p style="color:rgba(255,255,255,.6);font-size:17px;max-width:560px;margin:0 auto">Find out if an MBA is worth it — and exactly when you will break even on your investment.</p>
+  </div>
+
+  <div class="calc-grid">
+
+    <!-- LEFT: INPUTS -->
+    <div class="calc-panel">
+      <h2 class="calc-panel-title">📋 Your Situation</h2>
+
+      <div class="calc-field">
+        <label class="calc-label">MBA Program</label>
+        <select id="calc-school" onchange="calcPrefillCost()" class="calc-select">
+          <option value="">— Select school —</option>
+          <option value="harvard"  data-cost="230000">Harvard Business School</option>
+          <option value="wharton"  data-cost="225000">Wharton (UPenn)</option>
+          <option value="booth"    data-cost="215000">Chicago Booth</option>
+          <option value="sloan"    data-cost="220000">MIT Sloan</option>
+          <option value="columbia" data-cost="218000">Columbia Business School</option>
+          <option value="kellogg"  data-cost="210000">Kellogg (Northwestern)</option>
+          <option value="haas"     data-cost="205000">Haas (UC Berkeley)</option>
+          <option value="stern"    data-cost="205000">Stern (NYU)</option>
+          <option value="tuck"     data-cost="208000">Tuck (Dartmouth)</option>
+          <option value="yale"     data-cost="200000">Yale SOM</option>
+          <option value="custom"   data-cost="">Other / Custom</option>
+        </select>
+      </div>
+
+      <div class="calc-field">
+        <label class="calc-label">Total MBA Cost <span class="calc-label-note">(tuition + living, 2 years)</span></label>
+        <div class="calc-input-wrap">
+          <span class="calc-prefix">$</span>
+          <input type="number" id="calc-cost" min="0" max="500000" step="1000" placeholder="220,000" oninput="calcSync('cost','range')" class="calc-input">
+        </div>
+        <input type="range" id="calc-cost-range" min="50000" max="350000" step="5000" value="220000" oninput="calcSync('cost','input')" class="calc-range">
+        <div class="calc-range-labels"><span>$50k</span><span>$350k</span></div>
+      </div>
+
+      <div class="calc-field">
+        <label class="calc-label">Current Annual Salary <span class="calc-label-note">(pre-MBA)</span></label>
+        <div class="calc-input-wrap">
+          <span class="calc-prefix">$</span>
+          <input type="number" id="calc-cursalary" min="0" max="500000" step="1000" placeholder="85,000" oninput="calcSync('cursalary','range')" class="calc-input">
+        </div>
+        <input type="range" id="calc-cursalary-range" min="20000" max="300000" step="5000" value="85000" oninput="calcSync('cursalary','input')" class="calc-range">
+        <div class="calc-range-labels"><span>$20k</span><span>$300k</span></div>
+      </div>
+
+      <div class="calc-field">
+        <label class="calc-label">Expected Post-MBA Salary <span class="calc-label-note">(year 1)</span></label>
+        <div class="calc-input-wrap">
+          <span class="calc-prefix">$</span>
+          <input type="number" id="calc-postsalary" min="0" max="1000000" step="1000" placeholder="175,000" oninput="calcSync('postsalary','range')" class="calc-input">
+        </div>
+        <input type="range" id="calc-postsalary-range" min="50000" max="500000" step="5000" value="175000" oninput="calcSync('postsalary','input')" class="calc-range">
+        <div class="calc-range-labels"><span>$50k</span><span>$500k</span></div>
+      </div>
+
+      <div class="calc-two-col">
+        <div class="calc-field">
+          <label class="calc-label">Annual Raise %</label>
+          <input type="number" id="calc-growth" min="0" max="20" step="0.5" value="3" class="calc-input" style="padding-left:14px">
+        </div>
+        <div class="calc-field">
+          <label class="calc-label">Discount Rate %</label>
+          <input type="number" id="calc-discount" min="1" max="20" step="0.5" value="7" class="calc-input" style="padding-left:14px">
+        </div>
+      </div>
+
+      <button onclick="calculateROI()" class="calc-btn">Calculate My ROI →</button>
+    </div>
+
+    <!-- RIGHT: RESULTS -->
+    <div id="calc-results-panel">
+
+      <div id="calc-empty" class="calc-empty">
+        <div style="font-size:52px;margin-bottom:16px">📊</div>
+        <p style="color:rgba(255,255,255,.5);font-size:15px;line-height:1.7;max-width:300px;margin:0 auto">Fill in your details and click <strong style="color:#c9a84c">Calculate My ROI</strong> to see your personalized breakdown.</p>
+      </div>
+
+      <div id="calc-output" style="display:none">
+
+        <div class="calc-breakeven-card">
+          <p class="calc-metric-label">Break-Even Point</p>
+          <p id="calc-breakeven" class="calc-breakeven-value">--</p>
+          <p style="font-size:14px;color:rgba(255,255,255,.45);margin-top:4px">years after graduation</p>
+        </div>
+
+        <div class="calc-metrics">
+          <div class="calc-metric-card">
+            <p class="calc-metric-label">5-Year ROI</p>
+            <p id="calc-roi5" class="calc-metric-big" style="color:#10b981">--</p>
+            <p id="calc-gain5" class="calc-metric-sub">Net gain: --</p>
+          </div>
+          <div class="calc-metric-card">
+            <p class="calc-metric-label">10-Year ROI</p>
+            <p id="calc-roi10" class="calc-metric-big" style="color:#10b981">--</p>
+            <p id="calc-gain10" class="calc-metric-sub">Net gain: --</p>
+          </div>
+          <div class="calc-metric-card">
+            <p class="calc-metric-label">Net Present Value</p>
+            <p id="calc-npv" class="calc-metric-big" style="color:#c9a84c">--</p>
+            <p class="calc-metric-sub">Discounted 10-year</p>
+          </div>
+          <div class="calc-metric-card">
+            <p class="calc-metric-label">Salary Increase</p>
+            <p id="calc-pct" class="calc-metric-big" style="color:#c9a84c">--</p>
+            <p id="calc-increase-abs" class="calc-metric-sub">Per year, year 1</p>
+          </div>
+        </div>
+
+        <div class="calc-bars-card">
+          <p class="calc-metric-label" style="margin-bottom:16px">Cumulative Gain vs. MBA Cost</p>
+          <div id="calc-bars"></div>
+        </div>
+
+        <p style="text-align:center;margin-top:20px;font-size:13px;color:rgba(255,255,255,.35)">
+          Want more context? Read <a href="/art4/" onclick="showSection('art4');return false" style="color:#c9a84c">Is an MBA Worth It in 2026?</a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
@@ -3132,7 +3264,7 @@
 </footer>
 
 <!-- COOKIE BANNER -->
-<div id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-modal="false">
+<div id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-modal="false" style="display:none">
   <p>We use first-party and third-party cookies (Google Analytics, Google AdSense) to enhance your experience and display relevant advertising. By accepting, you consent to their use. Learn more in our <a href="/cookies/" onclick="showSection('cookies');return false">Cookie Policy</a>.</p>
   <button class="cookie-decline" onclick="declineCookies()">Essential only</button>
   <button class="cookie-accept" onclick="acceptCookies()" autofocus>Accept all</button>
@@ -3183,6 +3315,7 @@ const PAGE_TITLES={
   art19:'GMAT Study Plan: How to Score 700+ in 3 Months | MBA Finance Guide',
   art20:'Harvard MBA Curriculum 2026: Courses, Finance Training & HBS | MBA Finance Guide',
   art21:'Wharton MBA Curriculum 2026: Finance Courses & What Makes Wharton Different | MBA Finance Guide',
+  calculator:'MBA ROI Calculator — Is an MBA Worth It? | MBA Finance Guide',
   privacidad:'Privacy Policy | MBA Finance Guide',
   legal:'Legal Notice | MBA Finance Guide',
   cookies:'Cookie Policy | MBA Finance Guide'
@@ -3264,7 +3397,7 @@ async function handleFormSubmit(e){
 // ══════════════════════════════════════════
 function acceptCookies(){localStorage.setItem('mbafp_consent','accepted');document.getElementById('cookie-banner').style.display='none';if(typeof gtag==='function')gtag('consent','update',{'analytics_storage':'granted','ad_storage':'granted'});}
 function declineCookies(){localStorage.setItem('mbafp_consent','declined');document.getElementById('cookie-banner').style.display='none';}
-if(localStorage.getItem('mbafp_consent'))document.getElementById('cookie-banner').style.display='none';
+if(!localStorage.getItem('mbafp_consent'))document.getElementById('cookie-banner').style.display='flex';
 
 // ══════════════════════════════════════════
 //  SCROLL PROGRESS BAR
@@ -3500,6 +3633,101 @@ function filterFeed(cat,btn){
     if(id==='markets')setTimeout(revealMarkets,60);
   };
 })();
+
+// ══════════════════════════════════════════
+//  MBA ROI CALCULATOR
+// ══════════════════════════════════════════
+function calcPrefillCost(){
+  const sel=document.getElementById('calc-school');
+  const cost=sel.options[sel.selectedIndex].getAttribute('data-cost');
+  if(cost){
+    document.getElementById('calc-cost').value=cost;
+    document.getElementById('calc-cost-range').value=cost;
+  }
+}
+function calcSync(field,target){
+  const inp=document.getElementById('calc-'+field);
+  const rng=document.getElementById('calc-'+field+'-range');
+  if(!inp||!rng)return;
+  if(target==='range') rng.value=inp.value;
+  else inp.value=rng.value;
+}
+function calcFmt(n){
+  const abs=Math.abs(n);
+  const sign=n<0?'-':'';
+  if(abs>=1000000)return sign+'$'+(abs/1000000).toFixed(1)+'M';
+  if(abs>=1000)return sign+'$'+(abs/1000).toFixed(0)+'k';
+  return sign+'$'+abs;
+}
+function calculateROI(){
+  const cost      =parseFloat(document.getElementById('calc-cost').value)||220000;
+  const curSal    =parseFloat(document.getElementById('calc-cursalary').value)||85000;
+  const postSal   =parseFloat(document.getElementById('calc-postsalary').value)||175000;
+  const growth    =parseFloat(document.getElementById('calc-growth').value)/100||0.03;
+  const discount  =parseFloat(document.getElementById('calc-discount').value)/100||0.07;
+
+  const annualGain=postSal-curSal;
+  const pctIncrease=((postSal-curSal)/Math.max(curSal,1)*100).toFixed(0);
+
+  // Build yearly data
+  let cumulative=0, breakEven=null;
+  const gains=[];
+  for(let y=1;y<=30;y++){
+    const g=annualGain*Math.pow(1+growth,y-1);
+    cumulative+=g;
+    gains.push({y,g,cumulative});
+    if(breakEven===null&&cumulative>=cost) breakEven=y;
+  }
+
+  // 5-year & 10-year
+  const total5 =gains.slice(0,5).reduce((s,x)=>s+x.g,0);
+  const net5   =total5-cost;
+  const roi5   =(net5/cost*100).toFixed(0);
+  const total10=gains.slice(0,10).reduce((s,x)=>s+x.g,0);
+  const net10  =total10-cost;
+  const roi10  =(net10/cost*100).toFixed(0);
+
+  // NPV (10 years discounted)
+  let npv=-cost;
+  for(let y=1;y<=10;y++){
+    npv+=annualGain*Math.pow(1+growth,y-1)/Math.pow(1+discount,y);
+  }
+
+  // Render
+  document.getElementById('calc-empty').style.display='none';
+  document.getElementById('calc-output').style.display='block';
+
+  document.getElementById('calc-breakeven').textContent=breakEven?breakEven+'y':'30y+';
+
+  const c5=net5>=0?'#10b981':'#ef4444';
+  const c10=net10>=0?'#10b981':'#ef4444';
+  document.getElementById('calc-roi5').style.color=c5;
+  document.getElementById('calc-roi10').style.color=c10;
+  document.getElementById('calc-roi5').textContent=(net5>=0?'+':'')+roi5+'%';
+  document.getElementById('calc-gain5').textContent='Net gain: '+calcFmt(Math.round(net5));
+  document.getElementById('calc-roi10').textContent=(net10>=0?'+':'')+roi10+'%';
+  document.getElementById('calc-gain10').textContent='Net gain: '+calcFmt(Math.round(net10));
+  document.getElementById('calc-npv').textContent=calcFmt(Math.round(npv));
+  document.getElementById('calc-pct').textContent='+'+pctIncrease+'%';
+  document.getElementById('calc-increase-abs').textContent=calcFmt(annualGain)+' more/year';
+
+  // Progress bars
+  const barsEl=document.getElementById('calc-bars');
+  barsEl.innerHTML=[1,3,5,7,10].map(y=>{
+    const row=gains.find(g=>g.y===y);
+    const pct=Math.min(100,(row.cumulative/cost*100));
+    const done=row.cumulative>=cost;
+    return `<div style="margin-bottom:14px">
+      <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px">
+        <span style="color:rgba(255,255,255,.6)">Year ${y}</span>
+        <span style="color:${done?'#10b981':'rgba(255,255,255,.45)'};font-weight:700">${calcFmt(Math.round(row.cumulative))}${done?' ✓':''}</span>
+      </div>
+      <div style="background:rgba(255,255,255,.07);border-radius:4px;height:9px;overflow:hidden">
+        <div style="height:100%;width:${pct}%;background:${done?'#10b981':'#c9a84c'};border-radius:4px;transition:width .9s ease"></div>
+      </div>
+    </div>`;
+  }).join('');
+}
 </script>
 </body>
 </html>

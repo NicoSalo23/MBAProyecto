@@ -837,6 +837,126 @@ footer{background:var(--navy);color:var(--white);padding:64px 24px 32px}
   .ticker-item{padding:0 18px}
 }
 
+/* ── MBA ROI CALCULATOR ── */
+.calc-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:32px;
+  max-width:1100px;
+  margin:0 auto;
+  padding:48px 24px 80px;
+  align-items:start;
+}
+.calc-panel{
+  background:#1a2744;
+  border-radius:16px;
+  padding:32px;
+  border:1px solid rgba(255,255,255,.08);
+}
+.calc-panel-title{
+  font-size:18px;font-weight:700;
+  color:#c9a84c;
+  margin-bottom:24px;
+  display:flex;align-items:center;gap:8px;
+}
+.calc-field{margin-bottom:22px}
+.calc-label{
+  display:block;
+  font-size:12px;font-weight:700;
+  color:rgba(255,255,255,.5);
+  text-transform:uppercase;letter-spacing:.8px;
+  margin-bottom:8px;
+}
+.calc-label-note{font-weight:400;text-transform:none;color:rgba(255,255,255,.3);font-size:11px}
+.calc-select,.calc-input{
+  width:100%;
+  background:#0d1526;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:8px;
+  color:#fff;
+  font-size:14px;
+  padding:11px 14px;
+  font-family:inherit;
+  transition:border-color .2s;
+}
+.calc-select:focus,.calc-input:focus{outline:none;border-color:#c9a84c}
+.calc-select{cursor:pointer}
+.calc-input-wrap{position:relative}
+.calc-prefix{
+  position:absolute;left:13px;top:50%;
+  transform:translateY(-50%);
+  color:#c9a84c;font-weight:700;font-size:15px;
+  pointer-events:none;
+}
+.calc-input-wrap .calc-input{padding-left:26px}
+.calc-range{
+  width:100%;margin-top:8px;
+  accent-color:#c9a84c;
+  cursor:pointer;
+}
+.calc-range-labels{
+  display:flex;justify-content:space-between;
+  font-size:11px;color:rgba(255,255,255,.3);
+  margin-top:3px;
+}
+.calc-two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px}
+.calc-btn{
+  width:100%;
+  background:#c9a84c;color:#0d1526;
+  border:none;border-radius:10px;
+  padding:15px;font-size:16px;font-weight:900;
+  cursor:pointer;letter-spacing:.5px;
+  transition:background .2s,transform .15s;
+  font-family:inherit;
+}
+.calc-btn:hover{background:#d4b366;transform:translateY(-1px)}
+.calc-empty{
+  background:#1a2744;
+  border-radius:16px;
+  padding:52px 32px;
+  border:1px dashed rgba(201,168,76,.3);
+  text-align:center;
+}
+.calc-breakeven-card{
+  background:linear-gradient(135deg,#1a2744,#243355);
+  border-radius:16px;padding:28px 32px;
+  border:1px solid rgba(201,168,76,.35);
+  margin-bottom:16px;text-align:center;
+}
+.calc-breakeven-value{
+  font-family:'Playfair Display',serif;
+  font-size:4rem;font-weight:700;
+  color:#c9a84c;line-height:1;
+  margin:8px 0 4px;
+}
+.calc-metrics{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.calc-metric-card{
+  background:#1a2744;border-radius:12px;
+  padding:20px;border:1px solid rgba(255,255,255,.08);
+}
+.calc-metric-label{
+  font-size:11px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.8px;
+  color:rgba(255,255,255,.4);margin-bottom:8px;
+}
+.calc-metric-big{
+  font-family:'Playfair Display',serif;
+  font-size:1.85rem;font-weight:700;
+}
+.calc-metric-sub{font-size:12px;color:rgba(255,255,255,.4);margin-top:4px}
+.calc-bars-card{
+  background:#1a2744;border-radius:12px;
+  padding:24px;border:1px solid rgba(255,255,255,.08);
+}
+@media(max-width:860px){
+  .calc-grid{grid-template-columns:1fr;padding:32px 16px 60px}
+}
+@media(max-width:540px){
+  .calc-two-col{grid-template-columns:1fr}
+  .calc-metrics{grid-template-columns:1fr}
+  .calc-breakeven-value{font-size:3rem}
+}
+
 /* ── COOKIE BANNER ── */
 #cookie-banner{
   position:fixed;
