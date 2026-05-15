@@ -3315,8 +3315,6 @@
   <!-- Contenedor de términos (llenado por JS) -->
   <div id="glosario-container" style="max-width:1000px;margin:0 auto;padding:40px 24px 80px"></div>
 
-  <!-- Botón flotante volver arriba -->
-  <button id="glosario-top-btn" onclick="document.getElementById('section-glosario').scrollIntoView({behavior:'smooth',block:'start'})" style="position:fixed;bottom:32px;right:32px;background:#c9a84c;color:#0d1526;border:none;border-radius:50%;width:48px;height:48px;font-size:20px;font-weight:900;cursor:pointer;box-shadow:0 4px 20px rgba(201,168,76,.4);opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s;pointer-events:none;z-index:500;display:flex;align-items:center;justify-content:center;font-family:inherit" aria-label="Back to top">↑</button>
 
 </div>
 
@@ -3639,6 +3637,9 @@
     </div>
   </div>
 </footer>
+
+<!-- GLOSSARY BACK-TO-TOP (fixed, global level) -->
+<button id="glosario-top-btn" onclick="document.getElementById('section-glosario').scrollIntoView({behavior:'smooth',block:'start'})" style="position:fixed;bottom:32px;right:32px;background:#c9a84c;color:#0d1526;border:none;border-radius:50%;width:50px;height:50px;font-size:22px;font-weight:900;cursor:pointer;box-shadow:0 4px 24px rgba(201,168,76,.45);opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s;pointer-events:none;z-index:4000;display:flex;align-items:center;justify-content:center;font-family:inherit" aria-label="Back to top">↑</button>
 
 <!-- COOKIE BANNER -->
 <div id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-modal="false" style="display:none">
