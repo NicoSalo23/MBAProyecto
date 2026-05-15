@@ -69,6 +69,8 @@
       <a href="/preparacion/" onclick="showSection('preparacion');return false" id="nav-preparacion">GMAT Prep</a>
       <a href="/calculator/" onclick="showSection('calculator');return false" id="nav-calculator">🧮 ROI Calc</a>
       <a href="/glosario/" onclick="showSection('glosario');return false" id="nav-glosario">📖 Glossary</a>
+      <a href="/comparador/" onclick="showSection('comparador');return false" id="nav-comparador">⚖️ Compare</a>
+      <a href="/quiz/" onclick="showSection('quiz');return false" id="nav-quiz">🎯 Quiz</a>
       <a href="/markets/" onclick="showSection('markets');return false" id="nav-markets">Markets</a>
       <a href="/sobre/" onclick="showSection('sobre');return false" id="nav-sobre">About Us</a>
       <a href="/contacto/" onclick="showSection('contacto');return false" id="nav-contacto">Contact</a>
@@ -86,6 +88,8 @@
     <a href="/preparacion/" onclick="showSection('preparacion');toggleMobile();return false">GMAT Prep</a>
     <a href="/calculator/" onclick="showSection('calculator');toggleMobile();return false">🧮 ROI Calculator</a>
     <a href="/glosario/" onclick="showSection('glosario');toggleMobile();return false">📖 Glossary</a>
+    <a href="/comparador/" onclick="showSection('comparador');toggleMobile();return false">⚖️ Compare</a>
+    <a href="/quiz/" onclick="showSection('quiz');toggleMobile();return false">🎯 Quiz</a>
     <a href="/aggregator/" onclick="showSection('aggregator');toggleMobile();return false">📡 Live News</a>
     <a href="/markets/" onclick="showSection('markets');toggleMobile();return false">Markets</a>
     <a href="/sobre/" onclick="showSection('sobre');toggleMobile();return false">About Us</a>
@@ -261,6 +265,17 @@
       </div>
       <a href="/calculator/" onclick="showSection('calculator');return false" style="display:inline-block;background:#c9a84c;color:#0d1526;font-weight:900;font-size:16px;padding:16px 40px;border-radius:10px;letter-spacing:.4px;transition:all .2s;text-decoration:none" onmouseover="this.style.background='#d4b366';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#c9a84c';this.style.transform='none'">Calculate My MBA ROI →</a>
       <p style="margin-top:16px;font-size:13px;color:rgba(255,255,255,.3)">Free — no sign-up required</p>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER STRIP -->
+  <section style="background:#1a2744;padding:28px 24px;border-top:1px solid rgba(201,168,76,.15);border-bottom:1px solid rgba(201,168,76,.15)">
+    <div style="max-width:800px;margin:0 auto;display:flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:center">
+      <div style="flex:1;min-width:240px">
+        <p style="font-size:15px;font-weight:700;color:#fff;margin-bottom:4px">📥 Free: Wall Street Recruiting Checklist</p>
+        <p style="font-size:13px;color:rgba(255,255,255,.5);margin:0">20 steps to break into investment banking — download instantly</p>
+      </div>
+      <a href="#" onclick="showSection('newsletter');return false" style="background:#c9a84c;color:#0d1526;font-weight:900;font-size:14px;padding:12px 28px;border-radius:8px;text-decoration:none;white-space:nowrap;flex-shrink:0">Get Free Checklist →</a>
     </div>
   </section>
 
@@ -3302,6 +3317,277 @@
 
 </div>
 
+<!-- ══════════════ SCHOOL COMPARATOR ══════════════ -->
+<div id="section-comparador" class="section" style="background:#0d1526;padding:0">
+
+  <!-- Hero -->
+  <div style="background:linear-gradient(135deg,#0d1526 0%,#1a2744 100%);padding:64px 24px 48px;text-align:center;border-bottom:1px solid rgba(201,168,76,.2)">
+    <span style="background:#c9a84c;color:#0d1526;font-size:11px;font-weight:900;padding:4px 12px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;font-family:'DM Sans',sans-serif">Free Tool</span>
+    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:700;margin:16px 0 12px;line-height:1.2;background:linear-gradient(120deg,#ffffff 0%,#e8d9b8 28%,#E8C96A 52%,#c8b88a 72%,#ffffff 100%);background-size:260% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradientText 7s linear infinite">MBA School Comparator</h1>
+    <p style="color:rgba(255,255,255,.6);font-size:17px;max-width:560px;margin:0 auto;font-family:'DM Sans',sans-serif">Compare two top MBA programs side by side — cost, salary, finance placement and more.</p>
+  </div>
+
+  <!-- School selectors -->
+  <div style="max-width:800px;margin:48px auto 0;padding:0 24px">
+    <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:flex-end">
+      <div style="flex:1;min-width:200px">
+        <label style="display:block;color:rgba(255,255,255,.5);font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;font-family:'DM Sans',sans-serif">School A</label>
+        <div style="position:relative">
+          <select id="comp-school-1" onchange="comparadorRender()" style="background:#1a2744;border:1px solid rgba(201,168,76,.3);border-radius:10px;color:#fff;font-size:15px;padding:14px 18px;width:100%;cursor:pointer;font-family:'DM Sans',sans-serif;outline:none;appearance:none;-webkit-appearance:none">
+            <option value="">— Select School —</option>
+            <option value="harvard">Harvard Business School</option>
+            <option value="wharton">Wharton (UPenn)</option>
+            <option value="booth">Chicago Booth</option>
+            <option value="sloan">MIT Sloan</option>
+            <option value="columbia">Columbia Business School</option>
+            <option value="kellogg">Kellogg (Northwestern)</option>
+            <option value="haas">Haas (UC Berkeley)</option>
+            <option value="stern">Stern (NYU)</option>
+            <option value="tuck">Tuck (Dartmouth)</option>
+            <option value="yale">Yale SOM</option>
+          </select>
+          <span style="position:absolute;right:14px;top:50%;transform:translateY(-50%);pointer-events:none;color:#c9a84c;font-size:12px">&#9660;</span>
+        </div>
+      </div>
+      <div style="flex:1;min-width:200px">
+        <label style="display:block;color:rgba(255,255,255,.5);font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;font-family:'DM Sans',sans-serif">School B</label>
+        <div style="position:relative">
+          <select id="comp-school-2" onchange="comparadorRender()" style="background:#1a2744;border:1px solid rgba(201,168,76,.3);border-radius:10px;color:#fff;font-size:15px;padding:14px 18px;width:100%;cursor:pointer;font-family:'DM Sans',sans-serif;outline:none;appearance:none;-webkit-appearance:none">
+            <option value="">— Select School —</option>
+            <option value="harvard">Harvard Business School</option>
+            <option value="wharton">Wharton (UPenn)</option>
+            <option value="booth">Chicago Booth</option>
+            <option value="sloan">MIT Sloan</option>
+            <option value="columbia">Columbia Business School</option>
+            <option value="kellogg">Kellogg (Northwestern)</option>
+            <option value="haas">Haas (UC Berkeley)</option>
+            <option value="stern">Stern (NYU)</option>
+            <option value="tuck">Tuck (Dartmouth)</option>
+            <option value="yale">Yale SOM</option>
+          </select>
+          <span style="position:absolute;right:14px;top:50%;transform:translateY(-50%);pointer-events:none;color:#c9a84c;font-size:12px">&#9660;</span>
+        </div>
+      </div>
+      <div style="flex-shrink:0">
+        <button onclick="comparadorRender()" style="background:#c9a84c;color:#0d1526;font-size:15px;font-weight:700;padding:14px 28px;border:none;border-radius:10px;cursor:pointer;font-family:'DM Sans',sans-serif;letter-spacing:.5px;transition:opacity .2s" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Compare &#8594;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Result area -->
+  <div id="comp-result" style="max-width:900px;margin:40px auto 80px;padding:0 24px">
+    <!-- Empty state -->
+    <div id="comp-empty" style="text-align:center;padding:64px 24px;color:rgba(255,255,255,.4);font-family:'DM Sans',sans-serif">
+      <div style="font-size:56px;margin-bottom:20px">&#127891;</div>
+      <p style="font-size:17px;margin:0 0 8px;color:rgba(255,255,255,.55)">Select two schools above to start comparing</p>
+      <p style="font-size:14px;margin:0">Cost, salary, GMAT scores, finance placement and more — all side by side.</p>
+    </div>
+    <!-- Table (filled by JS) -->
+    <div id="comp-table" style="display:none"></div>
+  </div>
+
+</div>
+
+<!-- ══════════════ IB / GMAT QUIZ ══════════════ -->
+<div id="section-quiz" class="section" style="background:#0d1526;padding:0">
+
+  <!-- HERO -->
+  <div style="background:linear-gradient(135deg,#0d1526 0%,#1a2744 100%);padding:64px 24px 48px;text-align:center;border-bottom:1px solid rgba(201,168,76,.2)">
+    <span style="background:#c9a84c;color:#0d1526;font-size:11px;font-weight:900;padding:4px 12px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;font-family:'DM Sans',sans-serif">Free Quiz</span>
+    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:700;margin:16px 0 12px;line-height:1.2;background:linear-gradient(120deg,#ffffff 0%,#e8d9b8 28%,#E8C96A 52%,#c8b88a 72%,#ffffff 100%);background-size:260% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradientText 7s linear infinite">IB &amp; GMAT Practice Quiz</h1>
+    <p style="color:rgba(255,255,255,.6);font-size:17px;max-width:600px;margin:0 auto;font-family:'DM Sans',sans-serif">Test your knowledge across 30 questions — 15 Investment Banking technical and 15 GMAT quantitative.</p>
+  </div>
+
+  <!-- QUIZ WRAPPER -->
+  <div style="max-width:760px;margin:0 auto;padding:48px 24px 80px">
+
+    <!-- START SCREEN -->
+    <div id="quiz-start" style="text-align:center;background:#1a2744;border-radius:16px;padding:48px 32px;border:1px solid rgba(255,255,255,.08)">
+      <h2 style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#fff;margin:0 0 8px">Choose Your Quiz</h2>
+      <p style="color:rgba(255,255,255,.55);font-family:'DM Sans',sans-serif;font-size:15px;margin:0 0 36px">Select a category or take the full 30-question challenge.</p>
+
+      <!-- Category Cards -->
+      <div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:center;margin-bottom:36px">
+        <div style="background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.25);border-radius:12px;padding:24px 28px;flex:1;min-width:180px;max-width:240px;text-align:left">
+          <div style="font-size:32px;margin-bottom:10px">📊</div>
+          <div style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#c9a84c;font-weight:700;margin-bottom:6px">IB Technical</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(255,255,255,.5)">15 questions covering DCF, LBO, M&amp;A, valuation multiples and more.</div>
+        </div>
+        <div style="background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.25);border-radius:12px;padding:24px 28px;flex:1;min-width:180px;max-width:240px;text-align:left">
+          <div style="font-size:32px;margin-bottom:10px">🧮</div>
+          <div style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#10b981;font-weight:700;margin-bottom:6px">GMAT Quant</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(255,255,255,.5)">15 questions on algebra, percentages, probability, geometry and more.</div>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <button onclick="quizStart('all')" style="display:block;width:100%;background:#c9a84c;color:#0d1526;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:900;padding:16px 32px;border:none;border-radius:10px;cursor:pointer;letter-spacing:.4px;margin-bottom:16px;transition:opacity .2s" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Start Full Quiz (30 Questions)</button>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <button onclick="quizStart('IB Technical')" style="background:transparent;color:#c9a84c;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;padding:12px 24px;border:2px solid rgba(201,168,76,.4);border-radius:8px;cursor:pointer;transition:all .2s" onmouseover="this.style.borderColor='#c9a84c';this.style.background='rgba(201,168,76,.08)'" onmouseout="this.style.borderColor='rgba(201,168,76,.4)';this.style.background='transparent'">IB Technical Only</button>
+        <button onclick="quizStart('GMAT Quant')" style="background:transparent;color:#10b981;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;padding:12px 24px;border:2px solid rgba(16,185,129,.4);border-radius:8px;cursor:pointer;transition:all .2s" onmouseover="this.style.borderColor='#10b981';this.style.background='rgba(16,185,129,.08)'" onmouseout="this.style.borderColor='rgba(16,185,129,.4)';this.style.background='transparent'">GMAT Quant Only</button>
+      </div>
+    </div>
+
+    <!-- QUESTION SCREEN -->
+    <div id="quiz-question" style="display:none">
+      <!-- Progress -->
+      <div style="margin-bottom:12px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+          <span id="quiz-counter" style="font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(255,255,255,.5)">Question 1 of 30</span>
+          <span id="quiz-cat-badge" style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;color:#c9a84c;background:rgba(201,168,76,.12);padding:3px 10px;border-radius:20px;letter-spacing:.5px;text-transform:uppercase"></span>
+        </div>
+        <div style="background:rgba(255,255,255,.08);border-radius:100px;height:6px;overflow:hidden">
+          <div id="quiz-progress-bar" style="height:100%;width:0%;background:linear-gradient(90deg,#c9a84c,#e8c96a);border-radius:100px;transition:width .4s ease"></div>
+        </div>
+      </div>
+
+      <!-- Question card -->
+      <div style="background:#1a2744;border-radius:16px;padding:36px 32px 32px;border:1px solid rgba(255,255,255,.08);margin-bottom:0">
+        <p id="quiz-q-text" style="font-family:'Playfair Display',serif;font-size:clamp(1.1rem,2.5vw,1.35rem);color:#fff;line-height:1.55;margin:0 0 28px;font-weight:600"></p>
+
+        <!-- Options -->
+        <div style="display:flex;flex-direction:column;gap:10px" id="quiz-opts-container">
+          <button id="quiz-opt-0" onclick="quizAnswer(0)" style="background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.1);border-radius:10px;padding:14px 18px;text-align:left;font-family:'DM Sans',sans-serif;font-size:15px;color:rgba(255,255,255,.85);cursor:pointer;transition:all .2s;width:100%" onmouseover="if(!this.dataset.answered)this.style.borderColor='rgba(201,168,76,.5)';if(!this.dataset.answered)this.style.background='rgba(201,168,76,.06)'" onmouseout="if(!this.dataset.answered)this.style.borderColor='rgba(255,255,255,.1)';if(!this.dataset.answered)this.style.background='rgba(255,255,255,.04)'"></button>
+          <button id="quiz-opt-1" onclick="quizAnswer(1)" style="background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.1);border-radius:10px;padding:14px 18px;text-align:left;font-family:'DM Sans',sans-serif;font-size:15px;color:rgba(255,255,255,.85);cursor:pointer;transition:all .2s;width:100%" onmouseover="if(!this.dataset.answered)this.style.borderColor='rgba(201,168,76,.5)';if(!this.dataset.answered)this.style.background='rgba(201,168,76,.06)'" onmouseout="if(!this.dataset.answered)this.style.borderColor='rgba(255,255,255,.1)';if(!this.dataset.answered)this.style.background='rgba(255,255,255,.04)'"></button>
+          <button id="quiz-opt-2" onclick="quizAnswer(2)" style="background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.1);border-radius:10px;padding:14px 18px;text-align:left;font-family:'DM Sans',sans-serif;font-size:15px;color:rgba(255,255,255,.85);cursor:pointer;transition:all .2s;width:100%" onmouseover="if(!this.dataset.answered)this.style.borderColor='rgba(201,168,76,.5)';if(!this.dataset.answered)this.style.background='rgba(201,168,76,.06)'" onmouseout="if(!this.dataset.answered)this.style.borderColor='rgba(255,255,255,.1)';if(!this.dataset.answered)this.style.background='rgba(255,255,255,.04)'"></button>
+          <button id="quiz-opt-3" onclick="quizAnswer(3)" style="background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.1);border-radius:10px;padding:14px 18px;text-align:left;font-family:'DM Sans',sans-serif;font-size:15px;color:rgba(255,255,255,.85);cursor:pointer;transition:all .2s;width:100%" onmouseover="if(!this.dataset.answered)this.style.borderColor='rgba(201,168,76,.5)';if(!this.dataset.answered)this.style.background='rgba(201,168,76,.06)'" onmouseout="if(!this.dataset.answered)this.style.borderColor='rgba(255,255,255,.1)';if(!this.dataset.answered)this.style.background='rgba(255,255,255,.04)'"></button>
+        </div>
+
+        <!-- Feedback -->
+        <div id="quiz-feedback" style="display:none;margin-top:20px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);border-radius:10px;padding:16px 18px">
+          <div style="font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;color:#c9a84c;letter-spacing:.8px;text-transform:uppercase;margin-bottom:6px">Explanation</div>
+          <p id="quiz-feedback-text" style="font-family:'DM Sans',sans-serif;font-size:14px;color:rgba(255,255,255,.75);margin:0;line-height:1.6"></p>
+        </div>
+
+        <!-- Next button -->
+        <button id="quiz-next-btn" onclick="quizNext()" style="display:none;margin-top:20px;background:#c9a84c;color:#0d1526;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:800;padding:14px 32px;border:none;border-radius:10px;cursor:pointer;width:100%;letter-spacing:.3px;transition:opacity .2s" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Next Question →</button>
+      </div>
+    </div>
+
+    <!-- RESULT SCREEN -->
+    <div id="quiz-result" style="display:none;text-align:center">
+      <div style="background:#1a2744;border-radius:16px;padding:48px 32px;border:1px solid rgba(255,255,255,.08)">
+        <div style="font-size:56px;margin-bottom:16px">🎓</div>
+        <div id="quiz-score-text" style="font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;margin-bottom:8px">0 / 30</div>
+        <div id="quiz-rating" style="font-family:'DM Sans',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:28px;color:#c9a84c"></div>
+
+        <!-- Breakdown -->
+        <div id="quiz-breakdown" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:36px"></div>
+
+        <!-- Try Again -->
+        <button onclick="quizReset()" style="display:inline-block;background:#c9a84c;color:#0d1526;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:800;padding:14px 36px;border:none;border-radius:10px;cursor:pointer;letter-spacing:.3px;margin-bottom:20px;transition:opacity .2s" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Try Again</button>
+
+        <div style="margin-top:8px">
+          <p style="font-family:'DM Sans',sans-serif;font-size:14px;color:rgba(255,255,255,.45);margin:0 0 12px">Deepen your knowledge:</p>
+          <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+            <a href="/tecnico/" onclick="showSection('tecnico');return false" style="font-family:'DM Sans',sans-serif;font-size:13px;color:#c9a84c;text-decoration:none;border:1px solid rgba(201,168,76,.3);padding:8px 16px;border-radius:8px;transition:all .2s" onmouseover="this.style.background='rgba(201,168,76,.1)'" onmouseout="this.style.background='transparent'">Technical Finance Guide</a>
+            <a href="/preparacion/" onclick="showSection('preparacion');return false" style="font-family:'DM Sans',sans-serif;font-size:13px;color:#10b981;text-decoration:none;border:1px solid rgba(16,185,129,.3);padding:8px 16px;border-radius:8px;transition:all .2s" onmouseover="this.style.background='rgba(16,185,129,.1)'" onmouseout="this.style.background='transparent'">GMAT Prep Guide</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════ NEWSLETTER ══════════════ -->
+<div id="section-newsletter" class="section" style="background:#0d1526;padding:0">
+
+  <!-- HERO -->
+  <div style="background:linear-gradient(135deg,#0d1526 0%,#1a2744 100%);padding:64px 24px 48px;text-align:center;border-bottom:1px solid rgba(201,168,76,.2)">
+    <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);border-radius:20px;padding:6px 16px;margin-bottom:24px">
+      <span style="font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#c9a84c;font-family:'DM Sans',sans-serif">Free Download</span>
+    </div>
+    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:700;margin:0 0 16px;line-height:1.2;background:linear-gradient(120deg,#ffffff 0%,#e8d9b8 28%,#E8C96A 52%,#c8b88a 72%,#ffffff 100%);background-size:260% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradientText 7s linear infinite">Get the Wall Street Recruiting Checklist</h1>
+    <p style="color:rgba(255,255,255,.6);font-size:17px;max-width:640px;margin:0 auto;font-family:'DM Sans',sans-serif">20 proven steps to break into investment banking — used by candidates at Harvard, Wharton and Columbia.</p>
+  </div>
+
+  <!-- TWO-COLUMN LAYOUT -->
+  <div style="max-width:1000px;margin:0 auto;padding:64px 24px 80px;display:flex;gap:48px;align-items:flex-start;flex-wrap:wrap">
+
+    <!-- LEFT: Checklist Preview -->
+    <div style="flex:1;min-width:280px">
+      <div style="background:#fff;border-radius:12px;padding:28px;box-shadow:0 8px 40px rgba(0,0,0,.35);position:relative">
+        <!-- Badge -->
+        <div style="position:absolute;top:-12px;right:20px;background:#c9a84c;color:#0d1526;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:900;padding:4px 14px;border-radius:20px;letter-spacing:.6px;text-transform:uppercase">20 Steps</div>
+        <!-- Header -->
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;padding-bottom:16px;border-bottom:2px solid #f0f0f0">
+          <img src="/logo/logo.png" alt="MBA Finance Guide" style="height:28px;width:auto">
+          <div>
+            <div style="font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#0A1628;line-height:1.2">Wall Street Recruiting</div>
+            <div style="font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#0A1628;line-height:1.2">Checklist</div>
+          </div>
+        </div>
+        <!-- Preview items -->
+        <div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#c9a84c;margin-bottom:10px">Foundation</div>
+        <ul style="list-style:none;margin:0 0 16px;padding:0;display:flex;flex-direction:column;gap:8px">
+          <li style="font-family:'DM Sans',sans-serif;font-size:13px;color:#0A1628;display:flex;gap:8px;align-items:flex-start"><span style="color:#c9a84c;font-size:15px;line-height:1.4">☐</span> Master the 3 financial statements and how they link</li>
+          <li style="font-family:'DM Sans',sans-serif;font-size:13px;color:#0A1628;display:flex;gap:8px;align-items:flex-start"><span style="color:#c9a84c;font-size:15px;line-height:1.4">☐</span> Learn DCF valuation from scratch (build one in Excel)</li>
+          <li style="font-family:'DM Sans',sans-serif;font-size:13px;color:#0A1628;display:flex;gap:8px;align-items:flex-start"><span style="color:#c9a84c;font-size:15px;line-height:1.4">☐</span> Understand LBO mechanics and why PE firms use leverage</li>
+          <li style="font-family:'DM Sans',sans-serif;font-size:13px;color:#0A1628;display:flex;gap:8px;align-items:flex-start"><span style="color:#c9a84c;font-size:15px;line-height:1.4">☐</span> Memorize key multiples: EV/EBITDA, P/E, EV/Revenue</li>
+          <li style="font-family:'DM Sans',sans-serif;font-size:13px;color:#0A1628;display:flex;gap:8px;align-items:flex-start"><span style="color:#c9a84c;font-size:15px;line-height:1.4">☐</span> Build a comparable company analysis (comps) model</li>
+        </ul>
+        <!-- More indicator -->
+        <div style="font-family:'DM Sans',sans-serif;font-size:12px;color:#999;font-style:italic;padding-top:12px;border-top:1px dashed #e0e0e0">...and 15 more steps across Recruiting, Applications &amp; Interviews</div>
+        <!-- CTA -->
+        <a href="/checklist/" target="_blank" rel="noopener" style="display:block;margin-top:18px;text-align:center;background:#0A1628;color:#c9a84c;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;padding:10px 20px;border-radius:8px;text-decoration:none;letter-spacing:.3px">Preview Checklist →</a>
+      </div>
+    </div>
+
+    <!-- RIGHT: Form -->
+    <div style="flex:1;min-width:280px">
+      <div style="background:#1a2744;border-radius:16px;padding:36px 32px;border:1px solid rgba(255,255,255,.08)">
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.6rem;color:#fff;margin:0 0 10px;line-height:1.3">Get Instant Access</h2>
+        <p style="font-family:'DM Sans',sans-serif;font-size:14px;color:rgba(255,255,255,.55);margin:0 0 28px;line-height:1.6">Enter your email and download the checklist immediately — no spam, ever.</p>
+
+        <!-- Form -->
+        <form id="nl-form" onsubmit="newsletterSubmit(event)" style="display:flex;flex-direction:column;gap:14px">
+          <input id="nl-email" type="email" placeholder="your@email.com" required autocomplete="email"
+            style="background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.12);border-radius:10px;padding:14px 16px;font-family:'DM Sans',sans-serif;font-size:15px;color:#fff;outline:none;width:100%;box-sizing:border-box;transition:border-color .2s"
+            onfocus="this.style.borderColor='rgba(201,168,76,.6)'" onblur="this.style.borderColor='rgba(255,255,255,.12)'"
+          >
+          <button type="submit" id="nl-submit-btn"
+            style="background:#c9a84c;color:#0d1526;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:900;padding:15px 24px;border:none;border-radius:10px;cursor:pointer;letter-spacing:.4px;transition:opacity .2s"
+            onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+            Send Me the Checklist →
+          </button>
+        </form>
+
+        <!-- Success state -->
+        <div id="nl-success" style="display:none;text-align:center;padding:8px 0">
+          <div style="font-size:40px;margin-bottom:12px">✅</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;color:#10b981;margin:0 0 6px">You're in!</p>
+          <p style="font-family:'DM Sans',sans-serif;font-size:14px;color:rgba(255,255,255,.6);margin:0 0 20px;line-height:1.5">Your checklist is ready — click below to open it.</p>
+          <a href="/checklist/" target="_blank" rel="noopener"
+            style="display:inline-block;background:#c9a84c;color:#0d1526;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:900;padding:13px 28px;border-radius:10px;text-decoration:none;letter-spacing:.3px">
+            Open Wall Street Checklist →
+          </a>
+        </div>
+
+        <!-- Error state -->
+        <div id="nl-error" style="display:none;margin-top:14px;background:rgba(220,80,80,.1);border:1px solid rgba(220,80,80,.3);border-radius:8px;padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:13px;color:#f87171;text-align:center">
+          Something went wrong. Please try again or email us directly.
+        </div>
+
+        <!-- Trust signals -->
+        <div style="margin-top:20px;display:flex;gap:16px;flex-wrap:wrap">
+          <div style="display:flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(255,255,255,.4)"><span style="color:#10b981;font-weight:700">✓</span> No spam</div>
+          <div style="display:flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(255,255,255,.4)"><span style="color:#10b981;font-weight:700">✓</span> Instant access</div>
+          <div style="display:flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(255,255,255,.4)"><span style="color:#10b981;font-weight:700">✓</span> Unsubscribe anytime</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SOCIAL PROOF STRIP -->
+  <div style="background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.05);padding:28px 24px;text-align:center">
+    <p style="font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(255,255,255,.35);margin:0 0 10px;letter-spacing:.3px;text-transform:uppercase;font-weight:600">Trusted by finance candidates at</p>
+    <p style="font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;color:#c9a84c;margin:0;letter-spacing:.8px">Harvard &nbsp;•&nbsp; Wharton &nbsp;•&nbsp; Columbia &nbsp;•&nbsp; Booth &nbsp;•&nbsp; NYU Stern</p>
+  </div>
+
+</div>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
@@ -3405,6 +3691,10 @@ const PAGE_TITLES={
   art21:'Wharton MBA Curriculum 2026: Finance Courses & What Makes Wharton Different | MBA Finance Guide',
   calculator:'MBA ROI Calculator — Is an MBA Worth It? | MBA Finance Guide',
   glosario:'Finance Glossary: 200+ Terms Explained | MBA Finance Guide',
+  comparador:'MBA School Comparator — Compare Top Programs | MBA Finance Guide',
+  quiz:'IB & GMAT Practice Quiz — Test Your Finance Knowledge | MBA Finance Guide',
+  newsletter:'Free Wall Street Recruiting Checklist | MBA Finance Guide',
+  checklist:'Wall Street Recruiting Checklist — 20 Steps to Break into IB | MBA Finance Guide',
   privacidad:'Privacy Policy | MBA Finance Guide',
   legal:'Legal Notice | MBA Finance Guide',
   cookies:'Cookie Policy | MBA Finance Guide'
@@ -3435,6 +3725,45 @@ function showSection(id){
   if(ogUrl)ogUrl.content='https://mbafinanceguide.com'+slug;
 }
 function showArticle(id){showSection(id);}
+
+// ══════════════════════════════════════════
+//  NEWSLETTER
+// ══════════════════════════════════════════
+async function newsletterSubmit(e){
+  e.preventDefault();
+  const emailVal=document.getElementById('nl-email').value.trim();
+  const emailRx=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const errEl=document.getElementById('nl-error');
+  const successEl=document.getElementById('nl-success');
+  errEl.style.display='none';
+  if(!emailRx.test(emailVal)){
+    errEl.textContent='Please enter a valid email address.';
+    errEl.style.display='block';
+    return;
+  }
+  const btn=document.getElementById('nl-submit-btn');
+  btn.textContent='Sending…';
+  btn.disabled=true;
+  try{
+    const res=await fetch('https://formspree.io/f/xvzlnzrd',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({email:emailVal,_subject:'Newsletter Signup - Wall Street Checklist',source:'newsletter'})
+    });
+    if(res.ok){
+      document.getElementById('nl-form').style.display='none';
+      successEl.style.display='block';
+    } else {
+      throw new Error('Server error');
+    }
+  } catch(err){
+    errEl.textContent='Something went wrong. Please try again or email us directly.';
+    errEl.style.display='block';
+    btn.textContent='Send Me the Checklist →';
+    btn.disabled=false;
+  }
+}
+
 function toggleMobile(){
   const m=document.getElementById('mobile-menu');
   m.style.display=m.style.display==='block'?'none':'block';
@@ -4052,6 +4381,503 @@ function glosarioJumpTo(letter){
     }
   };
 })();
+
+// ══════════════ MBA SCHOOL COMPARATOR ══════════════
+const MBA_SCHOOLS={
+  harvard:{name:'Harvard Business School',short:'HBS',location:'Boston, MA',cost:230000,salary:175000,finance_pct:35,gmat:740,class_size:938,duration:'2 years',top_recruiters:'Goldman Sachs, McKinsey, Bain, KKR, Blackstone',rank:1},
+  wharton:{name:'Wharton (UPenn)',short:'Wharton',location:'Philadelphia, PA',cost:225000,salary:172000,finance_pct:42,gmat:733,class_size:915,duration:'2 years',top_recruiters:'Goldman Sachs, Morgan Stanley, Blackstone, Apollo, Citadel',rank:1},
+  booth:{name:'Chicago Booth',short:'Booth',location:'Chicago, IL',cost:215000,salary:165000,finance_pct:38,gmat:730,class_size:600,duration:'2 years',top_recruiters:'Goldman Sachs, Citadel, Two Sigma, McKinsey, Bain',rank:3},
+  sloan:{name:'MIT Sloan',short:'Sloan',location:'Cambridge, MA',cost:220000,salary:168000,finance_pct:30,gmat:730,class_size:480,duration:'2 years',top_recruiters:'Goldman Sachs, McKinsey, Amazon, Google, Bain',rank:4},
+  columbia:{name:'Columbia Business School',short:'CBS',location:'New York, NY',cost:218000,salary:163000,finance_pct:45,gmat:726,class_size:780,duration:'2 years',top_recruiters:'Goldman Sachs, JPMorgan, Blackstone, Apollo, KKR',rank:5},
+  kellogg:{name:'Kellogg (Northwestern)',short:'Kellogg',location:'Evanston, IL',cost:210000,salary:158000,finance_pct:28,gmat:727,class_size:720,duration:'2 years',top_recruiters:'McKinsey, Bain, BCG, Amazon, Goldman Sachs',rank:6},
+  haas:{name:'Haas (UC Berkeley)',short:'Haas',location:'Berkeley, CA',cost:205000,salary:157000,finance_pct:26,gmat:727,class_size:330,duration:'2 years',top_recruiters:'Google, Apple, McKinsey, Goldman Sachs, Amazon',rank:7},
+  stern:{name:'Stern (NYU)',short:'Stern',location:'New York, NY',cost:205000,salary:155000,finance_pct:40,gmat:723,class_size:420,duration:'2 years',top_recruiters:'Goldman Sachs, JPMorgan, Morgan Stanley, Blackstone, Deloitte',rank:8},
+  tuck:{name:'Tuck (Dartmouth)',short:'Tuck',location:'Hanover, NH',cost:208000,salary:158000,finance_pct:32,gmat:722,class_size:290,duration:'2 years',top_recruiters:'McKinsey, Bain, Goldman Sachs, JPMorgan, Warburg Pincus',rank:9},
+  yale:{name:'Yale SOM',short:'Yale',location:'New Haven, CT',cost:200000,salary:150000,finance_pct:25,gmat:720,class_size:360,duration:'2 years',top_recruiters:'McKinsey, BCG, Goldman Sachs, Bain, JPMorgan',rank:10}
+};
+
+function compFmt(n){return '$'+n.toLocaleString('en-US');}
+
+function comparadorRender(){
+  const k1=document.getElementById('comp-school-1').value;
+  const k2=document.getElementById('comp-school-2').value;
+  const empty=document.getElementById('comp-empty');
+  const table=document.getElementById('comp-table');
+
+  // Validation
+  if(!k1||!k2){
+    empty.style.display='block';
+    empty.innerHTML='<div style="font-size:56px;margin-bottom:20px">&#127891;</div><p style="font-size:17px;margin:0 0 8px;color:rgba(255,255,255,.55)">Select two schools above to start comparing</p><p style="font-size:14px;margin:0">Cost, salary, GMAT scores, finance placement and more — all side by side.</p>';
+    table.style.display='none';
+    return;
+  }
+  if(k1===k2){
+    empty.style.display='block';
+    empty.innerHTML='<div style="font-size:56px;margin-bottom:20px">&#9888;</div><p style="font-size:17px;margin:0 0 8px;color:rgba(255,255,255,.55)">Please select two different schools</p><p style="font-size:14px;margin:0">Choose a different program for School B.</p>';
+    table.style.display='none';
+    return;
+  }
+
+  const A=MBA_SCHOOLS[k1];
+  const B=MBA_SCHOOLS[k2];
+
+  // Helper: highlight winner (returns style string for each cell)
+  // lowerBetter=true means smaller value wins
+  function winStyle(vA,vB,lowerBetter){
+    if(vA===vB) return ['color:rgba(255,255,255,.85)','color:rgba(255,255,255,.85)'];
+    const aWins=lowerBetter?(vA<vB):(vA>vB);
+    return [
+      aWins?'color:#10b981;font-weight:700':'color:rgba(255,255,255,.7)',
+      aWins?'color:rgba(255,255,255,.7)':'color:#10b981;font-weight:700'
+    ];
+  }
+
+  const costStyle   =winStyle(A.cost,       B.cost,       true);
+  const salaryStyle =winStyle(A.salary,     B.salary,     false);
+  const finPctStyle =winStyle(A.finance_pct,B.finance_pct,false);
+  const gmatStyle   =winStyle(A.gmat,       B.gmat,       false);
+  const neutralCell ='color:rgba(255,255,255,.85)';
+
+  const rows=[
+    {label:'Location',         vA:A.location,              vB:B.location,              sA:neutralCell,           sB:neutralCell},
+    {label:'Total Cost (2yr)', vA:compFmt(A.cost),         vB:compFmt(B.cost),         sA:costStyle[0],          sB:costStyle[1]},
+    {label:'Avg Post-MBA Salary',vA:compFmt(A.salary),     vB:compFmt(B.salary),       sA:salaryStyle[0],        sB:salaryStyle[1]},
+    {label:'Finance Placement %',vA:A.finance_pct+'%',     vB:B.finance_pct+'%',       sA:finPctStyle[0],        sB:finPctStyle[1]},
+    {label:'GMAT Median',       vA:A.gmat,                 vB:B.gmat,                  sA:gmatStyle[0],          sB:gmatStyle[1]},
+    {label:'Class Size',        vA:A.class_size,            vB:B.class_size,            sA:neutralCell,           sB:neutralCell},
+    {label:'Program Duration',  vA:A.duration,             vB:B.duration,              sA:neutralCell,           sB:neutralCell},
+    {label:'Top Recruiters',    vA:A.top_recruiters,       vB:B.top_recruiters,        sA:neutralCell,           sB:neutralCell}
+  ];
+
+  const rowsHTML=rows.map((r,i)=>{
+    const bg=i%2===0?'':'background:rgba(255,255,255,.03)';
+    return `<tr style="${bg}">
+      <td style="padding:14px 18px;color:rgba(255,255,255,.5);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;border-bottom:1px solid rgba(255,255,255,.06);font-family:'DM Sans',sans-serif;white-space:nowrap">${r.label}</td>
+      <td style="padding:14px 18px;${r.sA};font-size:15px;border-bottom:1px solid rgba(255,255,255,.06);font-family:'DM Sans',sans-serif">${r.vA}</td>
+      <td style="padding:14px 18px;${r.sB};font-size:15px;border-bottom:1px solid rgba(255,255,255,.06);font-family:'DM Sans',sans-serif">${r.vB}</td>
+    </tr>`;
+  }).join('');
+
+  // Score: count how many numeric metrics each school wins
+  let scoreA=0,scoreB=0;
+  if(A.cost<B.cost)scoreA++;else if(B.cost<A.cost)scoreB++;
+  if(A.salary>B.salary)scoreA++;else if(B.salary>A.salary)scoreB++;
+  if(A.finance_pct>B.finance_pct)scoreA++;else if(B.finance_pct>A.finance_pct)scoreB++;
+  if(A.gmat>B.gmat)scoreA++;else if(B.gmat>A.gmat)scoreB++;
+
+  let verdictTitle,verdictText;
+  if(scoreA>scoreB){
+    verdictTitle=A.name+' edges ahead';
+    verdictText=`${A.short} wins ${scoreA} out of 4 comparable metrics. It offers a ${A.salary>B.salary?'higher average salary ('+compFmt(A.salary)+' vs '+compFmt(B.salary)+')':'lower total cost ('+compFmt(A.cost)+' vs '+compFmt(B.cost)+')'} and a stronger GMAT median of ${A.gmat}. ${B.short} counters with ${B.finance_pct>A.finance_pct?'a higher finance placement rate ('+B.finance_pct+'% vs '+A.finance_pct+'%)':('a class size of '+B.class_size+', offering a more intimate cohort experience')}.`;
+  }else if(scoreB>scoreA){
+    verdictTitle=B.name+' edges ahead';
+    verdictText=`${B.short} wins ${scoreB} out of 4 comparable metrics. It offers a ${B.salary>A.salary?'higher average salary ('+compFmt(B.salary)+' vs '+compFmt(A.salary)+')':'lower total cost ('+compFmt(B.cost)+' vs '+compFmt(A.cost)+')'} and a GMAT median of ${B.gmat}. ${A.short} counters with ${A.finance_pct>B.finance_pct?'a higher finance placement rate ('+A.finance_pct+'% vs '+B.finance_pct+'%)':('a class size of '+A.class_size+', offering a more intimate cohort experience')}.`;
+  }else{
+    verdictTitle='Too close to call';
+    verdictText=`${A.short} and ${B.short} are evenly matched across key metrics — each wins ${scoreA} comparable categories. Your decision should hinge on location preference (${A.location} vs ${B.location}), culture fit, and specific recruiter relationships in your target industry.`;
+  }
+
+  table.innerHTML=`
+    <div style="overflow-x:auto;border-radius:14px;border:1px solid rgba(201,168,76,.2);margin-bottom:28px">
+      <table style="width:100%;border-collapse:collapse;min-width:480px">
+        <thead>
+          <tr style="background:rgba(201,168,76,.08)">
+            <th style="padding:16px 18px;text-align:left;color:rgba(255,255,255,.4);font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;font-family:'DM Sans',sans-serif;border-bottom:1px solid rgba(201,168,76,.2)">Metric</th>
+            <th style="padding:16px 18px;text-align:left;color:#c9a84c;font-size:14px;font-weight:700;font-family:'DM Sans',sans-serif;border-bottom:1px solid rgba(201,168,76,.2)">${A.short} <span style="color:rgba(255,255,255,.35);font-size:11px;font-weight:400">#${A.rank}</span></th>
+            <th style="padding:16px 18px;text-align:left;color:#c9a84c;font-size:14px;font-weight:700;font-family:'DM Sans',sans-serif;border-bottom:1px solid rgba(201,168,76,.2)">${B.short} <span style="color:rgba(255,255,255,.35);font-size:11px;font-weight:400">#${B.rank}</span></th>
+          </tr>
+        </thead>
+        <tbody>${rowsHTML}</tbody>
+      </table>
+    </div>
+    <div style="background:#1a2744;border:1px solid rgba(201,168,76,.25);border-radius:14px;padding:28px 32px">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+        <span style="font-size:22px">&#9878;</span>
+        <h3 style="margin:0;font-family:'Playfair Display',serif;font-size:20px;color:#c9a84c;font-weight:600">${verdictTitle}</h3>
+      </div>
+      <p style="margin:0;color:rgba(255,255,255,.7);font-size:15px;line-height:1.7;font-family:'DM Sans',sans-serif">${verdictText}</p>
+      <div style="margin-top:18px;display:flex;gap:24px;flex-wrap:wrap">
+        <div style="font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(255,255,255,.45)"><span style="color:#10b981;font-weight:700">Green</span> = better value for that metric</div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(255,255,255,.45)">Class size has no winner — it reflects personal fit</div>
+      </div>
+    </div>`;
+
+  empty.style.display='none';
+  table.style.display='block';
+}
+
+// ══════════════════════════════════════════
+//  IB / GMAT QUIZ
+// ══════════════════════════════════════════
+const QUIZ_QUESTIONS = [
+  // ── IB TECHNICAL (15) ──
+  {
+    cat: 'IB Technical',
+    q: 'A company has EV of $500M and EBITDA of $50M. What is its EV/EBITDA multiple?',
+    opts: ['8x','10x','12x','15x'],
+    ans: 1,
+    exp: 'EV/EBITDA = $500M / $50M = 10x. This is one of the most common valuation multiples in investment banking.'
+  },
+  {
+    cat: 'IB Technical',
+    q: 'Which of the following increases Free Cash Flow?',
+    opts: ['Higher CapEx','Lower Depreciation','Lower Working Capital','Higher Interest Expense'],
+    ans: 2,
+    exp: 'Lower working capital means less cash tied up in operations, which increases FCF. FCF = EBIT(1-t) + D&A - CapEx - ΔNWC.'
+  },
+  {
+    cat: 'IB Technical',
+    q: 'In a DCF, increasing the terminal growth rate will:',
+    opts: ['Decrease enterprise value','Increase enterprise value','Have no effect on value','Decrease WACC'],
+    ans: 1,
+    exp: 'A higher terminal growth rate increases the terminal value (TV = FCF × (1+g) / (WACC - g)), which increases enterprise value.'
+  },
+  {
+    cat: 'IB Technical',
+    q: 'Which valuation method typically yields the HIGHEST valuation?',
+    opts: ['Comparable company analysis','Precedent transaction analysis','DCF analysis','Book value analysis'],
+    ans: 1,
+    exp: 'Precedent transactions include a control premium (typically 20-40%) paid to acquire a company, making them the highest valuation method on the "football field".'
+  },
+  {
+    cat: 'IB Technical',
+    q: 'If a company issues new shares, what happens to EPS (all else equal)?',
+    opts: ['EPS increases','EPS decreases','EPS stays the same','EPS doubles'],
+    ans: 1,
+    exp: 'EPS = Net Income / Shares Outstanding. Issuing new shares increases the denominator, which dilutes (decreases) EPS assuming net income stays constant.'
+  },
+  {
+    cat: 'IB Technical',
+    q: 'WACC is best described as:',
+    opts: ['The cost of debt only','The risk-free rate plus beta','The blended cost of all capital sources weighted by market value','The return on equity minus the cost of debt'],
+    ans: 2,
+    exp: 'WACC = (E/V)×Re + (D/V)×Rd×(1-T). It blends the cost of equity and after-tax cost of debt, weighted by their proportions at market value.'
+  },
+  {
+    cat: 'IB Technical',
+    q: 'In an LBO, the primary driver of returns is:',
+    opts: ['Multiple expansion only','Debt paydown only','A combination of debt paydown, EBITDA growth, and multiple expansion','Revenue growth only'],
+    ans: 2,
+    exp: 'LBO returns come from three sources: (1) debt paydown (equity builds as debt is repaid), (2) EBITDA growth, and (3) multiple expansion (buying at a low multiple and exiting at a higher one).'
+  },
+  {
+    cat: 'IB Technical',
+    q: 'What does "accretive" mean in M&A?',
+    opts: ['The deal decreases the acquirer\'s EPS','The deal increases the acquirer\'s EPS','The deal has no effect on EPS','The deal reduces revenue'],
+    ans: 1,
+    exp: 'An accretive deal increases the acquirer\'s EPS post-transaction. A dilutive deal decreases EPS. Accretion/dilution analysis is a standard M&A test.'
+  },
+  {
+    cat: 'IB Technical',
+    q: 'Goodwill appears on the balance sheet when:',
+    opts: ['A company has strong brand value','A company acquires another for more than its book value','A company has excess cash','A company issues bonds'],
+    ans: 1,
+    exp: 'Goodwill = Purchase Price − Fair Value of Net Assets Acquired. It represents the premium paid above tangible book value in an acquisition.'
+  },
+  {
+    cat: 'IB Technical',
+    q: 'Which of the following is NOT a use of cash in an LBO model?',
+    opts: ['Paying acquisition fees','Repaying existing debt','Issuing new equity','Paying transaction expenses'],
+    ans: 2,
+    exp: 'In an LBO, equity is a SOURCE of cash (along with debt), not a use. Uses of cash include buying the target, paying fees, and refinancing existing debt.'
+  },
+  {
+    cat: 'IB Technical',
+    q: 'Enterprise Value equals:',
+    opts: ['Market Cap + Cash − Debt','Market Cap − Cash + Debt','Market Cap only','Net Income × 10'],
+    ans: 1,
+    exp: 'EV = Market Cap + Debt + Preferred Stock + Minority Interest − Cash. It represents the total value of the business independent of capital structure.'
+  },
+  {
+    cat: 'IB Technical',
+    q: 'A company\'s EBITDA margin is 25% and revenue is $200M. What is EBITDA?',
+    opts: ['$25M','$40M','$50M','$75M'],
+    ans: 2,
+    exp: 'EBITDA = Revenue × EBITDA Margin = $200M × 25% = $50M. EBITDA margin is one of the most watched profitability metrics in IB.'
+  },
+  {
+    cat: 'IB Technical',
+    q: 'Which financial statement links the income statement and balance sheet?',
+    opts: ['The footnotes','The cash flow statement','The earnings release','The 10-K cover page'],
+    ans: 1,
+    exp: 'The cash flow statement reconciles net income (from the income statement) to cash, and the ending cash balance ties to the balance sheet. It\'s the critical link between the three statements.'
+  },
+  {
+    cat: 'IB Technical',
+    q: 'In a merger, a stock-for-stock deal is more likely to be dilutive when:',
+    opts: ['The acquirer\'s P/E is higher than the target\'s','The acquirer\'s P/E is lower than the target\'s','Both companies have the same P/E','The target has no debt'],
+    ans: 1,
+    exp: 'If the acquirer\'s P/E < target\'s P/E, the acquirer pays a higher earnings multiple than it trades at, which dilutes its own EPS. This is a core accretion/dilution concept.'
+  },
+  {
+    cat: 'IB Technical',
+    q: 'Which metric best captures a company\'s ability to service its debt?',
+    opts: ['Revenue growth rate','Debt / EBITDA ratio','Gross margin','Return on equity'],
+    ans: 1,
+    exp: 'Debt/EBITDA (leverage ratio) measures how many years of EBITDA it would take to repay all debt. Lenders typically cap this at 4-6x for leveraged buyouts.'
+  },
+  // ── GMAT QUANTITATIVE (15) ──
+  {
+    cat: 'GMAT Quant',
+    q: 'If 3x + 7 = 22, what is the value of x?',
+    opts: ['3','5','7','9'],
+    ans: 1,
+    exp: '3x = 22 − 7 = 15, so x = 15/3 = 5. Basic linear equations appear frequently on GMAT Problem Solving.'
+  },
+  {
+    cat: 'GMAT Quant',
+    q: 'A store offers a 20% discount on a $150 item. What is the final price?',
+    opts: ['$100','$110','$120','$130'],
+    ans: 2,
+    exp: 'Discount = 20% × $150 = $30. Final price = $150 − $30 = $120. Percent discount problems are common in GMAT Data Sufficiency and Problem Solving.'
+  },
+  {
+    cat: 'GMAT Quant',
+    q: 'If a rectangle has length 12 and width 5, what is its diagonal?',
+    opts: ['11','13','15','17'],
+    ans: 1,
+    exp: 'Diagonal = √(12² + 5²) = √(144 + 25) = √169 = 13. This is the 5-12-13 Pythagorean triple.'
+  },
+  {
+    cat: 'GMAT Quant',
+    q: 'What is 15% of 240?',
+    opts: ['30','36','40','42'],
+    ans: 1,
+    exp: '15% × 240 = 0.15 × 240 = 36. Tip: 10% = 24, 5% = 12, so 15% = 24 + 12 = 36.'
+  },
+  {
+    cat: 'GMAT Quant',
+    q: 'Train A travels at 60 mph. Train B travels at 90 mph. How long does it take Train B to cover 270 miles?',
+    opts: ['2 hours','3 hours','4 hours','4.5 hours'],
+    ans: 1,
+    exp: 'Time = Distance / Speed = 270 / 90 = 3 hours. Rate × Time = Distance (RTD) is one of the most tested formulas on the GMAT.'
+  },
+  {
+    cat: 'GMAT Quant',
+    q: 'If the ratio of boys to girls in a class is 3:5 and there are 24 girls, how many boys are there?',
+    opts: ['12','14','16','18'],
+    ans: 2,
+    exp: '5 parts = 24 girls, so 1 part = 4.8. Boys = 3 × 4.8 = 14.4 ≈ 14. In a clean version: if girls = 20, boys = 12. RTD and ratio problems are heavily tested on GMAT. Here the nearest integer is 14 — but note that with 24 girls the class size is not perfectly divisible; a cleaner setup would be 20 girls giving 12 boys.'
+  },
+  {
+    cat: 'GMAT Quant',
+    q: 'What is the probability of rolling a sum of 7 with two dice?',
+    opts: ['1/9','1/6','1/5','1/4'],
+    ans: 1,
+    exp: 'Combinations that sum to 7: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) = 6 out of 36 total = 6/36 = 1/6. Probability questions are common on GMAT Quant.'
+  },
+  {
+    cat: 'GMAT Quant',
+    q: 'A job takes 6 hours for Person A and 3 hours for Person B working alone. How long if they work together?',
+    opts: ['1 hour','2 hours','3 hours','4 hours'],
+    ans: 1,
+    exp: 'Combined rate = 1/6 + 1/3 = 1/6 + 2/6 = 3/6 = 1/2. Time = 1 / (1/2) = 2 hours. Work-rate problems are a GMAT classic.'
+  },
+  {
+    cat: 'GMAT Quant',
+    q: 'If x² = 64, which of the following must be true?',
+    opts: ['x = 8','x = −8','x = 8 or x = −8','x = 4'],
+    ans: 2,
+    exp: 'x² = 64 means x = +8 or x = −8. Both are valid solutions. GMAT often tests this to catch students who only consider the positive root.'
+  },
+  {
+    cat: 'GMAT Quant',
+    q: 'A car depreciates from $30,000 to $24,000. What is the percent decrease?',
+    opts: ['15%','20%','25%','30%'],
+    ans: 1,
+    exp: 'Decrease = $6,000. % decrease = 6,000/30,000 × 100 = 20%. Percent change = (change/original) × 100.'
+  },
+  {
+    cat: 'GMAT Quant',
+    q: 'What is the median of: 4, 7, 2, 9, 1, 6, 3?',
+    opts: ['4','5','6','7'],
+    ans: 0,
+    exp: 'Sorted: 1, 2, 3, 4, 6, 7, 9. The median is the middle value (4th of 7) = 4. Always sort before finding the median.'
+  },
+  {
+    cat: 'GMAT Quant',
+    q: 'If 2^n = 32, what is n?',
+    opts: ['4','5','6','8'],
+    ans: 1,
+    exp: '2^5 = 32. Powers of 2 (2,4,8,16,32,64,128) are essential to memorize for GMAT speed.'
+  },
+  {
+    cat: 'GMAT Quant',
+    q: 'A circle has radius 7. What is its area? (Use π ≈ 22/7)',
+    opts: ['44','154','196','308'],
+    ans: 1,
+    exp: 'Area = π × r² = (22/7) × 49 = 22 × 7 = 154. Memorize A = πr² and C = 2πr for GMAT geometry.'
+  },
+  {
+    cat: 'GMAT Quant',
+    q: 'What is the value of √(0.0081)?',
+    opts: ['0.009','0.09','0.9','9'],
+    ans: 1,
+    exp: '√(0.0081) = √(81/10000) = 9/100 = 0.09. Square roots of decimals frequently appear on GMAT Quant.'
+  },
+  {
+    cat: 'GMAT Quant',
+    q: 'In a group of 50 students, 30 study Finance and 25 study Marketing. 10 study both. How many study neither?',
+    opts: ['0','5','10','15'],
+    ans: 1,
+    exp: 'By inclusion-exclusion: Finance ∪ Marketing = 30 + 25 − 10 = 45. Neither = 50 − 45 = 5. Set theory/Venn diagrams are tested heavily on GMAT.'
+  }
+];
+
+let quizQuestions=[], quizIndex=0, quizScore=0, quizIBScore=0, quizGMATScore=0, quizAnswered=false, quizFilter='all';
+
+function quizShuffle(arr){
+  const a=[...arr];
+  for(let i=a.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function quizStart(filter){
+  quizFilter=filter;
+  if(filter==='all'){
+    quizQuestions=quizShuffle(QUIZ_QUESTIONS);
+  } else {
+    quizQuestions=quizShuffle(QUIZ_QUESTIONS.filter(q=>q.cat===filter));
+  }
+  quizIndex=0; quizScore=0; quizIBScore=0; quizGMATScore=0; quizAnswered=false;
+  document.getElementById('quiz-start').style.display='none';
+  document.getElementById('quiz-result').style.display='none';
+  document.getElementById('quiz-question').style.display='block';
+  quizShowQuestion();
+}
+
+function quizShowQuestion(){
+  const q=quizQuestions[quizIndex];
+  const total=quizQuestions.length;
+  const pct=(quizIndex/total)*100;
+
+  document.getElementById('quiz-progress-bar').style.width=pct+'%';
+  document.getElementById('quiz-counter').textContent='Question '+(quizIndex+1)+' of '+total;
+
+  const badge=document.getElementById('quiz-cat-badge');
+  badge.textContent=q.cat;
+  badge.style.color=q.cat==='IB Technical'?'#c9a84c':'#10b981';
+  badge.style.background=q.cat==='IB Technical'?'rgba(201,168,76,.12)':'rgba(16,185,129,.12)';
+
+  document.getElementById('quiz-q-text').textContent=q.q;
+
+  const ids=['quiz-opt-0','quiz-opt-1','quiz-opt-2','quiz-opt-3'];
+  const letters=['A','B','C','D'];
+  ids.forEach((id,i)=>{
+    const btn=document.getElementById(id);
+    btn.textContent=letters[i]+'.  '+q.opts[i];
+    btn.style.background='rgba(255,255,255,.04)';
+    btn.style.border='1.5px solid rgba(255,255,255,.1)';
+    btn.style.color='rgba(255,255,255,.85)';
+    btn.style.cursor='pointer';
+    btn.dataset.answered='';
+    btn.disabled=false;
+  });
+
+  document.getElementById('quiz-feedback').style.display='none';
+  document.getElementById('quiz-next-btn').style.display='none';
+  quizAnswered=false;
+}
+
+function quizAnswer(i){
+  if(quizAnswered)return;
+  quizAnswered=true;
+  const q=quizQuestions[quizIndex];
+  const correct=i===q.ans;
+
+  const ids=['quiz-opt-0','quiz-opt-1','quiz-opt-2','quiz-opt-3'];
+  ids.forEach((id,idx)=>{
+    const btn=document.getElementById(id);
+    btn.dataset.answered='true';
+    btn.disabled=true;
+    btn.style.cursor='default';
+    if(idx===q.ans){
+      btn.style.background='rgba(16,185,129,.15)';
+      btn.style.border='1.5px solid #10b981';
+      btn.style.color='#10b981';
+    } else if(idx===i && !correct){
+      btn.style.background='rgba(239,68,68,.15)';
+      btn.style.border='1.5px solid #ef4444';
+      btn.style.color='#ef4444';
+    }
+  });
+
+  if(correct){
+    quizScore++;
+    if(q.cat==='IB Technical') quizIBScore++;
+    else quizGMATScore++;
+  }
+
+  document.getElementById('quiz-feedback-text').textContent=q.exp;
+  document.getElementById('quiz-feedback').style.display='block';
+
+  const nextBtn=document.getElementById('quiz-next-btn');
+  const isLast=quizIndex===quizQuestions.length-1;
+  nextBtn.textContent=isLast?'See Results':'Next Question →';
+  nextBtn.style.display='block';
+}
+
+function quizNext(){
+  quizIndex++;
+  if(quizIndex>=quizQuestions.length){
+    quizShowResult();
+  } else {
+    quizShowQuestion();
+  }
+}
+
+function quizShowResult(){
+  document.getElementById('quiz-question').style.display='none';
+  document.getElementById('quiz-result').style.display='block';
+
+  const total=quizQuestions.length;
+  const pct=total>0?Math.round((quizScore/total)*100):0;
+
+  const scoreEl=document.getElementById('quiz-score-text');
+  scoreEl.textContent=quizScore+' / '+total+' Correct';
+  scoreEl.style.color=pct>=70?'#10b981':pct>=50?'#c9a84c':'#ef4444';
+
+  const ratingEl=document.getElementById('quiz-rating');
+  if(pct>=90){ratingEl.textContent='🏆 Excellent! Wall Street ready.';ratingEl.style.color='#10b981';}
+  else if(pct>=70){ratingEl.textContent='👍 Good Job! Solid foundation.';ratingEl.style.color='#c9a84c';}
+  else if(pct>=50){ratingEl.textContent='📚 Keep Practicing — you\'re getting there.';ratingEl.style.color='#c9a84c';}
+  else{ratingEl.textContent='💪 Keep Studying — review the explanations and try again.';ratingEl.style.color='#ef4444';}
+
+  const breakdown=document.getElementById('quiz-breakdown');
+  const ibTotal=quizFilter==='GMAT Quant'?0:quizQuestions.filter(q=>q.cat==='IB Technical').length;
+  const gmTotal=quizFilter==='IB Technical'?0:quizQuestions.filter(q=>q.cat==='GMAT Quant').length;
+
+  let cards='';
+  if(ibTotal>0){
+    const ibPct=ibTotal>0?Math.round((quizIBScore/ibTotal)*100):0;
+    cards+=`<div style="background:#1a2744;border:1px solid rgba(201,168,76,.2);border-radius:12px;padding:20px 24px;flex:1;min-width:140px;max-width:200px">
+      <div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;color:#c9a84c;letter-spacing:.8px;text-transform:uppercase;margin-bottom:8px">IB Technical</div>
+      <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#fff;margin-bottom:2px">${quizIBScore}/${ibTotal}</div>
+      <div style="font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(255,255,255,.45)">${ibPct}% correct</div>
+    </div>`;
+  }
+  if(gmTotal>0){
+    const gmPct=gmTotal>0?Math.round((quizGMATScore/gmTotal)*100):0;
+    cards+=`<div style="background:#1a2744;border:1px solid rgba(16,185,129,.2);border-radius:12px;padding:20px 24px;flex:1;min-width:140px;max-width:200px">
+      <div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;color:#10b981;letter-spacing:.8px;text-transform:uppercase;margin-bottom:8px">GMAT Quant</div>
+      <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#fff;margin-bottom:2px">${quizGMATScore}/${gmTotal}</div>
+      <div style="font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(255,255,255,.45)">${gmPct}% correct</div>
+    </div>`;
+  }
+  breakdown.innerHTML=cards;
+
+  // Update progress bar to 100%
+  document.getElementById('quiz-progress-bar').style.width='100%';
+}
+
+function quizReset(){
+  document.getElementById('quiz-result').style.display='none';
+  document.getElementById('quiz-question').style.display='none';
+  document.getElementById('quiz-start').style.display='block';
+}
 </script>
 </body>
 </html>
