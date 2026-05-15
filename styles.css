@@ -836,3 +836,59 @@ footer{background:var(--navy);color:var(--white);padding:64px 24px 32px}
   .markets-inner{padding:0 14px}
   .ticker-item{padding:0 18px}
 }
+
+/* ── COOKIE BANNER ── */
+#cookie-banner{
+  position:fixed;
+  bottom:0;left:0;right:0;
+  background:#1a2744;
+  border-top:1px solid rgba(201,168,76,.35);
+  padding:18px 24px;
+  display:flex;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+  z-index:9999;
+  box-shadow:0 -4px 24px rgba(0,0,0,.45);
+  animation:slideUpBanner .35s ease;
+}
+@keyframes slideUpBanner{
+  from{transform:translateY(100%);opacity:0}
+  to{transform:translateY(0);opacity:1}
+}
+#cookie-banner p{
+  flex:1;
+  min-width:220px;
+  font-size:13.5px;
+  color:rgba(255,255,255,.75);
+  line-height:1.55;
+  margin:0;
+}
+#cookie-banner p a{
+  color:#c9a84c;
+  text-decoration:underline;
+}
+.cookie-decline,.cookie-accept{
+  padding:9px 20px;
+  border-radius:6px;
+  border:none;
+  font-size:13px;
+  font-weight:700;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:background .2s,transform .1s;
+}
+.cookie-decline{
+  background:rgba(255,255,255,.1);
+  color:rgba(255,255,255,.8);
+}
+.cookie-decline:hover{background:rgba(255,255,255,.18)}
+.cookie-accept{
+  background:#c9a84c;
+  color:#0d1526;
+}
+.cookie-accept:hover{background:#d4b366;transform:translateY(-1px)}
+@media(max-width:540px){
+  #cookie-banner{flex-direction:column;align-items:stretch;padding:16px}
+  .cookie-decline,.cookie-accept{width:100%;text-align:center}
+}
