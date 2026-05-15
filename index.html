@@ -3310,12 +3310,13 @@
     <button onclick="glosarioJumpTo('W')" id="az-btn-W" style="background:rgba(255,255,255,.06);border:none;color:rgba(255,255,255,.6);font-size:13px;font-weight:700;padding:5px 10px;border-radius:6px;cursor:pointer;font-family:inherit">W</button>
     <button onclick="glosarioJumpTo('Y')" id="az-btn-Y" style="background:rgba(255,255,255,.06);border:none;color:rgba(255,255,255,.6);font-size:13px;font-weight:700;padding:5px 10px;border-radius:6px;cursor:pointer;font-family:inherit">Y</button>
     <button onclick="glosarioJumpTo('Z')" id="az-btn-Z" style="background:rgba(255,255,255,.06);border:none;color:rgba(255,255,255,.6);font-size:13px;font-weight:700;padding:5px 10px;border-radius:6px;cursor:pointer;font-family:inherit">Z</button>
-    <span style="width:1px;background:rgba(255,255,255,.12);align-self:stretch;margin:0 6px"></span>
-    <button onclick="document.getElementById('section-glosario').scrollIntoView({behavior:'smooth',block:'start'})" style="background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.35);color:#c9a84c;font-size:13px;font-weight:700;padding:5px 12px;border-radius:6px;cursor:pointer;font-family:inherit;white-space:nowrap">↑ Top</button>
   </div>
 
   <!-- Contenedor de términos (llenado por JS) -->
   <div id="glosario-container" style="max-width:1000px;margin:0 auto;padding:40px 24px 80px"></div>
+
+  <!-- Botón flotante volver arriba -->
+  <button id="glosario-top-btn" onclick="document.getElementById('section-glosario').scrollIntoView({behavior:'smooth',block:'start'})" style="position:fixed;bottom:32px;right:32px;background:#c9a84c;color:#0d1526;border:none;border-radius:50%;width:48px;height:48px;font-size:20px;font-weight:900;cursor:pointer;box-shadow:0 4px 20px rgba(201,168,76,.4);opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s;pointer-events:none;z-index:500;display:flex;align-items:center;justify-content:center;font-family:inherit" aria-label="Back to top">↑</button>
 
 </div>
 
@@ -3827,6 +3828,25 @@ if(!localStorage.getItem('mbafp_consent'))document.getElementById('cookie-banner
   window.addEventListener('scroll',()=>{
     const total=document.documentElement.scrollHeight-window.innerHeight;
     bar.style.width=(total>0?(window.scrollY/total)*100:0)+'%';
+  },{passive:true});
+})();
+
+// ══════════════════════════════════════════
+//  GLOSSARY BACK-TO-TOP BUTTON
+// ══════════════════════════════════════════
+(function(){
+  const btn=document.getElementById('glosario-top-btn');
+  if(!btn)return;
+  window.addEventListener('scroll',()=>{
+    const sec=document.getElementById('section-glosario');
+    if(!sec||!sec.classList.contains('active')){
+      btn.style.opacity='0';btn.style.transform='translateY(12px)';btn.style.pointerEvents='none';
+      return;
+    }
+    const show=window.scrollY>300;
+    btn.style.opacity=show?'1':'0';
+    btn.style.transform=show?'translateY(0)':'translateY(12px)';
+    btn.style.pointerEvents=show?'auto':'none';
   },{passive:true});
 })();
 
