@@ -125,6 +125,12 @@
         cat:'MBA Programs', tags:['HarvardMBA','HBS','MBAPrograms','BusinessSchool','Finance'] },
       { id:'art21', title:'Wharton MBA Curriculum in 2026: Finance Courses, Leadership Training, and What Makes Wharton Different',
         cat:'MBA Programs', tags:['WhartonMBA','MBAPrograms','WallStreet','FinanceMBA','BusinessSchool'] },
+
+      // ── ARTÍCULOS CON SLUG DESCRIPTIVO (art22+) ──────────────────────────
+      // Formato: { id:'slug-descriptivo-aqui', title:'...', cat:'...', tags:[...] }
+      { id:'mba-worth-it-age-of-ai-2026', title:'Is an MBA Still Worth It in the Age of AI? (2026 Honest Answer)', cat:'MBA Value', tags:['MBA','AI','ROI','CareerAdvice','Finance','WallStreet'] },
+      { id:'mba-vs-master-in-finance-2026', title:'MBA vs Master in Finance 2026: Which Degree Gets You to Wall Street Faster?', cat:'MBA Programs', tags:['MBA','MasterOfFinance','MFin','Finance','WallStreet'] },
+      { id:'mba-admissions-consulting-worth-it-2026', title:'MBA Admissions Consulting in 2026: Is Paying $10,000+ Actually Worth It?', cat:'MBA Admissions', tags:['MBA','MBAAdmissions','GMAT','BusinessSchool','ApplicationStrategy'] },
     ];
 
     const BASE = 'https://mbafinanceguide.com';
@@ -133,7 +139,11 @@
     ARTICLES.forEach(a => {
       const opt = document.createElement('option');
       opt.value = a.id;
-      opt.textContent = `${a.id.toUpperCase()} — ${a.title}`;
+      // Si el ID es un slug (contiene guiones), mostrarlo limpio; si es artN mostrarlo en mayúsculas
+      const label = a.id.startsWith('art') && !isNaN(a.id.slice(3))
+        ? a.id.toUpperCase()
+        : '🔗 ' + a.id;
+      opt.textContent = `${label} — ${a.title}`;
       select.appendChild(opt);
     });
 
