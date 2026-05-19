@@ -4530,13 +4530,11 @@ async function handleFormSubmit(e){
   btn.textContent='Sending...';btn.disabled=true;
   if(errMsg)errMsg.style.display='none';
   try{
-    const data=new FormData(form);
-    const obj={};
-    data.forEach((v,k)=>obj[k]=v);
+    const params=new URLSearchParams(new FormData(form));
     const res=await fetch('https://api.web3forms.com/submit',{
       method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify(obj)
+      headers:{'Accept':'application/json'},
+      body:params
     });
     const json=await res.json();
     if(json.success){
