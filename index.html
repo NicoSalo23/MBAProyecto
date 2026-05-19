@@ -148,6 +148,19 @@
     </div>
   </div>
 
+  <!-- FEATURED ARTICLES (dynamic — newest first) -->
+  <section style="padding:80px 24px;background:var(--cream)">
+    <div class="section-intro">
+      <div class="eyebrow">Featured Content</div>
+      <h2>Authority Guides for Finance Professionals</h2>
+      <p>Every article is researched and written with academic rigor and industry experience to sharpen your decision-making.</p>
+    </div>
+    <div class="grid" id="home-articles-grid"></div>
+    <div class="load-more-wrap">
+      <button class="load-more-btn" onclick="showSection('programas')">View all articles →</button>
+    </div>
+  </section>
+
   <!-- MARKET OVERVIEW -->
   <section id="market-overview-section">
     <div class="market-overview-inner">
@@ -169,7 +182,7 @@
           "showSymbolLogo": true,
           "showFloatingTooltip": false,
           "width": "100%",
-          "height": "660",
+          "height": "350",
           "plotLineColorGrowing": "rgba(201,168,76,1)",
           "plotLineColorFalling": "rgba(220,80,80,1)",
           "gridLineColor": "rgba(255,255,255,0.06)",
@@ -227,25 +240,6 @@
     </div>
   </section>
 
-  <!-- FEATURED ARTICLES -->
-  <section style="padding:80px 24px;background:var(--cream)">
-    <div class="section-intro">
-      <div class="eyebrow">Featured Content</div>
-      <h2>Authority Guides for Finance Professionals</h2>
-      <p>Every article is researched and written with academic rigor and industry experience to sharpen your decision-making.</p>
-    </div>
-    <div class="grid">
-    <article class="card"><div class="card-img" style="background-image:url('/images/art1.png');background-size:cover;background-position:center"><div class="card-img-inner">MBA</div><span class="card-cat">MBA Programs</span></div><div class="card-body"><div class="card-meta"><span>June 2025</span><span>·</span><span>9 min</span></div><h3><a href="/art1/" onclick="showArticle('art1');return false">Best MBA Programs for Investment Banking in 2026</a></h3><p>Which business schools actually get you into Goldman Sachs, JPMorgan, and Evercore — ranked by real recruiting outcomes.</p><div class="card-footer"><a href="/art1/" class="read-more" onclick="showArticle('art1');return false">Read article →</a><span class="read-time">9 min</span></div></div></article>
-    <article class="card"><div class="card-img" style="background-image:url('/images/art3.png');background-size:cover;background-position:center"><div class="card-img-inner">IB</div><span class="card-cat">IB Recruiting</span></div><div class="card-body"><div class="card-meta"><span>July 2025</span><span>·</span><span>8 min</span></div><h3><a href="/art3/" onclick="showArticle('art3');return false">How Investment Banking Recruiting Really Works in 2026</a></h3><p>The timeline, the networking playbook, the superday format, and what banks actually evaluate beyond your GPA.</p><div class="card-footer"><a href="/art3/" class="read-more" onclick="showArticle('art3');return false">Read article →</a><span class="read-time">8 min</span></div></div></article>
-    <article class="card"><div class="card-img" style="background-image:url('/images/art5.png');background-size:cover;background-position:center"><div class="card-img-inner">XLS</div><span class="card-cat">Modeling</span></div><div class="card-body"><div class="card-meta"><span>Aug 2025</span><span>·</span><span>9 min</span></div><h3><a href="/art5/" onclick="showArticle('art5');return false">Financial Modeling Skills Every Finance Student Needs</a></h3><p>The three-statement model, DCF, LBO, and comparable companies — what you must master before your first finance interview.</p><div class="card-footer"><a href="/art5/" class="read-more" onclick="showArticle('art5');return false">Read article →</a><span class="read-time">9 min</span></div></div></article>
-    <article class="card"><div class="card-img" style="background-image:url('/images/art6.png');background-size:cover;background-position:center"><div class="card-img-inner">PE</div><span class="card-cat">Private Equity</span></div><div class="card-body"><div class="card-meta"><span>Sep 2025</span><span>·</span><span>9 min</span></div><h3><a href="/art6/" onclick="showArticle('art6');return false">Private Equity Careers in 2026: What Nobody Tells You</a></h3><p>How PE firms actually recruit, what the work looks like day-to-day, and the compensation structure most candidates misunderstand.</p><div class="card-footer"><a href="/art6/" class="read-more" onclick="showArticle('art6');return false">Read article →</a><span class="read-time">9 min</span></div></div></article>
-    <article class="card"><div class="card-img" style="background-image:url('/images/art12.png');background-size:cover;background-position:center"><div class="card-img-inner">$$$</div><span class="card-cat">Compensation</span></div><div class="card-body"><div class="card-meta"><span>Dec 2025</span><span>·</span><span>8 min</span></div><h3><a href="/art12/" onclick="showArticle('art12');return false">Wall Street Salaries in 2026: How Much Finance Pros Earn</a></h3><p>Real compensation data for IB analysts, PE associates, hedge fund PMs, and consultants — base, bonus, and total comp.</p><div class="card-footer"><a href="/art12/" class="read-more" onclick="showArticle('art12');return false">Read article →</a><span class="read-time">8 min</span></div></div></article>
-    <article class="card"><div class="card-img" style="background-image:url('/images/art18.png');background-size:cover;background-position:center"><div class="card-img-inner">WS</div><span class="card-cat">MBA Guide</span></div><div class="card-body"><div class="card-meta"><span>Mar 2026</span><span>·</span><span>11 min</span></div><h3><a href="/art18/" onclick="showArticle('art18');return false">Finance MBA Programs 2026: Salaries, Recruiting & Wall Street Path</a></h3><p>The complete guide for serious candidates: which programs open doors to Goldman Sachs, PE firms, and top hedge funds.</p><div class="card-footer"><a href="/art18/" class="read-more" onclick="showArticle('art18');return false">Read article →</a><span class="read-time">11 min</span></div></div></article>
-  </div>
-    <div class="load-more-wrap">
-      <button class="load-more-btn" onclick="showSection('programas')">View all articles →</button>
-    </div>
-  </section>
 
   <!-- CALCULATOR CTA -->
   <section style="background:linear-gradient(135deg,#0d1526 0%,#1a2744 60%,#0d1526 100%);padding:72px 24px;text-align:center;position:relative;overflow:hidden">
@@ -4282,6 +4276,40 @@ const PAGE_TITLES={
   legal:'Legal Notice | MBA Finance Guide',
   cookies:'Cookie Policy | MBA Finance Guide'
 };
+
+// ══════════════════════════════════════════
+//  HOME FEATURED ARTICLES (newest first)
+//  Para agregar un artículo nuevo: añádelo al INICIO del array
+// ══════════════════════════════════════════
+const HOME_ARTICLES = [
+  {id:'deferred-mba-programs-2026',        artId:'art26', img:'/images/deferred-mba-programs-2026.jpg',              badge:'NEW',  cat:'MBA Admissions',  date:'May 2026',  min:10, title:'Best Deferred MBA Programs in 2026: Harvard 2+2, Yale, Stanford and More',          desc:'How top undergraduates are locking in elite MBA spots before graduation — Harvard 2+2, Stanford, Wharton M2A and more explained.'},
+  {id:'consulting-layoffs-mba-worth-it-2026', artId:'art25', img:'/images/consulting-layoffs-mba-worth-it-2026.jpg', badge:'NEW',  cat:'Finance Careers',  date:'May 2026',  min:11, title:'Is Management Consulting Still a Good Career After MBA in 2026?',                   desc:'McKinsey, BCG and Bain are changing fast. An honest look at layoffs, what firms are actually hiring for, and whether consulting is still worth it.'},
+  {id:'mba-admissions-consulting-worth-it-2026', artId:'art24', img:'/images/mba-application-deadlines-2026-2027.png', badge:'NEW', cat:'MBA Admissions', date:'May 2026', min:10, title:'MBA Admissions Consulting in 2026: Is Paying $10,000+ Actually Worth It?',           desc:'An honest breakdown of who really benefits from MBA admissions consulting — and when you are better off going it alone.'},
+  {id:'mba-vs-master-in-finance-2026',     artId:'art23', img:'/images/mba-vs-master-in-finance-2026.png',           badge:'NEW',  cat:'MBA Programs',    date:'May 2026',  min:10, title:'MBA vs Master in Finance 2026: Which Degree Gets You to Wall Street Faster?',       desc:'A direct head-to-head comparison of cost, duration, recruiting access and ROI — so you can choose the right degree for your career.'},
+  {id:'mba-worth-it-age-of-ai-2026',       artId:'art22', img:'/images/mba-worth-it-age-of-ai-2026.png',             badge:'NEW',  cat:'MBA Value',       date:'May 2026',  min:9,  title:'Is an MBA Still Worth It in the Age of AI? (2026 Honest Answer)',                   desc:'AI is automating finance tasks fast. We break down exactly when a $200k+ MBA is still a great investment — and when it is not.'},
+  {id:'wharton-mba-curriculum-2026',       artId:'art21', img:'/images/art21.png',                                    badge:'MBA',  cat:'MBA Programs',    date:'May 2026',  min:11, title:'Wharton MBA Curriculum in 2026: Finance Courses, Leadership Training, and What Makes Wharton Different', desc:'A deep dive into Wharton courses, finance specialization, Wall Street recruiting and what sets the program apart.'},
+];
+
+(function(){
+  const grid=document.getElementById('home-articles-grid');
+  if(!grid)return;
+  grid.innerHTML=HOME_ARTICLES.slice(0,6).map(a=>`
+    <article class="card">
+      <div class="card-img" style="background-image:url('${a.img}');background-size:cover;background-position:center">
+        <div class="card-img-inner">${a.badge}</div>
+        <span class="card-cat">${a.cat}</span>
+      </div>
+      <div class="card-body">
+        <div class="card-meta"><span>${a.date}</span><span>·</span><span>${a.min} min</span></div>
+        <h3><a href="/${a.id}/" onclick="showArticle('${a.artId}');return false">${a.title}</a></h3>
+        <p>${a.desc}</p>
+        <div class="card-footer">
+          <a href="/${a.id}/" class="read-more" onclick="showArticle('${a.artId}');return false">Read article →</a>
+          <span class="read-time">${a.min} min</span>
+        </div>
+      </div>
+    </article>`).join('');
+})();
 
 // ══════════════════════════════════════════
 //  ARTICLE SLUG MAPPING (artN → SEO slug)
