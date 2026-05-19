@@ -544,6 +544,7 @@
         </div>
         <button type="submit" class="submit-btn">Send Message</button>
         <div class="success-msg" id="success-msg">✅ Message sent successfully! We'll respond within 48 hours.</div>
+        <div id="contact-error-msg" style="display:none;background:rgba(220,38,38,0.08);border:1px solid rgba(220,38,38,0.25);border-radius:8px;padding:14px;color:#b91c1c;font-size:14px;margin-top:12px;text-align:center"></div>
         </form>
       </div>
     </div>
@@ -4522,20 +4523,32 @@ window.addEventListener('DOMContentLoaded',()=>{
 // ══════════════════════════════════════════
 async function handleFormSubmit(e){
   e.preventDefault();
-  const btn=e.target.querySelector('.submit-btn');
+  const form=e.target;
+  const btn=form.querySelector('.submit-btn');
   const msg=document.getElementById('success-msg');
+  const errMsg=document.getElementById('contact-error-msg');
   btn.textContent='Sending...';btn.disabled=true;
+  if(errMsg)errMsg.style.display='none';
   try{
-    const res=await fetch(e.target.action,{method:'POST',body:new FormData(e.target),headers:{'Accept':'application/json'}});
-    if(res.ok){
+    const data=new FormData(form);
+    const obj={};
+    data.forEach((v,k)=>obj[k]=v);
+    const res=await fetch('https://api.web3forms.com/submit',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify(obj)
+    });
+    const json=await res.json();
+    if(json.success){
       msg.classList.add('show');
-      e.target.reset();
-      setTimeout(()=>msg.classList.remove('show'),6000);
-    } else {
-      alert('There was an error. Please email us directly at mbafinanceguide@outlook.com');
+      form.reset();
+      btn.textContent='Send Message';btn.disabled=false;
+      setTimeout(()=>msg.classList.remove('show'),8000);
+    }else{
+      throw new Error(json.message||'Error');
     }
   }catch(err){
-    window.location.href='mailto:mbafinanceguide@outlook.com?subject=MBA Finance Guide Inquiry';
+    if(errMsg){errMsg.textContent='Something went wrong. Please email us at mbafinanceguide@outlook.com';errMsg.style.display='block';}
     btn.textContent='Send Message';btn.disabled=false;
   }
 }
