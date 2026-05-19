@@ -39,16 +39,20 @@
 <h2>Email</h2>
 <p><a href="mailto:mbafinanceguide@outlook.com">mbafinanceguide@outlook.com</a></p>
 <h2>Send a Message</h2>
-<form action="https://formspree.io/f/xvzlnzrd" method="POST" style="margin-top:8px">
-  <input type="hidden" name="_subject" value="New message from MBA Finance Guide">
+<form action="https://api.web3forms.com/submit" method="POST" style="margin-top:8px">
+  <input type="hidden" name="access_key" value="15579643-3694-4d2d-a288-62d59f99e121">
+  <input type="hidden" name="subject" value="New message from MBA Finance Guide">
+  <input type="hidden" name="from_name" value="MBA Finance Guide Contact Form">
   <p><label style="display:block;font-weight:600;margin-bottom:4px" for="name">Name</label>
   <input type="text" id="name" name="name" required style="width:100%;padding:10px;border:1px solid #ccc;border-radius:6px;font-size:15px"></p>
   <p style="margin-top:16px"><label style="display:block;font-weight:600;margin-bottom:4px" for="email">Email</label>
   <input type="email" id="email" name="email" required style="width:100%;padding:10px;border:1px solid #ccc;border-radius:6px;font-size:15px"></p>
   <p style="margin-top:16px"><label style="display:block;font-weight:600;margin-bottom:4px" for="msg">Message</label>
   <textarea id="msg" name="message" required rows="5" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:6px;font-size:15px"></textarea></p>
+  <div class="h-captcha" data-captcha="true"></div>
   <button type="submit" style="margin-top:16px;background:#1a2744;color:#fff;padding:12px 28px;border:none;border-radius:6px;font-size:15px;font-weight:700;cursor:pointer">Send Message</button>
 </form>
+<script src="https://web3forms.com/client/script.js" async defer></script>
 <h2 style="margin-top:40px">Follow Us</h2>
 <p><a href="https://x.com/MBAfinanceGuide" rel="noopener noreferrer" target="_blank">Twitter/X: @MBAfinanceGuide</a></p>
 <p><a href="https://www.reddit.com/user/MBAFinanceGuide/" rel="noopener noreferrer" target="_blank">Reddit: u/MBAFinanceGuide</a></p>
