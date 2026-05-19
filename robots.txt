@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+Disallow: /articles-draft.html
+Disallow: /publish-tool.html
+Disallow: /node_modules/
+
 Sitemap: https://mbafinanceguide.com/sitemap.xml

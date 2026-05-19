@@ -17,12 +17,13 @@
  *   # API disponible en: http://localhost:3001/api/feed
  */
 
-const express = require('express');
-const cors    = require('cors');
-const axios   = require('axios');
-const Parser  = require('rss-parser');
+const express   = require('express');
+const cors      = require('cors');
+const axios     = require('axios');
+const Parser    = require('rss-parser');
 const NodeCache = require('node-cache');
-const helmet  = require('helmet');
+const helmet    = require('helmet');
+const rateLimit = require('express-rate-limit');
 
 const app    = express();
 const parser = new Parser({ timeout: 8000 });
@@ -143,7 +144,7 @@ async function fetchFeed(feed, maxItems = 8) {
     const parsed = await parser.parseURL(feed.url);
     const items  = (parsed.items || []).slice(0, maxItems).map((item) => ({
       id:          item.guid || item.link,
-      title:       (item.title || 'Sin título').trim(),
+      title:       cleanExcerpt((item.title || 'Sin título').trim(), 200),
       link:        item.link || '#',
       excerpt:     cleanExcerpt(item.contentSnippet || item.content || item.summary || ''),
       pubDate:     item.pubDate || item.isoDate || new Date().toISOString(),
@@ -190,7 +191,8 @@ app.get('/api/feeds', (req, res) => {
  *   - limit:   Max artículos por feed (1-20, default 8)
  *   - lang:    "es" | "en" | "all" (default: all)
  */
-app.get('/api/feed', async (req, res) => {
+const feedLimiter = rateLimit({windowMs:60_000, max:30, standardHeaders:true, legacyHeaders:false});
+app.get('/api/feed', feedLimiter, async (req, res) => {
   const { sources, limit = 8, lang = 'all' } = req.query;
 
   // Filtrar feeds por fuente y/o idioma
