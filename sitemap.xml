@@ -1,249 +1,260 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- ══ HOMEPAGE ══ -->
   <url>
     <loc>https://mbafinanceguide.com/</loc>
-    <lastmod>2025-06-01</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- ══ MAIN SECTIONS ══ -->
   <url>
     <loc>https://mbafinanceguide.com/programas/</loc>
-    <lastmod>2025-06-01</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mbafinanceguide.com/carreras/</loc>
-    <lastmod>2025-06-01</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mbafinanceguide.com/tecnico/</loc>
-    <lastmod>2025-06-01</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mbafinanceguide.com/preparacion/</loc>
-    <lastmod>2025-06-01</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mbafinanceguide.com/markets/</loc>
-    <lastmod>2025-06-01</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- ══ TOOLS ══ -->
+  <url>
+    <loc>https://mbafinanceguide.com/calculator/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://mbafinanceguide.com/glosario/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://mbafinanceguide.com/comparador/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://mbafinanceguide.com/quiz/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- ══ SITE PAGES ══ -->
   <url>
     <loc>https://mbafinanceguide.com/sobre/</loc>
-    <lastmod>2025-06-01</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mbafinanceguide.com/contacto/</loc>
-    <lastmod>2025-06-01</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mbafinanceguide.com/privacidad/</loc>
-    <lastmod>2025-06-01</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://mbafinanceguide.com/cookies/</loc>
-    <lastmod>2025-06-01</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+
+  <!-- ══ MBA PROGRAMS ══ -->
   <url>
-    <loc>https://mbafinanceguide.com/checklist/</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://mbafinanceguide.com/best-mba-programs-investment-banking-2026/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://mbafinanceguide.com/quiz/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://mbafinanceguide.com/harvard-mba-vs-wharton-mba-finance-2026/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://mbafinanceguide.com/harvard-mba-curriculum-2026/</loc>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
   </url>
   <url>
-    <loc>https://mbafinanceguide.com/comparador/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://mbafinanceguide.com/wharton-mba-curriculum-2026/</loc>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
+    <priority>0.88</priority>
   </url>
   <url>
-    <loc>https://mbafinanceguide.com/glosario/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://mbafinanceguide.com/finance-mba-programs-wall-street-2026/</loc>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://mbafinanceguide.com/calculator/</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://mbafinanceguide.com/best-mba-programs-investment-banking-2026/</loc>
-    <lastmod>2025-06-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://mbafinanceguide.com/harvard-mba-vs-wharton-mba-finance-2026/</loc>
-    <lastmod>2025-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://mbafinanceguide.com/investment-banking-recruiting-guide-2026/</loc>
-    <lastmod>2025-07-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.88</priority>
   </url>
   <url>
     <loc>https://mbafinanceguide.com/is-mba-worth-it-2026/</loc>
-    <lastmod>2025-08-01</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://mbafinanceguide.com/financial-modeling-skills-finance-students/</loc>
-    <lastmod>2025-08-15</lastmod>
+    <loc>https://mbafinanceguide.com/mba-worth-it-age-of-ai-2026/</loc>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://mbafinanceguide.com/mba-vs-master-in-finance-2026/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+
+  <!-- ══ MBA ADMISSIONS ══ -->
+  <url>
+    <loc>https://mbafinanceguide.com/mba-application-strategy-2026/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://mbafinanceguide.com/mba-admissions-consulting-worth-it-2026/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://mbafinanceguide.com/deferred-mba-programs-2026/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://mbafinanceguide.com/gmat-study-plan-700-score-2026/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+
+  <!-- ══ FINANCE CAREERS ══ -->
+  <url>
+    <loc>https://mbafinanceguide.com/investment-banking-recruiting-guide-2026/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://mbafinanceguide.com/private-equity-careers-2026/</loc>
-    <lastmod>2025-09-01</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.88</priority>
   </url>
   <url>
     <loc>https://mbafinanceguide.com/hedge-fund-careers-2026/</loc>
-    <lastmod>2025-09-15</lastmod>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://mbafinanceguide.com/venture-capital-careers-2026/</loc>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://mbafinanceguide.com/consulting-vs-investment-banking-2026/</loc>
-    <lastmod>2025-10-01</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.88</priority>
   </url>
   <url>
-    <loc>https://mbafinanceguide.com/cfa-vs-mba-2026/</loc>
-    <lastmod>2025-10-15</lastmod>
+    <loc>https://mbafinanceguide.com/consulting-layoffs-mba-worth-it-2026/</loc>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://mbafinanceguide.com/best-finance-internships-college-students-2026/</loc>
-    <lastmod>2025-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://mbafinanceguide.com/venture-capital-careers-2026/</loc>
-    <lastmod>2025-11-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://mbafinanceguide.com/wall-street-salaries-2026/</loc>
-    <lastmod>2025-12-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://mbafinanceguide.com/finance-resume-investment-banking/</loc>
-    <lastmod>2025-12-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://mbafinanceguide.com/best-finance-careers-college-students-2026/</loc>
-    <lastmod>2026-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://mbafinanceguide.com/mba-application-strategy-2026/</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.88</priority>
   </url>
   <url>
     <loc>https://mbafinanceguide.com/mergers-acquisitions-careers-2026/</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://mbafinanceguide.com/asset-management-careers-mba-2026/</loc>
-    <lastmod>2026-02-15</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://mbafinanceguide.com/finance-mba-programs-wall-street-2026/</loc>
-    <lastmod>2026-03-01</lastmod>
+    <loc>https://mbafinanceguide.com/wall-street-salaries-2026/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://mbafinanceguide.com/best-finance-careers-college-students-2026/</loc>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://mbafinanceguide.com/gmat-study-plan-700-score-2026/</loc>
-    <lastmod>2026-04-01</lastmod>
+    <loc>https://mbafinanceguide.com/best-finance-internships-college-students-2026/</loc>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://mbafinanceguide.com/harvard-mba-curriculum-2026/</loc>
-    <lastmod>2026-05-01</lastmod>
+    <loc>https://mbafinanceguide.com/cfa-vs-mba-2026/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+
+  <!-- ══ TECHNICAL FINANCE ══ -->
+  <url>
+    <loc>https://mbafinanceguide.com/financial-modeling-skills-finance-students/</loc>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://mbafinanceguide.com/wharton-mba-curriculum-2026/</loc>
-    <lastmod>2026-05-07</lastmod>
+    <loc>https://mbafinanceguide.com/finance-resume-investment-banking/</loc>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
-  <url>
-    <loc>https://mbafinanceguide.com/mba-worth-it-age-of-ai-2026/</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://mbafinanceguide.com/mba-vs-master-in-finance-2026/</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://mbafinanceguide.com/mba-admissions-consulting-worth-it-2026/</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://mbafinanceguide.com/consulting-layoffs-mba-worth-it-2026/</loc>
-    <lastmod>2026-05-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://mbafinanceguide.com/deferred-mba-programs-2026/</loc>
-    <lastmod>2026-05-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
+
 </urlset>
