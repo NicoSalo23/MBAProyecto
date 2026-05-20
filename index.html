@@ -4804,7 +4804,7 @@ async function handleFormSubmit(e){
       throw new Error(json.message||'Error');
     }
   }catch(err){
-    if(errMsg){errMsg.textContent='Something went wrong. Please email us at mbafinanceguide@outlook.com';errMsg.style.display='block';}
+    if(errMsg){errMsg.textContent='Error: '+err.message+' | '+err.name;errMsg.style.display='block';}
     btn.textContent='Send Message';btn.disabled=false;
   }
 }
