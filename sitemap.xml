@@ -243,6 +243,14 @@
     <priority>0.88</priority>
   </url>
 
+  <!-- ══ MBA RESOURCES ══ -->
+  <url>
+    <loc>https://mbafinanceguide.com/best-mba-finance-resources-2026/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+
   <!-- ══ TECHNICAL FINANCE ══ -->
   <url>
     <loc>https://mbafinanceguide.com/financial-modeling-skills-finance-students/</loc>
