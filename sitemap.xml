@@ -259,6 +259,14 @@
     <priority>0.90</priority>
   </url>
 
+  <!-- ══ WHARTON VS BOOTH VS KELLOGG ══ -->
+  <url>
+    <loc>https://mbafinanceguide.com/wharton-vs-booth-vs-kellogg-finance-2026/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
   <!-- ══ MBA JOB PLACEMENT ══ -->
   <url>
     <loc>https://mbafinanceguide.com/mba-job-placement-rates-2026/</loc>
