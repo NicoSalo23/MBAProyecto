@@ -10,197 +10,588 @@
     h1{font-size:1.6rem;color:#c9a84c;margin-bottom:6px}
     .subtitle{color:rgba(255,255,255,0.5);font-size:14px;margin-bottom:32px}
     label{display:block;font-size:13px;font-weight:600;color:rgba(255,255,255,0.6);margin-bottom:8px;text-transform:uppercase;letter-spacing:.8px}
-    select{width:100%;max-width:680px;padding:12px 16px;background:#1a2744;border:1px solid rgba(255,255,255,0.15);border-radius:8px;color:#fff;font-size:15px;cursor:pointer;margin-bottom:32px}
+    select{width:100%;max-width:680px;padding:12px 16px;background:#1a2744;border:1px solid rgba(255,255,255,0.15);border-radius:8px;color:#fff;font-size:15px;cursor:pointer;margin-bottom:28px}
     select:focus{outline:none;border-color:#c9a84c}
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;max-width:1100px}
+
+    /* ── Image banner ── */
+    #img-section{max-width:1100px;margin-bottom:28px;background:#1a2744;border-radius:12px;padding:18px 20px;border:1px solid rgba(201,168,76,0.35);display:none;align-items:center;gap:20px}
+    #art-img{width:160px;height:85px;object-fit:cover;border-radius:8px;flex-shrink:0;border:1px solid rgba(255,255,255,0.1)}
+    .img-info{flex:1}
+    .img-info strong{font-size:13px;color:#c9a84c}
+    .img-info p{font-size:12px;color:rgba(255,255,255,0.45);margin:4px 0 8px}
+    #img-path{display:block;font-family:monospace;font-size:12px;background:#0d1526;padding:6px 10px;border-radius:6px;color:#c9a84c;word-break:break-all}
+    .img-hint{font-size:11px;color:rgba(255,255,255,0.3);margin-top:6px!important}
+
+    /* ── Cards grid ── */
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;max-width:1100px}
     .card{background:#1a2744;border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,0.08)}
     .card-header{display:flex;align-items:center;gap:10px;margin-bottom:14px}
     .net-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;flex-shrink:0}
-    .twitter  .net-icon{background:#000;color:#fff}
+    .twitter .net-icon{background:#000;color:#fff}
     .linkedin .net-icon{background:#0077b5;color:#fff}
-    .reddit   .net-icon{background:#ff4500;color:#fff}
+    .reddit  .net-icon{background:#ff4500;color:#fff}
     .net-name{font-weight:700;font-size:15px}
     .char-count{margin-left:auto;font-size:12px;color:rgba(255,255,255,0.4)}
     .char-count.warn{color:#f59e0b}
     .char-count.over{color:#ef4444}
-    textarea{width:100%;background:#0d1526;border:1px solid rgba(255,255,255,0.12);border-radius:8px;color:#e2e8f0;font-size:13px;line-height:1.6;padding:12px;resize:vertical;min-height:130px;font-family:inherit}
+    textarea{width:100%;background:#0d1526;border:1px solid rgba(255,255,255,0.12);border-radius:8px;color:#e2e8f0;font-size:13px;line-height:1.6;padding:12px;resize:vertical;font-family:inherit}
     textarea:focus{outline:none;border-color:#c9a84c}
-    .actions{display:flex;gap:8px;margin-top:12px}
-    .btn{padding:8px 16px;border-radius:6px;border:none;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;flex:1;text-align:center}
+    .actions{display:flex;gap:8px;margin-top:10px}
+    .btn{padding:8px 16px;border-radius:6px;border:none;font-size:13px;font-weight:700;cursor:pointer;transition:background .2s;flex:1;text-align:center}
     .btn-copy{background:#c9a84c;color:#0d1526}
     .btn-copy:hover{background:#d4b366}
+    .btn-sm{flex:none;padding:6px 12px;font-size:12px}
     .btn-open{background:rgba(255,255,255,0.08);color:#fff;text-decoration:none;display:flex;align-items:center;justify-content:center}
     .btn-open:hover{background:rgba(255,255,255,0.15)}
     .copied{background:#10b981!important;color:#fff!important}
     .hint{font-size:12px;color:rgba(255,255,255,0.35);margin-top:8px}
-    .step-badge{display:inline-block;background:#c9a84c;color:#0d1526;font-size:11px;font-weight:900;padding:2px 8px;border-radius:20px;margin-bottom:20px}
+    .badge{display:inline-block;background:#c9a84c;color:#0d1526;font-size:11px;font-weight:900;padding:2px 8px;border-radius:20px;margin-bottom:12px}
+    .divider{border:none;border-top:1px solid rgba(255,255,255,0.08);margin:18px 0}
+
+    /* ── Thread boxes ── */
+    .thread-label{font-size:11px;font-weight:700;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:.7px;margin-bottom:10px}
+    .tweet-box{margin-bottom:10px}
+    .tweet-num{font-size:11px;color:#c9a84c;font-weight:700;margin-bottom:3px}
+    .tweet-row{display:flex;gap:8px;align-items:flex-start}
+    .tweet-row textarea{min-height:60px;flex:1}
+
+    /* ── Reddit ── */
+    .reddit-sub{font-size:12px;color:#ff7043;font-weight:700;margin-bottom:12px}
+    .field-lbl{font-size:11px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:.6px;font-weight:700;margin-bottom:4px}
+    .reddit-field{margin-bottom:14px}
   </style>
 </head>
 <body>
   <h1>📣 Article Publisher</h1>
-  <p class="subtitle">Select an article and copy the ready-to-post text for each network.</p>
+  <p class="subtitle">Select an article → copy ready-to-post content for each network.</p>
 
   <label for="article-select">Select article to publish</label>
   <select id="article-select" onchange="generate()">
     <option value="">— Choose article —</option>
   </select>
 
+  <!-- Image banner -->
+  <div id="img-section">
+    <img id="art-img" src="" alt="">
+    <div class="img-info">
+      <strong>Article Image — attach to every post</strong>
+      <p>Right-click the preview → Save As, or use the path below to find the file</p>
+      <code id="img-path"></code>
+      <p class="img-hint">Always attach the image: posts with images get 2–3× more reach on every platform.</p>
+    </div>
+  </div>
+
   <div class="cards" id="cards" style="display:none">
-    <!-- Twitter -->
+
+    <!-- ══ TWITTER ══ -->
     <div class="card twitter">
       <div class="card-header">
         <div class="net-icon">𝕏</div>
         <span class="net-name">Twitter / X</span>
         <span class="char-count" id="tw-count">0 / 280</span>
       </div>
-      <div class="step-badge">Max 280 chars</div>
-      <textarea id="tw-text" oninput="updateCount('tw')" rows="5"></textarea>
+
+      <div class="badge">Single tweet · max 280 chars</div>
+      <textarea id="tw-text" oninput="updateCount('tw')" rows="4" style="min-height:80px"></textarea>
       <div class="actions">
-        <button class="btn btn-copy" onclick="copy('tw-text',this)">Copy text</button>
-        <a class="btn btn-open" id="tw-link" href="https://twitter.com/compose/tweet" target="_blank" rel="noopener">Open Twitter ↗</a>
+        <button class="btn btn-copy" onclick="copy('tw-text',this)">Copy tweet</button>
+        <a class="btn btn-open" href="https://twitter.com/compose/tweet" target="_blank" rel="noopener">Open Twitter ↗</a>
       </div>
-      <p class="hint">Paste in the Twitter compose box. Add the image manually from /images/ (artN.jpg or slug.jpg)</p>
+
+      <div class="divider"></div>
+
+      <!-- Thread -->
+      <div class="thread-label">🧵 Thread — copy each tweet one by one</div>
+      <div id="thread-boxes"></div>
     </div>
 
-    <!-- LinkedIn -->
+    <!-- ══ LINKEDIN ══ -->
     <div class="card linkedin">
       <div class="card-header">
         <div class="net-icon">in</div>
         <span class="net-name">LinkedIn</span>
         <span class="char-count" id="li-count">0 / 3000</span>
       </div>
-      <div class="step-badge">Ideal: 1200–1500 chars</div>
-      <textarea id="li-text" oninput="updateCount('li')" rows="8"></textarea>
+      <div class="badge">Ideal 1200–1500 chars · attach image</div>
+      <textarea id="li-text" oninput="updateCount('li')" rows="12" style="min-height:220px"></textarea>
       <div class="actions">
-        <button class="btn btn-copy" onclick="copy('li-text',this)">Copy text</button>
+        <button class="btn btn-copy" onclick="copy('li-text',this)">Copy post</button>
         <a class="btn btn-open" href="https://www.linkedin.com/in/mba-finance-guide-9639b5409/" target="_blank" rel="noopener">Open LinkedIn ↗</a>
       </div>
-      <p class="hint">Paste in LinkedIn post editor. Upload the article image for better reach.</p>
     </div>
 
-    <!-- Reddit warning -->
-    <div class="card" style="border-color:#ef4444;background:#1a0d0d">
+    <!-- ══ REDDIT ══ -->
+    <div class="card reddit">
       <div class="card-header">
-        <div class="net-icon" style="background:#ff4500">R</div>
-        <span class="net-name" style="color:#ef4444">Reddit — Read before posting</span>
+        <div class="net-icon">R</div>
+        <span class="net-name">Reddit — Discussion Post</span>
       </div>
-      <div style="background:#2d0d0d;border-radius:8px;padding:14px;font-size:13px;line-height:1.7;color:rgba(255,255,255,0.8)">
-        <p style="margin-bottom:10px">⚠️ <strong>Reddit bans new accounts that post links.</strong> No uses esta tarjeta para publicar directamente.</p>
-        <p style="margin-bottom:10px"><strong>Estrategia correcta:</strong></p>
-        <ol style="padding-left:18px;margin-bottom:10px">
-          <li>Crea una cuenta nueva</li>
-          <li>Durante 3-4 semanas: comenta y ayuda en <strong>r/MBA, r/finance, r/financialcareers</strong> sin poner links</li>
-          <li>Cuando tengas +100 karma, comparte artículos de forma natural respondiendo preguntas relevantes</li>
-        </ol>
-        <p><strong>Ejemplo correcto:</strong><br>
-        <em>"Someone asks: How to prepare for GMAT?"</em><br>
-        → Respondes con consejos reales + al final: "I wrote a detailed guide here if it helps: [link]"</p>
+      <div class="reddit-sub" id="reddit-sub"></div>
+
+      <div class="reddit-field">
+        <div class="field-lbl">Post Title</div>
+        <textarea id="reddit-title" rows="2" style="min-height:50px"></textarea>
+        <div class="actions"><button class="btn btn-copy btn-sm" onclick="copy('reddit-title',this)">Copy title</button></div>
       </div>
+
+      <div class="reddit-field">
+        <div class="field-lbl">Post Body — no links, personal tone</div>
+        <textarea id="reddit-body" rows="9" style="min-height:160px"></textarea>
+        <div class="actions"><button class="btn btn-copy btn-sm" onclick="copy('reddit-body',this)">Copy body</button></div>
+      </div>
+
+      <p class="hint">⚠️ Weeks 1–2: comments only (no links). Week 3+: post this when someone asks the exact question.</p>
     </div>
+
   </div>
 
-  <script>
-    const ARTICLES = [
-      { id:'best-mba-programs-investment-banking-2026',  title:'Best MBA Programs for Investment Banking in 2026',                                    cat:'MBA Programs',     tags:['MBA','InvestmentBanking','WallStreet','Finance'] },
-      { id:'harvard-mba-vs-wharton-mba-finance-2026',   title:'Harvard MBA vs Wharton MBA: Which Is Better for Finance?',                           cat:'MBA Programs',     tags:['MBA','Harvard','Wharton','BusinessSchool'] },
-      { id:'investment-banking-recruiting-guide-2026',  title:'How Investment Banking Recruiting Really Works in 2026',                              cat:'IB Recruiting',    tags:['InvestmentBanking','IBRecruiting','Finance','MBA'] },
-      { id:'is-mba-worth-it-2026',                      title:'Is an MBA Worth It in 2026? A Straight Answer',                                      cat:'MBA Value',        tags:['MBA','ROI','BusinessSchool','Finance'] },
-      { id:'financial-modeling-skills-finance-students',title:'Financial Modeling Skills Every Finance Student Needs',                               cat:'Technical',        tags:['FinancialModeling','Excel','InvestmentBanking','Finance'] },
-      { id:'private-equity-careers-2026',               title:'Private Equity Careers in 2026: What Nobody Tells You',                              cat:'Finance Careers',  tags:['PrivateEquity','Finance','MBA','WallStreet'] },
-      { id:'hedge-fund-careers-2026',                   title:'Hedge Fund Careers: How the Industry Really Works in 2026',                          cat:'Finance Careers',  tags:['HedgeFunds','Finance','InvestmentManagement','MBA'] },
-      { id:'consulting-vs-investment-banking-2026',     title:'Consulting vs Investment Banking: Which Path in 2026?',                              cat:'Finance Careers',  tags:['Consulting','InvestmentBanking','Finance','MBA'] },
-      { id:'cfa-vs-mba-2026',                           title:'CFA vs MBA in 2026: Which Credential Is Better?',                                   cat:'Credentials',      tags:['CFA','MBA','Finance','CareerAdvice'] },
-      { id:'best-finance-internships-college-students-2026', title:'Best Finance Internships for College Students in 2026',                         cat:'Internships',      tags:['FinanceInternship','WallStreet','StudentFinance','MBA'] },
-      { id:'venture-capital-careers-2026',              title:'Venture Capital Careers: How Investors Find Billion-Dollar Startups',                cat:'Finance Careers',  tags:['VentureCapital','VC','Startups','Finance'] },
-      { id:'wall-street-salaries-2026',                 title:'Wall Street Salaries in 2026: How Much Finance Pros Earn',                          cat:'Compensation',     tags:['WallStreet','Finance','Salary','InvestmentBanking'] },
-      { id:'finance-resume-investment-banking',         title:'How to Build a Finance Resume for Investment Banking',                               cat:'Career Advice',    tags:['FinanceResume','InvestmentBanking','CareerAdvice','Finance'] },
-      { id:'best-finance-careers-college-students-2026',title:'Best Finance Careers for College Students in 2026',                                  cat:'Career Guide',     tags:['FinanceCareers','WallStreet','MBA','Students'] },
-      { id:'mba-application-strategy-2026',             title:'MBA Application Strategy 2026: How Top Applicants Stand Out',                        cat:'MBA Admissions',   tags:['MBA','BusinessSchool','MBAAdmissions','GMAT'] },
-      { id:'mergers-acquisitions-careers-2026',         title:'Mergers & Acquisitions Careers in 2026: The M&A Banker Path',                       cat:'M&A Banking',      tags:['MA','MergersAndAcquisitions','InvestmentBanking','Finance'] },
-      { id:'asset-management-careers-mba-2026',         title:'Asset Management Careers After MBA: Road to Portfolio Manager',                      cat:'Asset Management', tags:['AssetManagement','PortfolioManager','MBA','Finance'] },
-      { id:'finance-mba-programs-wall-street-2026',     title:'Finance MBA Programs 2026: Salaries, Recruiting & Wall Street Path',                 cat:'MBA Guide',        tags:['MBA','WallStreet','Finance','InvestmentBanking'] },
-      { id:'gmat-study-plan-700-score-2026',            title:'GMAT Study Plan: How to Score 700+ in 3 Months',
-        cat:'GMAT Prep', tags:['GMAT','MBAAdmissions','BusinessSchool','TestPrep'] },
-      { id:'harvard-mba-curriculum-2026',               title:'Harvard MBA Curriculum in 2026: Courses, Finance Training and What Students Really Learn at HBS',
-        cat:'MBA Programs', tags:['HarvardMBA','HBS','MBAPrograms','BusinessSchool','Finance'] },
-      { id:'wharton-mba-curriculum-2026',               title:'Wharton MBA Curriculum in 2026: Finance Courses, Leadership Training, and What Makes Wharton Different',
-        cat:'MBA Programs', tags:['WhartonMBA','MBAPrograms','WallStreet','FinanceMBA','BusinessSchool'] },
+<script>
+const ARTICLES = [
+  { id:'best-mba-programs-investment-banking-2026', img:'images/art1.jpg',
+    title:'Best MBA Programs for Investment Banking in 2026',
+    cat:'MBA Programs', tags:['MBA','InvestmentBanking','WallStreet','Finance'] },
 
-      // ── ARTÍCULOS CON SLUG DESCRIPTIVO (art22+) ──────────────────────────
-      // Formato: { id:'slug-descriptivo-aqui', title:'...', cat:'...', tags:[...] }
-      { id:'mba-worth-it-age-of-ai-2026', title:'Is an MBA Still Worth It in the Age of AI? (2026 Honest Answer)', cat:'MBA Value', tags:['MBA','AI','ROI','CareerAdvice','Finance','WallStreet'] },
-      { id:'mba-vs-master-in-finance-2026', title:'MBA vs Master in Finance 2026: Which Degree Gets You to Wall Street Faster?', cat:'MBA Programs', tags:['MBA','MasterOfFinance','MFin','Finance','WallStreet'] },
-      { id:'mba-admissions-consulting-worth-it-2026', title:'MBA Admissions Consulting in 2026: Is Paying $10,000+ Actually Worth It?', cat:'MBA Admissions', tags:['MBA','MBAAdmissions','GMAT','BusinessSchool','ApplicationStrategy'] },
-      { id:'consulting-layoffs-mba-worth-it-2026', title:'Is Management Consulting Still a Good Career After MBA in 2026?', cat:'Finance Careers', tags:['Consulting','MBA','McKinsey','Layoffs','CareerAdvice','Finance'] },
-      { id:'deferred-mba-programs-2026', title:'Best Deferred MBA Programs in 2026: Harvard 2+2, Yale, Stanford and More', cat:'MBA Admissions', tags:['MBA','DeferredMBA','Harvard2Plus2','MBAAdmissions','BusinessSchool'] },
-      { id:'best-mba-finance-resources-2026', title:'Best Online Finance Resources for MBA Students in 2026', cat:'MBA Resources', tags:['MBAResources','FinanceEducation','MBARecruiting','InvestmentBanking','MBA2026'] },
-    ];
+  { id:'harvard-mba-vs-wharton-mba-finance-2026', img:'images/art2.jpg',
+    title:'Harvard MBA vs Wharton MBA: Which Is Better for Finance?',
+    cat:'MBA Programs', tags:['MBA','Harvard','Wharton','BusinessSchool'] },
 
-    const BASE = 'https://mbafinanceguide.com';
-    const select = document.getElementById('article-select');
+  { id:'investment-banking-recruiting-guide-2026', img:'images/art3.jpg',
+    title:'How Investment Banking Recruiting Really Works in 2026',
+    cat:'IB Recruiting', tags:['InvestmentBanking','IBRecruiting','Finance','MBA'],
+    thread:[
+      "Investment banking recruiting is not a meritocracy. It's a process — and the people who win know the rules before they start. Most candidates figure them out too late. Here's how it actually works in 2026. 🧵",
+      "The timeline is earlier than you think:\n\n• Sophomore year: first finance club, first networking\n• Junior fall: applications open (often Sept–Oct)\n• Junior winter: superdays and offers\n• Senior year: you either have an offer or you're scrambling\n\nMiss the window. Miss the job.",
+      "What banks actually screen for in resumes:\n• Target school (unfair but real)\n• GPA above 3.5 (floor, not differentiator)\n• 1 relevant internship (ideally sophomore year)\n• Clubs: finance, investment, or case competition\n\nNone of this is about skills. It's about signal.",
+      "The interview has 2 parts most people only half-prepare for:\n\n1. Technicals: LBO, DCF, accretion/dilution, accounting questions\n2. Fit: \"Why banking?\" \"Why this bank?\" \"Walk me through your resume\"\n\nBanks cut more people on fit than on technicals. That answer better be tight.",
+      "The full 2026 recruiting guide — timeline, networking scripts, interview prep, and what actually gets offers:\n\nmbafinanceguide.com/investment-banking-recruiting-guide-2026/\n\n#InvestmentBanking #IBD #Finance #MBA #Recruiting #WallStreet"
+    ]},
 
-    ARTICLES.forEach(a => {
-      const opt = document.createElement('option');
-      opt.value = a.id;
-      // Si el ID es un slug (contiene guiones), mostrarlo limpio; si es artN mostrarlo en mayúsculas
-      const label = a.id.startsWith('art') && !isNaN(a.id.slice(3))
-        ? a.id.toUpperCase()
-        : '🔗 ' + a.id;
-      opt.textContent = `${label} — ${a.title}`;
-      select.appendChild(opt);
-    });
+  { id:'is-mba-worth-it-2026', img:'images/art4.jpg',
+    title:'Is an MBA Worth It in 2026? A Straight Answer',
+    cat:'MBA Value', tags:['MBA','ROI','BusinessSchool','Finance'],
+    thread:[
+      "\"Is an MBA worth it?\" is the wrong question. The right question is: worth it compared to what? The answer changes completely depending on your career path, target industry, and current salary. Here's the 2026 breakdown. 🧵",
+      "The MBA IS worth it if:\n• You want to switch into IB, PE, or consulting from a non-finance background\n• You're targeting a role where the degree is a literal ticket (many firms only hire MBAs at associate level)\n• You get into a top-15 program with financial aid",
+      "The MBA is NOT worth it if:\n• You're already in finance and want to go deeper technically (get the CFA)\n• You're in tech and want to stay in tech (almost no ROI)\n• You're going to a program ranked outside the top 25 and paying full price\n\nThe brand matters. A lot.",
+      "The actual ROI math at top programs:\n\nHarvard/Wharton/Booth post-MBA total comp: $200K–$350K (IB/consulting)\n2-year cost (tuition + living + lost income): ~$350K–$400K\n\nBreak-even: 3–5 years. For most finance careers, that math works.",
+      "The honest answer to \"Is an MBA worth it in 2026?\" — broken down by career path, salary level, and program tier:\n\nmbafinanceguide.com/is-mba-worth-it-2026/\n\n#MBA #MBAWorthIt #Finance #CareerAdvice #BusinessSchool #Wharton #Harvard"
+    ]},
 
-    function generate() {
-      const id = select.value;
-      if (!id) { document.getElementById('cards').style.display='none'; return; }
-      const art = ARTICLES.find(a => a.id === id);
-      const url = `${BASE}/${id}/`;
-      const hashtags = art.tags.map(t => '#'+t).join(' ');
-      const hashtagsShort = art.tags.slice(0,3).map(t => '#'+t).join(' ');
+  { id:'financial-modeling-skills-finance-students', img:'images/art5.jpg',
+    title:'Financial Modeling Skills Every Finance Student Needs',
+    cat:'Technical', tags:['FinancialModeling','Excel','InvestmentBanking','Finance'] },
 
-      // Twitter (max 280 chars)
-      const tw = `📊 ${art.title}\n\n${url}\n\n${hashtagsShort} #MBAFinanceGuide`;
-      document.getElementById('tw-text').value = tw;
+  { id:'private-equity-careers-2026', img:'images/art6.jpg',
+    title:'Private Equity Careers in 2026: What Nobody Tells You',
+    cat:'Finance Careers', tags:['PrivateEquity','Finance','MBA','WallStreet'] },
 
-      // LinkedIn (longer, more professional)
-      const li = `${art.title}\n\n` +
-        `We just published a new guide on MBA Finance Guide covering everything you need to know about ${art.cat.toLowerCase()}.\n\n` +
-        `Whether you're a student, MBA candidate, or finance professional, this article breaks down the key insights to help you make smarter career and education decisions.\n\n` +
-        `📖 Read the full article: ${url}\n\n` +
-        `What's your experience with ${art.cat.toLowerCase()}? Drop your thoughts in the comments 👇\n\n` +
-        `${art.tags.map(t => '#'+t).join(' ')} #MBAFinanceGuide #Finance #MBA`;
-      document.getElementById('li-text').value = li;
+  { id:'hedge-fund-careers-2026', img:'images/art7.jpg',
+    title:'Hedge Fund Careers: How the Industry Really Works in 2026',
+    cat:'Finance Careers', tags:['HedgeFunds','Finance','InvestmentManagement','MBA'] },
 
-      updateCount('tw');
-      updateCount('li');
-      document.getElementById('cards').style.display='grid';
-    }
+  { id:'consulting-vs-investment-banking-2026', img:'images/art8.jpg',
+    title:'Consulting vs Investment Banking: Which Path in 2026?',
+    cat:'Finance Careers', tags:['Consulting','InvestmentBanking','Finance','MBA'] },
 
-    function updateCount(net) {
-      const text = document.getElementById(net+'-text').value;
-      const len  = text.length;
-      const el   = document.getElementById(net+'-count');
-      if (net === 'tw') {
-        el.textContent = `${len} / 280`;
-        el.className = 'char-count' + (len > 280 ? ' over' : len > 250 ? ' warn' : '');
-      } else if (net === 'li') {
-        el.textContent = `${len} / 3000`;
-        el.className = 'char-count' + (len > 3000 ? ' over' : '');
-      } else {
-        el.textContent = `${len} chars`;
-        el.className = 'char-count';
-      }
-    }
+  { id:'cfa-vs-mba-2026', img:'images/art9.jpg',
+    title:'CFA vs MBA in 2026: Which Credential Is Better?',
+    cat:'Credentials', tags:['CFA','MBA','Finance','CareerAdvice'],
+    thread:[
+      "CFA vs MBA is a false choice for most people — but only if you understand what each credential actually buys you. Most finance professionals pick one without knowing the other's real value. Here's the 2026 breakdown. 🧵",
+      "The CFA wins if you want:\n• Buy-side roles (portfolio management, equity research)\n• Asset management at institutional firms\n• A deep technical signal without leaving your job\n• Cost: ~$4K total vs. $200K+ for an MBA\n\nPass rate for all 3 levels combined: ~15%. It's not easy.",
+      "The MBA wins if you want:\n• Investment banking (the MBA is still the primary associate pipeline)\n• Management consulting (McKinsey, Bain, BCG almost exclusively hire MBAs)\n• A complete career pivot with a network reset\n• General management or C-suite trajectory",
+      "Where it gets interesting: doing both.\n\nCFA + MBA from a top program signals technical depth AND commercial ambition. In private equity and hedge funds, it's a genuinely rare and valued combination.\n\nCost: ~$235K. Timeline: 5–7 years. Worth it for the right person.",
+      "The full CFA vs MBA comparison — by career path, cost, ROI, and who should choose which:\n\nmbafinanceguide.com/cfa-vs-mba-2026/\n\n#CFA #MBA #Finance #InvestmentBanking #AssetManagement #CareerAdvice #FinanceCareers"
+    ]},
 
-    function copy(id, btn) {
-      const text = document.getElementById(id).value;
-      navigator.clipboard.writeText(text).then(() => {
-        const orig = btn.textContent;
-        btn.textContent = '✅ Copied!';
-        btn.classList.add('copied');
-        setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 2000);
-      });
-    }
-  </script>
+  { id:'best-finance-internships-college-students-2026', img:'images/art10.jpg',
+    title:'Best Finance Internships for College Students in 2026',
+    cat:'Internships', tags:['FinanceInternship','WallStreet','StudentFinance','MBA'] },
+
+  { id:'venture-capital-careers-2026', img:'images/art11.jpg',
+    title:'Venture Capital Careers: How Investors Find Billion-Dollar Startups',
+    cat:'Finance Careers', tags:['VentureCapital','VC','Startups','Finance'] },
+
+  { id:'wall-street-salaries-2026', img:'images/art12.jpg',
+    title:'Wall Street Salaries in 2026: How Much Finance Pros Earn',
+    cat:'Compensation', tags:['WallStreet','Finance','Salary','InvestmentBanking'],
+    thread:[
+      "Wall Street pays more than almost any other industry straight out of college or business school. But most people have no idea what the actual numbers look like. Here's the 2026 breakdown no one publishes in one place. 🧵",
+      "First-year Investment Banking Analyst (post-college):\n• Base: $110,000\n• Bonus: $70,000–$90,000\n• Total: ~$190,000\n\nThat's more than the average U.S. family earns in 3 years. And you're 22.",
+      "Post-MBA Associate (IB, year 1):\n• Base: $175,000–$200,000\n• Bonus: $100,000–$150,000\n• Total: $275,000–$350,000\n\nThree years after your MBA, you're clearing $400K+ if you make VP. The math on the degree starts making sense.",
+      "Private Equity is where the real money is — but only later.\n• PE Associate: $250K–$350K all-in\n• VP: $400K–$600K\n• MD/Partner: $1M–$5M+\n\nCarry (profit share) at senior levels can dwarf salary. Most people never see that number in a job ad.",
+      "Hedge funds? Top performers clear $500K+ as analysts. Quant funds pay even more.\n\nThe full 2026 breakdown — IB, PE, HF, VC, asset management, consulting:\nmbafinanceguide.com/wall-street-salaries-2026/\n\n#WallStreet #Finance #MBA #InvestmentBanking #Salary2026"
+    ]},
+
+  { id:'finance-resume-investment-banking', img:'images/art13.jpg',
+    title:'How to Build a Finance Resume for Investment Banking',
+    cat:'Career Advice', tags:['FinanceResume','InvestmentBanking','CareerAdvice','Finance'] },
+
+  { id:'best-finance-careers-college-students-2026', img:'images/art14.jpg',
+    title:'Best Finance Careers for College Students in 2026',
+    cat:'Career Guide', tags:['FinanceCareers','WallStreet','MBA','Students'] },
+
+  { id:'mba-application-strategy-2026', img:'images/art15.jpg',
+    title:'MBA Application Strategy 2026: How Top Applicants Stand Out',
+    cat:'MBA Admissions', tags:['MBA','BusinessSchool','MBAAdmissions','GMAT'] },
+
+  { id:'mergers-acquisitions-careers-2026', img:'images/art16.jpg',
+    title:'Mergers & Acquisitions Careers in 2026: The M&A Banker Path',
+    cat:'M&A Banking', tags:['MA','MergersAndAcquisitions','InvestmentBanking','Finance'] },
+
+  { id:'asset-management-careers-mba-2026', img:'images/art17.jpg',
+    title:'Asset Management Careers After MBA: Road to Portfolio Manager',
+    cat:'Asset Management', tags:['AssetManagement','PortfolioManager','MBA','Finance'] },
+
+  { id:'finance-mba-programs-wall-street-2026', img:'images/art18.jpg',
+    title:'Finance MBA Programs 2026: Salaries, Recruiting & Wall Street Path',
+    cat:'MBA Guide', tags:['MBA','WallStreet','Finance','InvestmentBanking'] },
+
+  { id:'gmat-study-plan-700-score-2026', img:'images/art19.jpg',
+    title:'GMAT Study Plan: How to Score 700+ in 3 Months',
+    cat:'GMAT Prep', tags:['GMAT','MBAAdmissions','BusinessSchool','TestPrep'] },
+
+  { id:'harvard-mba-curriculum-2026', img:'images/art20.jpg',
+    title:'Harvard MBA Curriculum 2026: What Students Really Learn at HBS',
+    cat:'MBA Programs', tags:['HarvardMBA','HBS','MBAPrograms','BusinessSchool','Finance'] },
+
+  { id:'wharton-mba-curriculum-2026', img:'images/art21.jpg',
+    title:'Wharton MBA Curriculum 2026: Finance Courses & What Makes Wharton Different',
+    cat:'MBA Programs', tags:['WhartonMBA','MBAPrograms','WallStreet','FinanceMBA','BusinessSchool'] },
+
+  { id:'mba-worth-it-age-of-ai-2026', img:'images/mba-worth-it-age-of-ai-2026.jpg',
+    title:'Is an MBA Still Worth It in the Age of AI? (2026 Honest Answer)',
+    cat:'MBA Value', tags:['MBA','AI','ROI','CareerAdvice','Finance','WallStreet'],
+    thread:[
+      "AI can now build a DCF model in 30 seconds, write an investment memo, and synthesize 200-page industry reports instantly. The MBA curriculum was built partly around teaching those skills. So what does the degree buy you now? 🧵",
+      "What AI is replacing in finance:\n• First-pass financial modeling\n• Industry research and data synthesis\n• First drafts of pitch decks and memos\n• Routine due diligence\n\nThese were analyst and associate tasks. The people doing them at $190K/yr are being asked to do more with less.",
+      "What AI is NOT replacing (yet):\n• Client relationships and trust\n• Deal judgment under uncertainty\n• Managing teams through ambiguous situations\n• Knowing which model assumption is wrong before you run it\n\nThese are the things an MBA is actually supposed to build.",
+      "The MBA programs adapting fastest are integrating AI tools into core curriculum — not as electives.\n\nThe ones that aren't? You're paying $230K to learn Excel and case frameworks that GPT-4 handles in a prompt.\n\nSchool selection in 2026 means asking: what does this program teach that AI can't do?",
+      "The full analysis — which MBA skills survive AI, which programs are adapting, and whether the degree still pencils out:\n\nmbafinanceguide.com/mba-worth-it-age-of-ai-2026/\n\n#MBA #AI #FinanceCareers #ArtificialIntelligence #FutureOfFinance #MBAWorthIt"
+    ]},
+
+  { id:'mba-vs-master-in-finance-2026', img:'images/mba-vs-master-in-finance-2026.jpg',
+    title:'MBA vs Master in Finance 2026: Which Degree Gets You to Wall Street Faster?',
+    cat:'MBA Programs', tags:['MBA','MasterOfFinance','MFin','Finance','WallStreet'] },
+
+  { id:'mba-admissions-consulting-worth-it-2026', img:'images/mba-application-deadlines-2026-2027.jpg',
+    title:'MBA Admissions Consulting in 2026: Is Paying $10,000+ Actually Worth It?',
+    cat:'MBA Admissions', tags:['MBA','MBAAdmissions','GMAT','BusinessSchool','ApplicationStrategy'] },
+
+  { id:'consulting-layoffs-mba-worth-it-2026', img:'images/consulting-layoffs-mba-worth-it-2026.jpg',
+    title:'Is Management Consulting Still a Good Career After MBA in 2026?',
+    cat:'Finance Careers', tags:['Consulting','MBA','McKinsey','Layoffs','CareerAdvice','Finance'] },
+
+  { id:'deferred-mba-programs-2026', img:'images/deferred-mba-programs-2026.jpg',
+    title:'Best Deferred MBA Programs in 2026: Harvard 2+2, Yale, Stanford and More',
+    cat:'MBA Admissions', tags:['MBA','DeferredMBA','Harvard2Plus2','MBAAdmissions','BusinessSchool'] },
+
+  { id:'best-mba-finance-resources-2026', img:'images/best-mba-finance-resources-2026.jpg',
+    title:'Best Online Finance Resources for MBA Students in 2026',
+    cat:'MBA Resources', tags:['MBAResources','FinanceEducation','MBARecruiting','InvestmentBanking','MBA2026'] },
+
+  { id:'mba-career-change-guide-2026', img:'images/art28.jpg',
+    title:'How to Use an MBA to Change Careers in 2026: The Complete Guide',
+    cat:'Finance Careers', tags:['MBACareerChange','CareerPivot','InvestmentBanking','Consulting','MBA2026'] },
+];
+
+/* ── Category config ── */
+const CAT = {
+  'MBA Programs':    {sub:'r/MBA',               tw:'📊'},
+  'Finance Careers': {sub:'r/financialcareers',  tw:'💼'},
+  'IB Recruiting':   {sub:'r/financialcareers',  tw:'🏦'},
+  'MBA Value':       {sub:'r/MBA',               tw:'🎓'},
+  'MBA Admissions':  {sub:'r/MBA',               tw:'📝'},
+  'Credentials':     {sub:'r/CFA',               tw:'📜'},
+  'Compensation':    {sub:'r/finance',           tw:'💰'},
+  'Technical':       {sub:'r/financialcareers',  tw:'📈'},
+  'GMAT Prep':       {sub:'r/GMAT',              tw:'✏️'},
+  'Internships':     {sub:'r/financialcareers',  tw:'🎯'},
+  'MBA Resources':   {sub:'r/MBA',               tw:'📚'},
+  'Career Advice':   {sub:'r/financialcareers',  tw:'🗺️'},
+  'Career Guide':    {sub:'r/financialcareers',  tw:'🗺️'},
+  'Asset Management':{sub:'r/investing',         tw:'📊'},
+  'M&A Banking':     {sub:'r/financialcareers',  tw:'🤝'},
+  'MBA Guide':       {sub:'r/MBA',               tw:'🎓'},
+};
+
+const BASE = 'https://mbafinanceguide.com';
+const sel  = document.getElementById('article-select');
+
+ARTICLES.forEach(a => {
+  const opt = document.createElement('option');
+  opt.value = a.id;
+  opt.textContent = `${a.title}`;
+  sel.appendChild(opt);
+});
+
+function generate() {
+  const id = sel.value;
+  if (!id) {
+    document.getElementById('cards').style.display = 'none';
+    document.getElementById('img-section').style.display = 'none';
+    return;
+  }
+  const art   = ARTICLES.find(a => a.id === id);
+  const url   = `${BASE}/${id}/`;
+  const cfg   = CAT[art.cat] || {sub:'r/MBA', tw:'📊'};
+  const tags3 = art.tags.slice(0,3).map(t=>'#'+t).join(' ');
+  const tagsAll = art.tags.map(t=>'#'+t).join(' ');
+
+  /* Image */
+  const imgEl   = document.getElementById('art-img');
+  const imgPath = document.getElementById('img-path');
+  const imgSec  = document.getElementById('img-section');
+  imgEl.src     = art.img;
+  imgEl.alt     = art.title;
+  imgPath.textContent = art.img;
+  imgSec.style.display = 'flex';
+
+  /* Twitter single */
+  const tw = `${cfg.tw} ${art.title}\n\n${url}\n\n${tags3} #MBAFinanceGuide`;
+  document.getElementById('tw-text').value = tw;
+  updateCount('tw');
+
+  /* Thread */
+  const tweets = art.thread || buildThread(art, url);
+  const box = document.getElementById('thread-boxes');
+  box.innerHTML = tweets.map((t,i) => `
+    <div class="tweet-box">
+      <div class="tweet-num">Tweet ${i+1} of ${tweets.length}${i===tweets.length-1?' (has link)':''}</div>
+      <div class="tweet-row">
+        <textarea id="tw-t${i}" rows="3" style="min-height:${i===0?70:60}px">${escHtml(t)}</textarea>
+        <button class="btn btn-copy btn-sm" style="margin-top:0;align-self:center" onclick="copyById('tw-t${i}',this)">Copy</button>
+      </div>
+    </div>`).join('');
+
+  /* LinkedIn */
+  const li = buildLinkedIn(art, url, tagsAll);
+  document.getElementById('li-text').value = li;
+  updateCount('li');
+
+  /* Reddit */
+  const rd = buildReddit(art, cfg.sub);
+  document.getElementById('reddit-sub').textContent = `Suggested: ${cfg.sub}`;
+  document.getElementById('reddit-title').value = rd.title;
+  document.getElementById('reddit-body').value  = rd.body;
+
+  document.getElementById('cards').style.display = 'grid';
+}
+
+/* ── Thread builder (fallback for articles without hardcoded thread) ── */
+function buildThread(art, url) {
+  const tags = art.tags.slice(0,3).map(t=>'#'+t).join(' ');
+  const hooks = {
+    'MBA Programs':    `Most people pick their MBA program based on rankings. Here's why that's the wrong starting point — and what actually matters for ${art.cat.toLowerCase()} outcomes. 🧵`,
+    'Finance Careers': `Breaking into ${art.cat.toLowerCase()} in 2026 is more competitive than ever — but the path is more predictable than most people think. Here's what actually works. 🧵`,
+    'MBA Admissions':  `MBA admissions in 2026 is not about having the perfect profile. It's about telling the right story at the right time. Here's what top applicants do differently. 🧵`,
+    'Credentials':     `The credential debate in finance is mostly noise. Here's the framework that actually helps you decide what to pursue — based on your specific career target. 🧵`,
+    'Compensation':    `Finance compensation in 2026 is more variable than ever. Here's the data most salary guides don't include — and why the headline numbers are often misleading. 🧵`,
+    'Technical':       `The technical skills that get finance candidates hired in 2026 are different from what most guides say. Here's what actually matters in the room. 🧵`,
+    'GMAT Prep':       `700+ on the GMAT is achievable in 3 months — but only if you study the right things. Most candidates waste 40% of their prep time on low-yield material. Here's what to focus on. 🧵`,
+    'Internships':     `The finance internship that leads to a full-time offer isn't found on job boards. Here's how the process actually works in 2026. 🧵`,
+    'MBA Resources':   `After tracking hundreds of MBA finance resources, most aren't worth your time. Here's what actually moves the needle for recruiting and admissions. 🧵`,
+    'Career Advice':   `The conventional wisdom on ${art.title.split(':')[0].toLowerCase()} is outdated. Here's what the data and people who've done it actually say. 🧵`,
+    'Career Guide':    `Finance career paths in 2026 look very different from 5 years ago. Here's the updated picture — including what firms are actually hiring for now. 🧵`,
+    'Asset Management':`Asset management is one of the most overlooked post-MBA career paths. Here's why that's a mistake — and what the trajectory actually looks like. 🧵`,
+    'M&A Banking':     `M&A is recovering in 2026. That means teams are hiring — and the path for MBA candidates is opening back up. Here's how it works. 🧵`,
+    'MBA Guide':       `The MBA path into finance is more structured than people think. Here's the full picture — programs, recruiting, timing, and what separates the people who land at top firms. 🧵`,
+    'MBA Value':       `The MBA ROI question is almost always asked wrong. Here's the framework that actually helps you decide — based on your specific situation. 🧵`,
+    'IB Recruiting':   `IB recruiting in 2026 has changed significantly. Here's what the process looks like now — and what gets offers. 🧵`,
+  };
+
+  const t1 = hooks[art.cat] || `🧵 Everything you need to know about ${art.title.replace(' in 2026','').replace(' 2026','')} — a 2026 breakdown:`;
+
+  return [
+    t1,
+    `What most guides get wrong about ${art.cat.toLowerCase()}:\n\n→ The headline numbers aren't the full story\n→ Timing relative to recruiting cycles matters more than credentials\n→ The network you build before you need it is the only one that counts\n\nMost people learn this after the fact.`,
+    `What actually separates successful candidates:\n\n1. They understand the process before it starts\n2. They have a clear target role — not just "finance"\n3. They treat preparation as a structured project, not last-minute cramming\n\nThis applies whether you're targeting IB, PE, consulting, or AM.`,
+    `The data point most people overlook:\n\nThe difference between top and median outcomes in ${art.cat.toLowerCase()} is not about raw talent. It's about information — who understood the game and who was figuring it out as they went.`,
+    `Full breakdown with 2026 data:\n${url}\n\n${tags} #MBAFinanceGuide`,
+  ];
+}
+
+/* ── LinkedIn builder ── */
+function buildLinkedIn(art, url, tagsAll) {
+  const openers = {
+    'Compensation':    `A Goldman Sachs first-year analyst earns more than most professionals in their 40s. The 2026 comp data is worth understanding before you make career decisions.`,
+    'MBA Value':       `The MBA is worth $230,000 for some people and a poor investment for others. The difference isn't intelligence — it's whether you're using the degree for the right problem.`,
+    'IB Recruiting':   `Investment banking recruiting is decided months before most students think it starts. Here's what the process actually looks like — and what the candidates who get offers do differently.`,
+    'Credentials':     `The CFA costs $4,000 and takes 4 years. The MBA costs $230,000 and takes 2. They are not competing for the same outcome.`,
+    'MBA Programs':    `Not all MBA programs deliver the same outcomes — even within the M7. The variance in placement rates, depending on your target industry and firm, is larger than the rankings suggest.`,
+    'Finance Careers': `Finance career paths in 2026 look different from what the guides published 5 years ago. Some paths are more accessible. Others have become significantly harder. Here's the updated picture.`,
+    'MBA Admissions':  `The MBA application process rewards clarity — not perfection. The candidates who get in aren't always the most qualified on paper. They're the ones with the most coherent story.`,
+    'Technical':       `Recruiters can tell in 10 minutes whether your technical finance skills are real or superficial. Here's what they're actually looking for — and how to build it before you're in the room.`,
+    'GMAT Prep':       `A 700+ GMAT opens every M7 door. A 650 closes most of them. The difference is not intelligence — it's preparation structure. Here's what actually works.`,
+  };
+  const opener = openers[art.cat] || `${art.title} — here's the honest breakdown that most guides don't give you.`;
+
+  return `${opener}\n\n` +
+    `Whether you're a student, MBA candidate, or finance professional evaluating your next move, understanding ${art.cat.toLowerCase()} in 2026 is different from even two years ago.\n\n` +
+    `A few things worth knowing:\n\n` +
+    `→ The gap between top and median outcomes is larger than most people admit\n` +
+    `→ Timing and information matter as much as credentials\n` +
+    `→ The decision framework that worked in 2020 needs updating\n\n` +
+    `We broke down the full picture — data, career paths, and what actually moves the needle:\n` +
+    `👉 ${url}\n\n` +
+    `What's the part of ${art.cat.toLowerCase()} that nobody explains clearly? Drop it in the comments.\n\n` +
+    `${tagsAll} #MBAFinanceGuide #Finance #MBA`;
+}
+
+/* ── Reddit builder (no links, personal tone) ── */
+function buildReddit(art, sub) {
+  const shortTitle = art.title.replace(/\s+in\s+2026/gi,'').replace(/\s+2026/gi,'').replace(/: .*/,'').replace(/\?.*$/,'').trim();
+
+  const titles = {
+    'MBA Programs':    `My honest take on ${shortTitle} after months of research — some things surprised me`,
+    'Finance Careers': `What nobody tells you about ${shortTitle} until you're already in it`,
+    'IB Recruiting':   `The IB recruiting timeline reality check — what I wish someone had told me earlier`,
+    'MBA Value':       `Genuinely wrestling with whether the MBA ROI still makes sense in the current market`,
+    'MBA Admissions':  `After going through the MBA application process, here's what I'd do differently`,
+    'Credentials':     `CFA vs MBA debate — sharing my framework after going back and forth on this for a year`,
+    'Compensation':    `The Wall Street comp data for 2026 — some of these numbers are wilder than I expected`,
+    'Technical':       `Honest question: what financial modeling skills actually matter vs. what looks good on paper?`,
+    'GMAT Prep':       `What finally moved my GMAT score after 3 months of plateauing`,
+    'Internships':     `Finance internship recruiting in 2026 — sharing what I observed and what actually worked`,
+    'MBA Resources':   `The MBA finance resources that actually helped vs. the ones that wasted my time`,
+    'Career Advice':   `Real talk about ${shortTitle} — filtering through the noise`,
+    'Career Guide':    `${shortTitle} in 2026 — what the career guides don't cover`,
+    'Asset Management':`Asset management as a post-MBA path is underrated. Sharing what I found.`,
+    'M&A Banking':     `M&A hiring is picking up — sharing observations on what the path looks like now`,
+    'MBA Guide':       `Trying to map out the MBA → finance path clearly. Here's what I've pieced together.`,
+  };
+
+  const bodies = {
+    'MBA Programs':
+      `Been deep in research on MBA program outcomes for the past few months and wanted to share some observations that surprised me.\n\n` +
+      `The main thing I noticed: the difference in finance placement rates between programs that rank similarly is much larger than the rankings imply. Two programs with similar US News ranks can have wildly different outcomes for IB or consulting placement depending on location, alumni density at target firms, and how aggressive the career office is.\n\n` +
+      `A few other things that stood out:\n\n` +
+      `• Location matters more than most guides admit. Being in New York or Chicago is genuinely worth something for recruiting in ways that "strong alumni network" doesn't fully capture.\n` +
+      `• The "culture fit" between you and a program matters for recruiting in ways that are hard to quantify but really affect outcomes.\n` +
+      `• Class size affects the recruiting pool significantly — smaller classes can mean more personalized attention or fewer alumni in high-demand roles, depending on the school.\n\n` +
+      `For anyone currently in the decision process: what factors are you weighting most? I'm curious whether others have found the same disconnect between rankings and actual placement outcomes.`,
+
+    'Finance Careers':
+      `Spent a lot of time over the past year trying to understand what ${shortTitle.toLowerCase()} actually looks like from the inside — not the recruiting brochure version.\n\n` +
+      `A few honest observations:\n\n` +
+      `• The career path is more structured than people expect, but the timeline to senior roles has been compressing. People are making VP faster than 5 years ago at some firms, slower at others.\n` +
+      `• The "what do you actually do day to day" question is almost never answered clearly in guides. The reality is more Excel and internal process management than deal strategy, especially in the first 2-3 years.\n` +
+      `• Compensation is strong but the variance within a role at different firms is significant. Same title, same tenure, 30-40% comp difference is not uncommon.\n` +
+      `• AI tools are genuinely changing the analyst-level work. Not replacing it, but compressing it. The people who adapt fast have a real edge.\n\n` +
+      `What's your experience been? Particularly interested in hearing from people who've made a lateral move into this space vs. those who came in through the traditional pipeline.`,
+
+    'MBA Value':
+      `Going back and forth on this and wanted to get some honest input from people who've been through it.\n\n` +
+      `The standard ROI argument is straightforward: top program + high-comp role = break even in 3-5 years. But that math assumes you land the role, the hiring market cooperates at graduation, and you get into a program where the math actually works.\n\n` +
+      `What I keep getting stuck on:\n\n` +
+      `• The variance in outcomes even within the same program is significant. Two people graduating from Booth in the same year with similar profiles can have very different outcomes based on sector timing and luck.\n` +
+      `• The opportunity cost math is often undercounted. It's not just tuition — it's 2 years of salary growth, equity vesting, and network momentum that you pause.\n` +
+      `• For some career switches, there's no substitute. For others, you're paying $200K+ to get a credential for a job you could have gotten another way.\n\n` +
+      `For those who've done the MBA: what did you not account for in your ROI calculation that ended up mattering more than you expected? Positive or negative.`,
+
+    'MBA Admissions':
+      `Went through the MBA application process and came out with some observations I wish I'd had going in.\n\n` +
+      `The thing that surprised me most: the process rewards clarity more than perfection. The candidates who get into top programs aren't always the ones with the best stats — they're the ones with the most coherent story about why they need this specific degree for this specific goal.\n\n` +
+      `A few things I'd do differently:\n\n` +
+      `• Start the "why MBA, why now" thinking earlier. I spent way too long polishing my resume and not enough time actually clarifying what I wanted the degree to accomplish.\n` +
+      `• Recommendations matter more than most people treat them. A lukewarm recommendation from a prestigious person is worse than a specific, enthusiastic one from someone who actually knows your work.\n` +
+      `• The GMAT/GRE floor is real but it's not a differentiator above the threshold. Schools aren't choosing between a 730 and a 760 — they're filtering out everyone below their floor and then making judgment calls.\n` +
+      `• Essays are where most people lose — not because they're bad writers but because they answer the wrong question. Schools want to understand your judgment, not your resume.\n\n` +
+      `Anyone else find the process different from what the guides describe? Curious what people's experience has been.`,
+
+    'Credentials':
+      `Been going back and forth on CFA vs MBA for the past year and finally landed somewhere. Sharing my framework in case it helps others in the same situation.\n\n` +
+      `The key insight that simplified it for me: they're not competing for the same outcome. The question isn't which credential is "better" — it's which door you need opened.\n\n` +
+      `The CFA opened the door to buy-side roles for me in a way that the MBA would have taken 3 years and $200K+ to replicate. But it wouldn't have gotten me into IB at the associate level or landed me at McKinsey. Those require the MBA.\n\n` +
+      `The way I now think about it:\n\n` +
+      `• If you want to go deep in investment analysis, portfolio management, equity research → CFA is more direct and cost-efficient\n` +
+      `• If you want to switch industries, go into IB/consulting/PE from outside finance, or need a complete network reset → MBA\n` +
+      `• If you want both and have the time and capital → the combination is genuinely rare and valued, especially in PE and HF\n\n` +
+      `What did others use as the deciding factor? Especially curious about people who did one and wish they'd done the other.`,
+
+    'Compensation':
+      `Been tracking finance compensation data for a while and wanted to share some observations since the publicly available info is often vague or outdated.\n\n` +
+      `A few things that stood out in 2026:\n\n` +
+      `• The base salary floor for IB analysts at bulge brackets is now around $110K. Three years ago it was $85K. The increases have been significant and fast.\n` +
+      `• But the variance in total comp is wider than ever. Bonus pools vary enormously by bank, by year, and by group. The "total comp" number you see cited is often the good-year number.\n` +
+      `• Post-MBA associate comp at top shops is genuinely $275-350K all-in year 1. The jump from analyst to associate is the biggest single comp step in most finance careers.\n` +
+      `• PE and hedge funds have pulled away from banking in total comp at the senior level. The carry economics at megafunds is a completely different wealth category.\n\n` +
+      `For context, the median US household earns around $75K. First-year IB analysts earn 2.5x that before bonus.\n\n` +
+      `What's your experience with comp transparency at firms you've worked at or recruited to? Do the numbers people cite match the reality?`,
+
+    'Technical':
+      `Honest question for the group: what financial modeling skills actually matter in practice vs. what just looks good on a resume?\n\n` +
+      `I've been thinking about this because the gap between what recruiting guides say to learn and what actually comes up in interviews and on the job is real.\n\n` +
+      `From what I've seen:\n\n` +
+      `• Three-statement modeling is genuinely foundational. If you can't build one from scratch, it shows in interviews.\n` +
+      `• LBO modeling is table stakes for PE recruiting. It's not advanced — it's the baseline.\n` +
+      `• DCF fluency matters less than people think for most IB roles, but you need to be able to discuss the assumptions intelligently.\n` +
+      `• Excel speed is underrated. Not about shortcuts — about structural thinking. Building models that are auditable and don't break matters more than knowing every keyboard shortcut.\n\n` +
+      `The AI question: tools are genuinely doing more of the first-pass modeling work. But the people who understand what the model is doing — and can catch when it's wrong — still have a significant edge.\n\n` +
+      `What's been your experience? Anything that came up in interviews or on the job that you felt unprepared for?`,
+
+    'GMAT Prep':
+      `Finally broke through 700 after plateauing around 650 for two months. Sharing what changed in case it helps someone in the same spot.\n\n` +
+      `The main thing: I was studying the wrong material. I was spending about 60% of my time on content review (re-learning math concepts I already knew) and only 40% on practicing actual questions under timed conditions. Flipping that ratio made the biggest difference.\n\n` +
+      `A few other things that helped:\n\n` +
+      `• Doing error analysis after every practice section — not just reviewing wrong answers, but understanding WHY I got them wrong and what trap I fell into\n` +
+      `• Timed practice from day one, not "I'll add timing later when I understand the content better"\n` +
+      `• Taking full practice tests with real breaks, not section by section\n` +
+      `• Verbal CR is learnable — it's more about understanding the logical structure of arguments than about reading comprehension in the traditional sense\n\n` +
+      `One thing I underestimated: test-day mental stamina. Doing well on practice tests and doing well on the actual exam are different because of fatigue. Practice under real conditions.\n\n` +
+      `What worked for people who scored 700+? Any resource or approach you'd recommend?`,
+  };
+
+  // Default body for categories not explicitly handled
+  const defaultBody =
+    `Been thinking a lot about ${shortTitle.toLowerCase()} lately and wanted to get some honest perspectives from people who've been through it.\n\n` +
+    `A few observations after going deep on this topic:\n\n` +
+    `• The conventional wisdom you find in most guides is often a few years behind what's actually happening in recruiting and hiring\n` +
+    `• The variance in outcomes — even between candidates with similar profiles — is much larger than people admit publicly\n` +
+    `• The preparation that matters most happens earlier than most people start\n\n` +
+    `I've been trying to build a clearer picture of what actually works vs. what just sounds good in theory. Some of what I found matched expectations. A lot didn't.\n\n` +
+    `For anyone who's been through this process recently: what do you wish you'd known going in? And what turned out to matter less than you expected?`;
+
+  return {
+    title: titles[art.cat] || `My take on ${shortTitle} — what I found after digging into the data`,
+    body:  bodies[art.cat]  || defaultBody
+  };
+}
+
+/* ── Helpers ── */
+function updateCount(net) {
+  const text = document.getElementById(net+'-text').value;
+  const len  = text.length;
+  const el   = document.getElementById(net+'-count');
+  if (net === 'tw') {
+    el.textContent = `${len} / 280`;
+    el.className = 'char-count' + (len > 280 ? ' over' : len > 250 ? ' warn' : '');
+  } else {
+    el.textContent = `${len} / 3000`;
+    el.className = 'char-count' + (len > 3000 ? ' over' : '');
+  }
+}
+
+function copy(id, btn) {
+  const val = document.getElementById(id).value;
+  navigator.clipboard.writeText(val).then(() => flash(btn));
+}
+
+function copyById(id, btn) {
+  const val = document.getElementById(id).value;
+  navigator.clipboard.writeText(val).then(() => flash(btn));
+}
+
+function flash(btn) {
+  const orig = btn.textContent;
+  btn.textContent = '✅ Copied!';
+  btn.classList.add('copied');
+  setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 2000);
+}
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+</script>
 </body>
 </html>
