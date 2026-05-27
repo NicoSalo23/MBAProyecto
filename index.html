@@ -5542,7 +5542,8 @@ const _sectionListeners=[];
 function onShowSection(fn){_sectionListeners.push(fn);}
 function showSection(id){
   document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-  const el=document.getElementById('section-'+id);
+  const urlId=ART_SLUG_MAP[id]||id;
+  const el=document.getElementById('section-'+urlId)||document.getElementById('section-'+id);
   if(el){
     el.classList.add('active');
     window.scrollTo({top:0,behavior:'smooth'});
@@ -5553,8 +5554,7 @@ function showSection(id){
   document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
   const nav=document.getElementById('nav-'+id);
   if(nav)nav.classList.add('active');
-  document.title=PAGE_TITLES[id]||'MBA Finance Guide';
-  const urlId=ART_SLUG_MAP[id]||id;
+  document.title=PAGE_TITLES[id]||PAGE_TITLES[urlId]||'MBA Finance Guide';
   const slug=urlId==='home'?'/':'/'+urlId+'/';
   try{history.pushState({section:id},document.title,slug);}catch(e){}
   const canonical=document.querySelector('link[rel="canonical"]');
