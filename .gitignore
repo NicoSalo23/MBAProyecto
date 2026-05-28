@@ -14,3 +14,8 @@ npm-debug.log*
 
 # VS Code local settings (optional — project settings are in .vscode/)
 .vscode/settings.json
+
+# Claude Code tooling — local only, no relevance to the site
+.agents/
+.claude/
+skills-lock.json
