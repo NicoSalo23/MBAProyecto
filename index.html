@@ -133,6 +133,11 @@
   <!-- HERO -->
   <div class="hero" id="main-content">
     <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true" role="presentation"></canvas>
+    <div class="hero-orbs" aria-hidden="true">
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-orb hero-orb-3"></div>
+    </div>
     <div class="hero-inner">
       <div>
         <div class="hero-badge">Finance Authority Portal</div>
@@ -148,6 +153,43 @@
         <div class="stat-card"><div class="stat-number" data-counter data-value="26" id="article-count-stat">26</div><div class="stat-label">High-quality articles published</div></div>
         <div class="stat-card"><div class="stat-number" data-counter data-value="185" data-prefix="$" data-suffix="K">$185K</div><div class="stat-label">Average post-MBA salary in investment banking (U.S.)</div></div>
         <div class="stat-card"><div class="stat-number">Top <span data-counter data-value="20">20</span></div><div class="stat-label">MBA programs analyzed in depth</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar" aria-label="MBA programs covered">
+    <span class="trust-bar-label">Schools Covered</span>
+    <div class="trust-track-fade">
+      <div class="trust-track">
+        <span>Wharton</span><span class="trust-sep">·</span>
+        <span>Harvard Business School</span><span class="trust-sep">·</span>
+        <span>Booth</span><span class="trust-sep">·</span>
+        <span>Kellogg</span><span class="trust-sep">·</span>
+        <span>Stanford GSB</span><span class="trust-sep">·</span>
+        <span>MIT Sloan</span><span class="trust-sep">·</span>
+        <span>Columbia Business School</span><span class="trust-sep">·</span>
+        <span>NYU Stern</span><span class="trust-sep">·</span>
+        <span>Tuck</span><span class="trust-sep">·</span>
+        <span>Yale SOM</span><span class="trust-sep">·</span>
+        <span>Ross</span><span class="trust-sep">·</span>
+        <span>Haas</span><span class="trust-sep">·</span>
+        <span>Fuqua</span><span class="trust-sep">·</span>
+        <span>Darden</span><span class="trust-sep">·</span>
+        <span>Wharton</span><span class="trust-sep">·</span>
+        <span>Harvard Business School</span><span class="trust-sep">·</span>
+        <span>Booth</span><span class="trust-sep">·</span>
+        <span>Kellogg</span><span class="trust-sep">·</span>
+        <span>Stanford GSB</span><span class="trust-sep">·</span>
+        <span>MIT Sloan</span><span class="trust-sep">·</span>
+        <span>Columbia Business School</span><span class="trust-sep">·</span>
+        <span>NYU Stern</span><span class="trust-sep">·</span>
+        <span>Tuck</span><span class="trust-sep">·</span>
+        <span>Yale SOM</span><span class="trust-sep">·</span>
+        <span>Ross</span><span class="trust-sep">·</span>
+        <span>Haas</span><span class="trust-sep">·</span>
+        <span>Fuqua</span><span class="trust-sep">·</span>
+        <span>Darden</span><span class="trust-sep">·</span>
       </div>
     </div>
   </div>
@@ -6740,6 +6782,37 @@ function quizReset(){
   document.getElementById('quiz-question').style.display='none';
   document.getElementById('quiz-start').style.display='block';
 }
+
+// ══════════════════════════════════════════
+//  CARD 3D MAGNETIC TILT
+// ══════════════════════════════════════════
+(function(){
+  function applyTilt(card){
+    if(card._tilt)return;
+    card._tilt=true;
+    card.addEventListener('mousemove',function(e){
+      const r=card.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-0.5;
+      const y=(e.clientY-r.top)/r.height-0.5;
+      card.style.transform='translateY(-6px) perspective(700px) rotateY('+(x*7)+'deg) rotateX('+(-y*7)+'deg)';
+      card.style.transition='transform 0.08s linear';
+    });
+    card.addEventListener('mouseleave',function(){
+      card.style.transform='';
+      card.style.transition='transform 0.5s cubic-bezier(0.23,1,0.32,1),box-shadow var(--transition),border-color var(--transition)';
+    });
+  }
+  document.querySelectorAll('.card').forEach(applyTilt);
+  new MutationObserver(function(mutations){
+    mutations.forEach(function(m){
+      m.addedNodes.forEach(function(n){
+        if(n.nodeType!==1)return;
+        if(n.classList&&n.classList.contains('card'))applyTilt(n);
+        if(n.querySelectorAll)n.querySelectorAll('.card').forEach(applyTilt);
+      });
+    });
+  }).observe(document.body,{childList:true,subtree:true});
+})();
 </script>
 </body>
 </html>

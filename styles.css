@@ -424,6 +424,33 @@ footer{background:var(--navy);color:var(--white);padding:64px 24px 32px}
 .pillar{transition:transform 0.25s ease,box-shadow 0.25s ease}
 .pillar:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(10,22,40,0.08)}
 
+/* ════════════════════════════════════════
+   TRUST BAR — scrolling schools marquee
+   ════════════════════════════════════════ */
+.trust-bar{background:var(--navy2);border-bottom:1px solid rgba(201,168,76,0.12);padding:10px 0;display:flex;align-items:center;overflow:hidden}
+.trust-bar-label{flex-shrink:0;font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:rgba(255,255,255,0.3);padding:0 20px 0 24px;white-space:nowrap;border-right:1px solid rgba(201,168,76,0.2)}
+.trust-track-fade{flex:1;overflow:hidden;position:relative}
+.trust-track-fade::before,.trust-track-fade::after{content:'';position:absolute;top:0;bottom:0;width:64px;z-index:1;pointer-events:none}
+.trust-track-fade::before{left:0;background:linear-gradient(90deg,var(--navy2),transparent)}
+.trust-track-fade::after{right:0;background:linear-gradient(270deg,var(--navy2),transparent)}
+.trust-track{display:inline-flex;align-items:center;white-space:nowrap;padding-left:28px;animation:trustScroll 40s linear infinite}
+.trust-track:hover{animation-play-state:paused}
+.trust-track span{font-size:12px;font-weight:500;color:rgba(255,255,255,0.48);padding:0 14px;transition:color 0.2s}
+.trust-track span:hover{color:var(--gold2)}
+.trust-track .trust-sep{color:rgba(201,168,76,0.35);padding:0;font-size:11px}
+@keyframes trustScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@media(max-width:680px){.trust-bar-label{display:none}}
+
+/* ════════════════════════════════════════
+   HERO AURORA ORBS
+   ════════════════════════════════════════ */
+.hero-orbs{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(72px)}
+.hero-orb-1{width:520px;height:520px;top:-15%;left:-8%;background:radial-gradient(circle,rgba(201,168,76,0.13) 0%,transparent 65%);animation:orbDrift 11s ease-in-out infinite alternate}
+.hero-orb-2{width:380px;height:380px;top:15%;right:-6%;background:radial-gradient(circle,rgba(40,100,220,0.15) 0%,transparent 65%);animation:orbDrift 14s ease-in-out infinite alternate-reverse}
+.hero-orb-3{width:260px;height:260px;bottom:-8%;left:42%;background:radial-gradient(circle,rgba(201,168,76,0.08) 0%,transparent 65%);animation:orbDrift 9s ease-in-out infinite alternate 2s}
+@keyframes orbDrift{0%{transform:translate(0,0) scale(1)}100%{transform:translate(32px,20px) scale(1.17)}}
+
 /* ── FORM INPUT FOCUS GLOW ── */
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold);background:var(--white);box-shadow:0 0 0 3px rgba(201,168,76,0.12)}
 
